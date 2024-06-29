@@ -1,9 +1,9 @@
-import Navigation from '@/components/Navigation';
+import ExplorerNavigation from '@/components/ExplorerNavigation';
 
 export default function ExplorerLayout({ children }) {
   return (
     <div className='grid grid-cols-[16rem_1fr] h-full gap-12'>
-      <div>Explorer Navigation</div>
+      <ExplorerNavigation />
       <div className='py-2'>{children}</div>
     </div>
   );
