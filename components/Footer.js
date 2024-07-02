@@ -104,7 +104,7 @@ function Footer() {
         <div className='w-1/3 pb-1 h-auto'>
           <h3 className='text-primary-300 font-bold pb-1'>App Follow</h3>
           <ul className=' bg-accent-300 text-accent-100'>
-            <li className='py-1'>
+            <li className='py-1 w-12'>
               <Link
                 href='https://github.com/'
                 rel='noopener noreferrer'
@@ -112,13 +112,13 @@ function Footer() {
               >
                 <Image
                   src={GithubSvg}
-                  alt='github'
+                  alt='github logo'
                   width='auto'
                   height='auto'
                 />
               </Link>
             </li>
-            <li className='py-1'>
+            <li className='py-1 w-28'>
               <Link
                 href='https://vercel.com/'
                 rel='noopener noreferrer'
@@ -126,7 +126,7 @@ function Footer() {
               >
                 <Image
                   src={VercelSvg}
-                  alt='github'
+                  alt='vercel logo'
                   width='auto'
                   height='auto'
                 />

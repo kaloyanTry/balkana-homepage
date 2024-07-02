@@ -1,5 +1,6 @@
 import HomeImagesShow from '@/components/HomeImagesShow';
 import { getTracksImages } from '@/lib/actions';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Balkana Home',
@@ -7,7 +8,6 @@ export const metadata = {
 
 export default async function Home() {
   const images = await getTracksImages();
-  // console.log(images);
 
   return (
     <>
@@ -19,7 +19,7 @@ export default async function Home() {
           <h1>You are wellcome to Balkana</h1>
         </article>
 
-        <section className='flex flex-col m-auto py-8 px-4 '>
+        <section className='flex flex-col m-auto py-8 px-4'>
           <h2 className='text-center text-6xl m-8 font-bold text-primary-200'>
             Goal
           </h2>
@@ -76,6 +76,21 @@ export default async function Home() {
             polluting and without causing harm.
           </p>
         </section>
+
+        <aside className='flex flex-col-2 m-auto py-8 px-4 gap-16'>
+          <Link
+            href='/home/tracks'
+            className='bg-accent-200 text-primary-300 text-2xl p-8'
+          >
+            Explore the tracks
+          </Link>
+          <Link
+            href='/home/projects'
+            className='bg-accent-200 text-primary-200 text-2xl p-8'
+          >
+            Explore the projects
+          </Link>
+        </aside>
       </main>
     </>
   );

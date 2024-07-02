@@ -4,9 +4,6 @@ import { useState, useEffect } from 'react';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 
 const HomeImagesShow = ({ images }) => {
-  // console.log(images);
-  // console.log(images.length);
-
   const CDNURL =
     'https://sixxmrmgffvhhcbjbnwu.supabase.co/storage/v1/object/public/track-images/';
 

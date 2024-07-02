@@ -4,7 +4,6 @@ import HomeImagesShow from './HomeImagesShow';
 async function HomeSlideShow() {
   const tracksImages = await getTracksImages();
 
-  //
   const CDNURL =
     'https://sixxmrmgffvhhcbjbnwu.supabase.co/storage/v1/object/public/main-images/';
 
@@ -16,7 +15,6 @@ async function HomeSlideShow() {
 
     return displayedImages;
   });
-  // console.log(images);
   return (
     <div>
       <HomeImagesShow images={images} />

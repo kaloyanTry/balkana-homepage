@@ -50,7 +50,7 @@ function ImagesShow({ images }) {
 
               <Link
                 href='/home'
-                className='bg-slate-700 px-4 py-2 text-white text-2xl hover:bg-slate-500 transition-all'
+                className='bg-primary-200 px-4 py-2 text-accent-100 text-2xl hover:bg-primary-300 transition-all'
               >
                 Explore
               </Link>
