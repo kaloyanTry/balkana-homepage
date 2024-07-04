@@ -14,12 +14,12 @@ function ImagesShow({ images }) {
     infinite: true,
     prevArrow: (
       <div className='ml-10 top-40 md:top-72'>
-        <ArrowLeftIcon className='h-8 w-8 text-white cursor-pointer' />
+        <ArrowLeftIcon className='h-8 w-8 text-accent-100 cursor-pointer' />
       </div>
     ),
     nextArrow: (
       <div className='mr-10 top-40 md:top-72'>
-        <ArrowRightIcon className='h-8 w-8 text-white cursor-pointer' />
+        <ArrowRightIcon className='h-8 w-8 text-accent-100 cursor-pointer' />
       </div>
     ),
   };
@@ -32,25 +32,15 @@ function ImagesShow({ images }) {
             key={index}
             className='flex justify-center md:items-center items-start w-screen h-screen relative'
           >
-            <Image
-              className='w-screen'
-              src={image.url}
-              alt={image.alt}
-              fill
-              // width={600}
-              // height={400}
-            />
+            <Image className='w-screen' src={image.url} alt={image.alt} fill />
             <div className='relative z-10 text-center'>
-              <h1 className='text-8xl mb-6 tracking-tight font-normal text-white'>
+              <h1 className='text-8xl mb-6 tracking-tight font-normal text-primary-100'>
                 Touch the Balkan
               </h1>
-              {/* <p className='text-4xl mb-10 tracking-tight font-normal text-white'>
-                Explore the Balkan
-              </p> */}
 
               <Link
                 href='/home'
-                className='bg-primary-200 px-4 py-2 text-accent-100 text-2xl hover:bg-primary-300 transition-all'
+                className=' bg-primary-200 px-4 py-2 text-accent-100 text-2xl hover:bg-primary-300 transition-all animate-pulse'
               >
                 Explore
               </Link>

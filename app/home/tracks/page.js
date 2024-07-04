@@ -1,4 +1,6 @@
+import Spinner from '@/components/Spinner';
 import TracksList from '@/components/TracksList';
+import { Suspense } from 'react';
 
 export const metadata = {
   title: 'Tracks',
@@ -18,7 +20,9 @@ function TracksPage() {
         humans&apos; actions. Please, explore Balkanas&apos; tracks with respect
         to the mountain and without destruction attitude and behavior.
       </p>
-      <TracksList />
+      <Suspense fallback={<Spinner />}>
+        <TracksList />
+      </Suspense>
     </div>
   );
 }

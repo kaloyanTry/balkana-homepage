@@ -26,7 +26,7 @@ function Navigation() {
             href='/home/tracks'
             className='hover:text-accent-200 transition-colors '
           >
-            Tracks
+            Trails
           </Link>
         </li>
         <li>
