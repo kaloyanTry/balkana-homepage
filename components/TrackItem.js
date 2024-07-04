@@ -5,7 +5,7 @@ function TrackItem({ track }) {
   const { id, title, distance, elevation, difficulty, image } = track;
 
   return (
-    <div className='flex flex-col bg-primary-100'>
+    <main className='flex flex-col bg-primary-100'>
       <div className='flex justify-between relative w-auto h-96'>
         <Image
           src={image}
@@ -17,7 +17,7 @@ function TrackItem({ track }) {
       </div>
 
       <div className='flex-grow'>
-        <div>
+        <section>
           <h2 className='text-accent-300 text-4xl font-semibold min-h-32 m-4'>
             Track: {title}
           </h2>
@@ -52,9 +52,9 @@ function TrackItem({ track }) {
               Details and explore
             </Link>
           </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
 
