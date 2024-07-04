@@ -10,7 +10,7 @@ export const metadata = {
 function ProjectsPage() {
   return (
     <main>
-      <section className='flex flex-col m-auto'>
+      <section className='flex flex-col m-auto pb-12 border-b-4 border-accent-200'>
         <h1 className='text-8xl my-16 text-primary-200 font-bold text-center'>
           Balkanas&apos; Projects
         </h1>
