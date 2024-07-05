@@ -8,7 +8,7 @@ async function ProjectsPage({ params }) {
 
   return (
     <div className='flex flex-col'>
-      <div className='flex justify-between relative w-auto h-96'>
+      <div className='flex justify-between relative w-auto h-96 my-4'>
         <Image
           src={image}
           fill
@@ -19,18 +19,20 @@ async function ProjectsPage({ params }) {
       </div>
 
       <div className='flex my-12 justify-center'>
-        <h2 className=' text-primary-200 text-6xl font-semibold'>{title}</h2>
+        <h2 className=' text-primary-200 text-9xl font-semibold'>{title}</h2>
       </div>
 
       <div className='flex flex-col items-center'>
-        <div className='flex gap-2 my-2'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
+        <div className='flex gap-2 my-6'>
+          <h3 className='text-4xl text-accent-300 font-semibold '>
             Opening year{' '}
-            <span className='font-bold text-primary-300'>{year}</span>
+            <span className='font-bold text-6xl bg-accent-300 p-2 text-primary-100'>
+              {year}
+            </span>
           </h3>
         </div>
 
-        <div className='flex gap-2 my-2'>
+        <div className='flex gap-2 my-8'>
           <h3 className='text-4xl text-accent-300 font-semibold'>
             Partners{' '}
             <span className='font-bold text-primary-300'>{partners}</span>

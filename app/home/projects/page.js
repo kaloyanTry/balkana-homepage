@@ -18,7 +18,10 @@ function ProjectsPage() {
           Balkanas&apos; projects are public and open. They involve personal
           commitment, voluntary work and efforts for an active life in
           accordance with natural laws and respect for the environment, the
-          habitat of local life forms.
+          habitat of local life forms. Balkanas&apos; projects are public and
+          open. They involve personal commitment, voluntary work and efforts for
+          an active life in accordance with natural laws and respect for the
+          environment, the habitat of local life forms.
         </p>
       </section>
       <Suspense fallback={<Spinner />}>

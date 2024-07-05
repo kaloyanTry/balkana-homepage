@@ -15,34 +15,36 @@ export default async function Home() {
         <HomeImagesShow images={images} />
       </header>
       <main className='flex flex-col m-auto py-8 px-4'>
-        <article className='text-8xl text-center text-accent-300 pb-8'>
-          <h1>You are wellcome to Balkana</h1>
+        <article className='pb-8'>
+          <h1 className='text-9xl text-center text-accent-300 font-semibold'>
+            You are wellcome to Balkana
+          </h1>
         </article>
 
         <section className='flex flex-col m-auto py-8 px-4'>
-          <h2 className='text-center text-6xl m-8 font-bold text-primary-200'>
+          <h2 className='text-center text-7xl m-8 font-bold text-primary-200'>
             Goal
           </h2>
-          <blockquote className='block text-xl text-right text-accent-300 px-4 font-semibold'>
+          <blockquote className='block text-2xl text-right text-accent-300 px-4 font-light'>
             &apos;Discipline is the bridge between goals and
             accomplishment.&apos;
             <cite> (Eliud Kipchoge)</cite>
           </blockquote>
-          <p className='text-justify text-2xl m-4 pb-8 border-b-2 font-normal text-primary-200'>
-            Our Goal is to preserve and maintain traditional paths, tracks,
-            routes in the mountain. Specifically, in the Centre Stara Planina
-            area. Our Goal is to preserve and maintain traditional paths,tracks,
-            routes in the mountain. Specifically, in the Centre Stara Planina
-            area. Our Goal is to preserve and maintain traditional paths,tracks,
-            routes in the mountain. Specifically, in the Centre Stara Planina
-            area.
+          <p className='text-justify text-2xl m-4 pb-8 border-b-2 font-normal text-primary-300'>
+            Our Goal is to preserve and maintain traditional paths,trails,
+            tracks, routes in the mountain. Specifically, in the Centre Stara
+            Planina area. Our Goal is to preserve and maintain traditional
+            paths,tracks, routes in the mountain. Specifically, in the Centre
+            Stara Planina area. Our Goal is to preserve and maintain traditional
+            paths,tracks, routes in the mountain. Specifically, in the Centre
+            Stara Planina area.
           </p>
         </section>
         <section className='flex flex-col m-auto py-8 px-4'>
-          <h2 className='text-center text-6xl m-8 font-bold text-primary-200'>
+          <h2 className='text-center text-7xl m-8 font-bold text-primary-200'>
             Activities
           </h2>
-          <blockquote className='block text-xl text-right text-accent-300 px-4 font-semibold pt-2'>
+          <blockquote className='block text-2xl text-right text-accent-300 px-4 font-light pt-2'>
             &apos;We are what we repeatedly do. Excellence, then, is not an act,
             but a habit.&apos;
             <cite> (Aristotel)</cite>
@@ -59,10 +61,10 @@ export default async function Home() {
           </p>
         </section>
         <section className='flex flex-col m-auto py-8 px-4'>
-          <h2 className='text-center text-6xl m-8 font-bold text-primary-200'>
+          <h2 className='text-center text-7xl m-8 font-bold text-primary-200'>
             Projects
           </h2>
-          <blockquote className='block text-xl text-right text-accent-300 px-4 pt-2 font-semibold'>
+          <blockquote className='block text-2xl text-right text-accent-300 px-4 pt-2 font-light'>
             &apos;Winning means surpassing yourself and turning your dreams into
             reality.&apos;
             <cite> (Kilian Jornet)</cite>
@@ -80,13 +82,13 @@ export default async function Home() {
         <aside className='flex flex-col-2 m-auto py-8 px-4 gap-16'>
           <Link
             href='/home/tracks'
-            className='bg-accent-200 text-primary-300 text-2xl p-8'
+            className='bg-accent-200 text-primary-100 text-2xl p-8'
           >
             Explore the tracks
           </Link>
           <Link
             href='/home/projects'
-            className='bg-accent-200 text-primary-200 text-2xl p-8'
+            className='bg-accent-200 text-primary-300 text-2xl p-8'
           >
             Explore the projects
           </Link>

@@ -17,15 +17,17 @@ async function TrackPage({ params }) {
   const checkSuits = suitable;
   function suitsResult(result) {
     if (checkSuits.length > 9) {
-      result = '🏃 & 🚴';
+      result = '🏃‍➡️ + 🚴';
     } else {
       if (checkSuits.includes('running')) {
-        result = '🏃';
+        result = '🏃‍➡️';
       }
       if (checkSuits.includes('cycling')) {
         result = '🚴';
       }
     }
+
+    //////🚵🏃
 
     return result;
   }
