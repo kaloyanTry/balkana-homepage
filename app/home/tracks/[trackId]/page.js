@@ -1,6 +1,14 @@
 import { getTrack } from '@/lib/actions';
 import Image from 'next/image';
 
+export async function generateMetadata({ params }) {
+  const { title } = await getTrack(params.trackId);
+  const titleFirstWord = title.split(' - ').slice(0, 1);
+  console.log(titleFirstWord);
+
+  return { title: `Trail ${titleFirstWord}` };
+}
+
 async function TrackPage({ params }) {
   const track = await getTrack(params.trackId);
 

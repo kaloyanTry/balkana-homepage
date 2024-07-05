@@ -40,7 +40,7 @@ function ProjectItem({ project }) {
       <div className='flex justify-end my-8 pb-12 border-b-4 border-accent-200'>
         <Link
           href={`/home/projects/${id}`}
-          className='bg-accent-300 text-primary-100 p-4'
+          className='bg-accent-300 text-primary-100 text-xl p-4'
         >
           Explore more
         </Link>

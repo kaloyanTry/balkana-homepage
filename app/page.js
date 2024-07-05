@@ -1,10 +1,14 @@
+import { Suspense } from 'react';
+import Spinner from '@/components/Spinner';
 import SlideShow from '@/components/SlideShow';
+
+export const dynamic = 'force-dynamic';
 
 function HomePage() {
   return (
-    <div>
+    <Suspense fallback={<Spinner />}>
       <SlideShow />
-    </div>
+    </Suspense>
   );
 }
 

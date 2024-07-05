@@ -1,6 +1,12 @@
 import { getProject } from '@/lib/actions';
 import Image from 'next/image';
 
+export async function generateMetadata({ params }) {
+  const { year } = await getProject(params.projectId);
+
+  return { title: `Project ${year}` };
+}
+
 async function ProjectsPage({ params }) {
   const project = await getProject(params.projectId);
 

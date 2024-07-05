@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 import Spinner from '@/components/Spinner';
 import ProjectsList from '@/components/ProjectsList';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Projects',
   description: 'Balkana Projects general information',
