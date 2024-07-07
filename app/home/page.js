@@ -82,13 +82,13 @@ export default async function Home() {
         <aside className='flex flex-col-2 m-auto py-8 px-4 gap-16'>
           <Link
             href='/home/tracks'
-            className='bg-accent-200 text-primary-100 text-2xl p-8'
+            className='bg-accent-300 text-primary-100 text-2xl p-8 rounded'
           >
             Explore the tracks
           </Link>
           <Link
             href='/home/projects'
-            className='bg-accent-200 text-primary-300 text-2xl p-8'
+            className='bg-accent-300 text-accent-100 text-2xl p-8 rounded'
           >
             Explore the projects
           </Link>

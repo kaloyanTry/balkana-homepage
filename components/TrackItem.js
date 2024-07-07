@@ -47,7 +47,7 @@ function TrackItem({ track }) {
           <div className=' text-accent-100 text-right text-xl'>
             <Link
               href={`/home/tracks/${id}`}
-              className=' bg-primary-200 py-2 px-4 inline-block hover:bg-accent-300 transition-all hover:text-primary-300'
+              className=' bg-primary-200 py-2 px-4 inline-block hover:bg-accent-200 transition-all hover:text-primary-300 rounded-tl'
             >
               Details and explore
             </Link>

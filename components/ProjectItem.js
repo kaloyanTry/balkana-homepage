@@ -18,7 +18,7 @@ function ProjectItem({ project }) {
         </h3>
       </div>
 
-      <div className='flex justify-between relative w-auto h-96 my-8'>
+      <div className='flex justify-between relative w-auto h-96 my-8 max-w-[2000] max-h-[900]'>
         <Image
           src={image}
           fill
@@ -40,7 +40,7 @@ function ProjectItem({ project }) {
       <div className='flex justify-end my-8 pb-12 border-b-4 border-accent-200'>
         <Link
           href={`/home/projects/${id}`}
-          className='bg-accent-300 text-primary-100 text-xl p-4'
+          className='bg-accent-300 text-primary-100 text-xl p-4 rounded'
         >
           Explore more
         </Link>

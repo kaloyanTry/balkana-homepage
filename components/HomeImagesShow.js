@@ -50,10 +50,10 @@ const HomeImagesShow = ({ images }) => {
   );
 
   return (
-    <div className='max-w-[2000px] max-h-[900px]  m-auto py-8 px-8 relative group'>
+    <div className='m-auto py-8 px-8 relative group'>
       <div
         style={{ backgroundImage: `url(${trackImages[currentIndex].url})` }}
-        className='w-full h-96 bg-center bg-cover duration-300'
+        className='w-auto h-96 bg-center bg-cover duration-300'
       ></div>
 
       <Arrow direction='left' onClick={prevImage} />
