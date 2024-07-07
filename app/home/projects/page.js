@@ -2,7 +2,9 @@ import { Suspense } from 'react';
 import Spinner from '@/components/Spinner';
 import ProjectsList from '@/components/ProjectsList';
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
+
+export const revalidate = 3600;
 
 export const metadata = {
   title: 'Projects',
