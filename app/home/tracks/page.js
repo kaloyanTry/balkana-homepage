@@ -1,17 +1,22 @@
+import Filter from '@/components/FIlter';
 import Spinner from '@/components/Spinner';
 import TracksList from '@/components/TracksList';
 import { getTracks } from '@/lib/actions';
 import { Suspense } from 'react';
 
-export const revalidate = 86400;
+// code for static generated pages:
+// export const revalidate = 86400;
 
 export const metadata = {
   title: 'Trails',
   description: 'The overview of the Balkanas trails',
 };
 
-async function TracksPage() {
+// when using sesarchParams the page is dynamic rendered page
+async function TracksPage({ searchParams }) {
   const tracks = await getTracks();
+  const filterSuitable = searchParams?.suitable ?? 'all';
+  const filterDistance = searchParams?.distance ?? 'all';
 
   return (
     <main>
@@ -30,8 +35,14 @@ async function TracksPage() {
         <span className='font-bold'>{tracks.length} trails</span>, which you can
         explore. <span className='font-bold'>Enjoy!</span>
       </p>
+      <div>
+        <Filter />
+      </div>
       <Suspense fallback={<Spinner />}>
-        <TracksList />
+        <TracksList
+          filterSuitable={filterSuitable}
+          filterDistance={filterDistance}
+        />
       </Suspense>
     </main>
   );
