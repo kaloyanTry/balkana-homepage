@@ -11,7 +11,7 @@ function ProjectItem({ project }) {
           <span className='text-primary-300 '>Project</span> {title}
         </h2>
         <h3 className='text-4xl my-8 text-primary-300 font-semibold text-center'>
-          Openning Year:{' '}
+          Opening Year:{' '}
           <span className='text-5xl font-bold bg-accent-300 text-accent-100 p-2'>
             {year}
           </span>

@@ -1,3 +1,4 @@
+import TextExpander from '@/components/TextExpander';
 import { getTrack } from '@/lib/actions';
 import Image from 'next/image';
 
@@ -35,7 +36,7 @@ async function TrackPage({ params }) {
       }
     }
 
-    //////🚵🏃
+    /////////🚵🏃
 
     return result;
   }
@@ -88,7 +89,9 @@ async function TrackPage({ params }) {
       </div>
 
       <div className='flex my-4 justify-center'>
-        <p className=' text-primary-300 text-2xl font-normal'>{description}</p>
+        <p className=' text-primary-300 text-2xl font-normal'>
+          <TextExpander>{description}</TextExpander>
+        </p>
       </div>
     </div>
   );

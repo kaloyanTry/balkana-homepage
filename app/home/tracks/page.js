@@ -27,8 +27,8 @@ async function TracksPage() {
       </p>
       <p className='mb-16 text-accent-300 text-2xl font-normal'>
         Our public database of routes include{' '}
-        <span className='font-bold text-3xl'>{tracks.length} trails</span>,
-        which you can explore. Enjoy!
+        <span className='font-bold'>{tracks.length} trails</span>, which you can
+        explore. <span className='font-bold'>Enjoy!</span>
       </p>
       <Suspense fallback={<Spinner />}>
         <TracksList />
