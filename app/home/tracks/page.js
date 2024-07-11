@@ -1,4 +1,5 @@
-import Filter from '@/components/FIlter';
+import FilterSuitable from '@/components/FilterSuitable';
+import FilterDistance from '@/components/FilterDistance';
 import Spinner from '@/components/Spinner';
 import TracksList from '@/components/TracksList';
 import { getTracks } from '@/lib/actions';
@@ -30,15 +31,19 @@ async function TracksPage({ searchParams }) {
         humans&apos; actions. Please, explore Balkanas&apos; trails with respect
         to the mountain and without destruction attitude and behavior.
       </p>
-      <p className='mb-16 text-accent-300 text-2xl font-normal'>
+      <p className='mb-8 text-accent-300 text-2xl font-normal'>
         Our public database of routes include{' '}
         <span className='font-bold'>{tracks.length} trails</span>, which you can
-        explore. <span className='font-bold'>Enjoy!</span>
+        explore. <span className='font-bold'>Explore!</span>
       </p>
-      <div>
-        <Filter />
+      <div className='flex grid-cols-2 gap-4 justify-center'>
+        <span className='text-xl font-medium bg-accent-300 text-accent-100 p-2 mb-8'>
+          Explore
+        </span>
+        <FilterSuitable />
+        <FilterDistance />
       </div>
-      <Suspense fallback={<Spinner />}>
+      <Suspense fallback={<Spinner />} key={filterSuitable || filterDistance}>
         <TracksList
           filterSuitable={filterSuitable}
           filterDistance={filterDistance}

@@ -6,7 +6,7 @@ function TextExpander({ children }) {
   const [isExpended, setIsExpended] = useState(false);
   const displaytext = isExpended
     ? children
-    : children.split(' ').slice(0, 40).join(' ') + '...';
+    : children.split(' ').slice(0, 20).join(' ') + '...';
 
   return (
     <span>
