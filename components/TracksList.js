@@ -18,6 +18,7 @@ async function TracksList({ filterSuitable, filterDistance }) {
       track.suitable.includes('running')
     );
 
+  if (filterDistance === '') displayedTrails = tracks;
   if (filterDistance === 'short')
     displayedTrails = tracks.filter((track) => track.distance <= 20);
   if (filterDistance === 'trail')

@@ -31,10 +31,13 @@ async function TracksPage({ searchParams }) {
         humans&apos; actions. Please, explore Balkanas&apos; trails with respect
         to the mountain and without destruction attitude and behavior.
       </p>
-      <p className='mb-8 text-accent-300 text-2xl font-normal'>
+      <p className='mb-8 text-primary-300 text-2xl font-normal'>
         Our public database of routes include{' '}
-        <span className='font-bold'>{tracks.length} trails</span>, which you can
-        explore. <span className='font-bold'>Explore!</span>
+        <span className='font-bold text-accent-300'>
+          {tracks.length} trails
+        </span>
+        , which you can explore.{' '}
+        <span className='font-bold text-accent-300'>Explore!</span>
       </p>
       <div className='flex grid-cols-2 gap-4 justify-center'>
         <span className='text-xl font-medium bg-accent-300 text-accent-100 p-2 mb-8'>

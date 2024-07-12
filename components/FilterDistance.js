@@ -18,25 +18,6 @@ function FilterDistance() {
 
   return (
     <div className='flex mb-8 text-lg'>
-      {/* <button
-        className='my-2 px-4 hover:bg-primary-100 hover:border-r-2 border-primary-300'
-        onClick={() => handleFilter('short')}
-      >
-        short
-      </button>
-      <button
-        className='my-2 px-4 hover:bg-primary-100 hover:border-r-2 border-primary-300'
-        onClick={() => handleFilter('trail')}
-      >
-        trail
-      </button>
-      <button
-        className='my-2 px-4 hover:bg-primary-100 hover:border-r-2 border-primary-300'
-        onClick={() => handleFilter('ultra')}
-      >
-        ultra
-      </button> */}
-
       <ButtonTracks
         filterSuitable='short'
         handleFilter={handleFilter}
@@ -58,6 +39,25 @@ function FilterDistance() {
       >
         ultra
       </ButtonTracks>
+
+      {/* <button
+        className='my-2 px-4 hover:bg-primary-100 hover:border-r-2 border-primary-300'
+        onClick={() => handleFilter('short')}
+      >
+        short
+      </button>
+      <button
+        className='my-2 px-4 hover:bg-primary-100 hover:border-r-2 border-primary-300'
+        onClick={() => handleFilter('trail')}
+      >
+        trail
+      </button>
+      <button
+        className='my-2 px-4 hover:bg-primary-100 hover:border-r-2 border-primary-300'
+        onClick={() => handleFilter('ultra')}
+      >
+        ultra
+      </button> */}
     </div>
   );
 }
