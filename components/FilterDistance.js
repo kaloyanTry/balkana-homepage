@@ -8,7 +8,7 @@ function FilterDistance() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const activeFilter = searchParams.get('distance') ?? '';
+  const activeFilter = searchParams.get('distance') ?? 'all';
 
   function handleFilter(filterDistance) {
     const params = new URLSearchParams(searchParams);
@@ -19,21 +19,28 @@ function FilterDistance() {
   return (
     <div className='flex mb-8 text-lg'>
       <ButtonTracks
-        filterSuitable='short'
+        filterDistance='all'
+        handleFilter={handleFilter}
+        activeFilter={activeFilter}
+      >
+        all
+      </ButtonTracks>
+      <ButtonTracks
+        filterDistance='short'
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
         short
       </ButtonTracks>
       <ButtonTracks
-        filterSuitable='trail'
+        filterDistance='trail'
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
         trail
       </ButtonTracks>
       <ButtonTracks
-        filterSuitable='ultra'
+        filterDistance='ultra'
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >

@@ -1,4 +1,3 @@
-import FilterSuitable from '@/components/FilterSuitable';
 import FilterDistance from '@/components/FilterDistance';
 import Spinner from '@/components/Spinner';
 import TracksList from '@/components/TracksList';
@@ -16,7 +15,6 @@ export const metadata = {
 // when using sesarchParams the page is dynamic rendered page
 async function TracksPage({ searchParams }) {
   const tracks = await getTracks();
-  const filterSuitable = searchParams?.suitable ?? 'all';
   const filterDistance = searchParams?.distance ?? 'all';
 
   return (
@@ -39,18 +37,14 @@ async function TracksPage({ searchParams }) {
         , which you can explore.{' '}
         <span className='font-bold text-accent-300'>Explore!</span>
       </p>
-      <div className='flex grid-cols-2 gap-4 justify-center'>
+      <div className='flex justify-center'>
         <span className='text-xl font-medium bg-accent-300 text-accent-100 p-2 mb-8'>
           Explore
         </span>
-        <FilterSuitable />
         <FilterDistance />
       </div>
-      <Suspense fallback={<Spinner />} key={filterSuitable || filterDistance}>
-        <TracksList
-          filterSuitable={filterSuitable}
-          filterDistance={filterDistance}
-        />
+      <Suspense fallback={<Spinner />} key={filterDistance}>
+        <TracksList filterDistance={filterDistance} />
       </Suspense>
     </main>
   );

@@ -1,5 +1,5 @@
 function ButtonTracks({
-  filterSuitable,
+  filterDistance,
   handleFilter,
   activeFilter,
   children,
@@ -7,9 +7,9 @@ function ButtonTracks({
   return (
     <button
       className={`my-2 px-4 text-primary-300 hover:bg-primary-100 hover:border-r-2 border-primary-300 ${
-        filterSuitable === activeFilter ? 'font-bold' : ''
+        filterDistance === activeFilter ? 'font-bold' : ''
       }`}
-      onClick={() => handleFilter(filterSuitable)}
+      onClick={() => handleFilter(filterDistance)}
     >
       {children}
     </button>
