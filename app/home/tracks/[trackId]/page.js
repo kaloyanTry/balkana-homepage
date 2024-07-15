@@ -1,3 +1,5 @@
+import DateSelector from '@/components/DateSelector';
+import ReservationForm from '@/components/ReservationForm';
 import TextExpander from '@/components/TextExpander';
 import { getTrack } from '@/lib/actions';
 import Image from 'next/image';
@@ -92,6 +94,15 @@ async function TrackPage({ params }) {
         <p className=' text-primary-300 text-2xl font-normal'>
           <TextExpander>{description}</TextExpander>
         </p>
+      </div>
+      <div className='flex flex-col my-8'>
+        <h3 className='text-4xl text-accent-300 text-center'>
+          Plan your trail {title}. Share with others.
+        </h3>
+        <div>
+          <DateSelector />
+          <ReservationForm />
+        </div>
       </div>
     </div>
   );
