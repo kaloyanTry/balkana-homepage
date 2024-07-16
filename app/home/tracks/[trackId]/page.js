@@ -1,13 +1,13 @@
-import DateSelector from '@/components/DateSelector';
-import ReservationForm from '@/components/ReservationForm';
-import TextExpander from '@/components/TextExpander';
+import Exploration from '@/components/Exploration';
+import Spinner from '@/components/Spinner';
+import Track from '@/components/Track';
 import { getTrack } from '@/lib/actions';
-import Image from 'next/image';
+import { Suspense } from 'react';
+import { UsersIcon } from '@heroicons/react/24/solid';
 
 export async function generateMetadata({ params }) {
   const { title } = await getTrack(params.trackId);
   const titleFirstWord = title.split(' - ').slice(0, 1);
-  // console.log(titleFirstWord);
 
   return { title: `Trail ${titleFirstWord}` };
 }
@@ -15,93 +15,21 @@ export async function generateMetadata({ params }) {
 async function TrackPage({ params }) {
   const track = await getTrack(params.trackId);
 
-  const {
-    id,
-    title,
-    distance,
-    description,
-    elevation,
-    difficulty,
-    image,
-    suitable,
-  } = track;
-  const checkSuits = suitable;
-  function suitsResult(result) {
-    if (checkSuits.length > 9) {
-      result = '🏃‍➡️ + 🚴';
-    } else {
-      if (checkSuits.includes('running')) {
-        result = '🏃‍➡️';
-      }
-      if (checkSuits.includes('cycling')) {
-        result = '🚴';
-      }
-    }
-
-    /////////🚵🏃
-
-    return result;
-  }
-
   return (
-    <div className='flex flex-col'>
-      <div className='flex justify-between relative w-auto h-96'>
-        <Image
-          src={image}
-          fill
-          sizes='100%'
-          alt={`Track ${title}`}
-          className='object-cover'
-        />
-      </div>
+    <div className='mx-auto mt-2'>
+      <Track track={track} />
 
-      <div className='flex my-12 justify-center'>
-        <h2 className=' text-primary-200 text-6xl font-semibold'>{title}</h2>
-      </div>
-
-      <div className='flex flex-col items-center'>
-        <div className='flex gap-2 my-2'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
-            Distance:{' '}
-            <span className='font-bold text-primary-300'>{distance}</span>K
-          </h3>
-        </div>
-
-        <div className='flex gap-2 my-2'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
-            Elevation:{' '}
-            <span className='font-bold text-primary-300'>{elevation}</span>
-            D+
-          </h3>
-        </div>
-
-        <div className='flex gap-2 my-2'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
-            Difficulty:{' '}
-            <span className='font-bold text-primary-300'>{difficulty}</span>
-          </h3>
-        </div>
-
-        <div className='flex gap-2 my-2'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
-            Suitable for:{' '}
-            <span className='font-bold text-6xl'>{suitsResult()}</span>
-          </h3>
-        </div>
-      </div>
-
-      <div className='flex my-4 justify-center'>
-        <p className=' text-primary-300 text-2xl font-normal'>
-          <TextExpander>{description}</TextExpander>
-        </p>
-      </div>
-      <div className='flex flex-col my-8'>
+      <div className='flex flex-col my-8 items-center justify-center'>
         <h3 className='text-4xl text-accent-300 text-center'>
-          Plan your trail {title}. Share with others.
+          Plan your trail{' '}
+          <span className='text-5xl text-primary-200'>{track.title}</span> and
+          share with others
         </h3>
+        <UsersIcon className='h-12 w-12 text-accent-300' />
         <div>
-          <DateSelector />
-          <ReservationForm />
+          <Suspense fallback={<Spinner />}>
+            <Exploration track={track} />
+          </Suspense>
         </div>
       </div>
     </div>

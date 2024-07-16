@@ -10,8 +10,7 @@ async function ProfilePage() {
   // const explorer = await getExplorer(email);
   // console.log(explorer.nationality);
 
-  const countryFlag = 'pt.jpg';
-  const nationality = 'portugal';
+  const nationality = 'bulgarian';
 
   return (
     <div>

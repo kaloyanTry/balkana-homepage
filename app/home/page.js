@@ -16,7 +16,7 @@ export default async function Home() {
       </header>
       <main className='flex flex-col m-auto py-8 px-4'>
         <article className='pb-8'>
-          <h1 className='text-9xl text-center text-accent-300 font-semibold'>
+          <h1 className='text-9xl text-center text-primary-200 font-semibold'>
             You are wellcome to Balkana
           </h1>
         </article>

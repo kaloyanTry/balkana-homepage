@@ -3,7 +3,7 @@
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 
-function DateSelector({ track, settings, bookedDates }) {
+function DateSelector({ track, bookedDates }) {
   return (
     <div className='flex flex-col justify-between'>
       <DayPicker
