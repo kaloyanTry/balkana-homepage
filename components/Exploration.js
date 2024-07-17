@@ -1,4 +1,4 @@
-import { getBookedDatesByTrackId } from '@/lib/actions-data-services';
+import { getBookedDatesByTrackId } from '@/lib/actions';
 import DateSelector from '@/components/DateSelector';
 import ExplorationForm from '@/components/ExplorationForm';
 
@@ -7,7 +7,7 @@ async function Exploration({ track }) {
 
   return (
     <div>
-      <DateSelector bookedDates={bookedDates} track={track} />
+      <DateSelector track={track} bookedDates={bookedDates} />
       <ExplorationForm track={track} />
     </div>
   );

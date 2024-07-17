@@ -23,7 +23,7 @@ function ExplorationForm({ track }) {
           </select>
         </div>
         <div className='space-y-2 my-4 font-semibold'>
-          <label htmlFor='observations'>Share your experience with us?</label>
+          <label htmlFor='experience'>Share your experience with us?</label>
           <textarea
             name='experience'
             id='experience'

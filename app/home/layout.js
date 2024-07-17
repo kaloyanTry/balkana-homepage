@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { ExplorationProvider } from '@/components/ExplorationContext';
 
 export default function HomeLayout({ children }) {
   return (
@@ -7,7 +8,9 @@ export default function HomeLayout({ children }) {
       <Header />
 
       <div className='flex-1 px-8 py-12 grid'>
-        <main className='max-w-7xl mx-auto w-full'>{children}</main>
+        <main className='max-w-7xl mx-auto w-full'>
+          <ExplorationProvider>{children}</ExplorationProvider>
+        </main>
       </div>
 
       <Footer />
