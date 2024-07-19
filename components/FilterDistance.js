@@ -17,7 +17,7 @@ function FilterDistance() {
   }
 
   return (
-    <div className='flex mb-8 text-lg'>
+    <div className='flex mb-8 text-xl'>
       <ButtonTracks
         filterDistance='all'
         handleFilter={handleFilter}

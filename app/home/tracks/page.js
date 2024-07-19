@@ -39,7 +39,7 @@ async function TracksPage({ searchParams }) {
         <span className='font-bold text-accent-300'>Explore!</span>
       </p>
       <div className='flex justify-center'>
-        <span className='text-xl font-medium bg-accent-300 text-accent-100 p-2 mb-8'>
+        <span className='text-2xl font-medium bg-accent-300 text-accent-100 p-2 mb-8'>
           Explore
         </span>
         <FilterDistance />
