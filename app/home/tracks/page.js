@@ -1,3 +1,4 @@
+import ExplorationReminder from '@/components/ExplorationReminder';
 import FilterDistance from '@/components/FilterDistance';
 import Spinner from '@/components/Spinner';
 import TracksList from '@/components/TracksList';
@@ -45,6 +46,7 @@ async function TracksPage({ searchParams }) {
       </div>
       <Suspense fallback={<Spinner />} key={filterDistance}>
         <TracksList filterDistance={filterDistance} />
+        <ExplorationReminder />
       </Suspense>
     </main>
   );

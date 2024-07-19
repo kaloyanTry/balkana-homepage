@@ -21,6 +21,7 @@ function useExploration() {
 
   if (context === undefined)
     throw new Error('Context was used outside provider');
+
   return context;
 }
 

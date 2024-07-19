@@ -49,8 +49,10 @@ function DateSelector({ track, bookedDates }) {
           {numDays ? (
             <>
               <p className='text-xl'>
-                Days on trail:{' '}
-                <span className='text-2xl font-semibold'>{numDays + 1}</span>
+                Days on the trail:{' '}
+                <span className='text-2xl font-semibold px-2'>
+                  {numDays + 1}
+                </span>
               </p>
             </>
           ) : null}
