@@ -3,9 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 async function Navigation() {
-  // get the explorer's image from Google or GitHub
+  // get the explorer's image from Google or GitHub. Because of auth() => cookies... Navigation is dynamic rendered!!!, and so the entire website
+  //Later leave this approach and make it dynamic only exploration form:
   const session = await auth();
-  console.log(session);
+
   return (
     <nav className='z-10 text-2xl text-accent-300 font-semibold'>
       <ul className='flex gap-12'>
