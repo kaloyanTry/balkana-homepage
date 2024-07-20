@@ -18,6 +18,16 @@ const nextConfig = {
         hostname: 'sixxmrmgffvhhcbjbnwu.supabase.co',
         pathname: '/storage/v1/object/public/projects-images/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/a/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        pathname: '/u/**',
+      },
     ],
   },
 };
