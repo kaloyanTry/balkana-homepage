@@ -1,15 +1,19 @@
+import { auth } from '@/lib/auth';
+
 export const metadata = {
   title: 'Explorer Area',
 };
 
-function ExplorerPage() {
+async function ExplorerPage() {
+  const session = await auth();
+  const firstName = session.user.name.split(' ').at(0);
   return (
     <div>
       <h2 className='font-semibold text-4xl text-accent-200 m-4'>
-        Explorere Page
+        Explorer Page
       </h2>
       <p className='font-normal text-xl text-primary-300 m-4'>
-        Wellcome, Explorer
+        Wellcome, {firstName}
       </p>
     </div>
   );
