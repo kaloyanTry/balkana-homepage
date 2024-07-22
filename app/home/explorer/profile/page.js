@@ -1,16 +1,15 @@
 import { getExplorer } from '@/lib/actions';
 import SelectCountry from '@/components/SelectCountry';
 import UpdatePrifileForm from '@/components/UpdatePrifileForm';
+import { auth } from '@/lib/auth';
 
 export const metadata = {
   title: 'Update Explorer Profile',
 };
 
 async function ProfilePage() {
-  // const explorer = await getExplorer(email);
-  // console.log(explorer.nationality);
-
-  const nationality = 'bulgarian';
+  const session = await auth();
+  const explorer = await getExplorer(session.user.email);
 
   return (
     <div>
@@ -24,11 +23,12 @@ async function ProfilePage() {
         Providing real information will make your exploration faster and
         smoother. See you in Balkana!
       </p>
-      <UpdatePrifileForm>
+      <UpdatePrifileForm explorer={explorer}>
         <SelectCountry
           name='nationality'
+          id='nationality'
           className='px-5 py-3 bg-wgite text-primary-300 w-full shadow-sm rounded-sm'
-          defaultCountry={nationality}
+          defaultCountry={explorer.nationality}
         />
       </UpdatePrifileForm>
     </div>

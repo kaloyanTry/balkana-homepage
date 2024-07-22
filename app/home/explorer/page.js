@@ -6,6 +6,7 @@ export const metadata = {
 
 async function ExplorerPage() {
   const session = await auth();
+
   const firstName = session.user.name.split(' ').at(0);
   return (
     <div>

@@ -37,8 +37,8 @@ function ExplorerNavigation() {
         {navLinks.map((link) => (
           <li key='link.name'>
             <Link
-              className={`py-3 px-5 hover:bg-accent-100 hover:text-primary-200 transition-colors flex items-center gap-4 font-semibold text-accent-200 ${
-                pathname === link.href ? 'bg-accent-100 text-primary-200' : ''
+              className={`py-3 px-5 hover:bg-accent-100 hover:text-primary-300 transition-colors flex items-center gap-4 font-semibold text-accent-300 ${
+                pathname === link.href ? 'bg-accent-100 text-primary-300' : ''
               }`}
               href={link.href}
             >

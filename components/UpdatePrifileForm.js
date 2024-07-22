@@ -2,25 +2,26 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import SelectCountry from './SelectCountry';
+import { useFormStatus } from 'react-dom';
+import { updateExplorerProfile } from '@/lib/actions';
 
-function UpdatePrifileForm({ children }) {
+function UpdatePrifileForm({ explorer, children }) {
   const [count, setCount] = useState();
-  // const { fullName, email, phone, nationality, countryFlag } = explorer;
-  const countryFlag =
-    'https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg';
+
+  const { fullName, email, phone, nationality, countryFlag } = explorer;
+
   return (
     <form
-      action=''
+      action={updateExplorerProfile}
       className='flex flex-col gap-4 bg-accent-100 text-xl px-8 py-16'
     >
       <div className='space-y-2'>
         <label>Full name</label>
         <input
           disabled
-          defaultValue=''
+          defaultValue={fullName}
           name='fullName'
-          className='px-5 py-3 bg-white text-primary-300 w-full shadow-sm rounded-sm'
+          className='px-5 py-3 bg-accent-200 text-primary-300 w-full shadow-sm rounded-sm'
         />
       </div>
 
@@ -28,17 +29,16 @@ function UpdatePrifileForm({ children }) {
         <label>Email address</label>
         <input
           disabled
-          defaultValue=''
+          defaultValue={email}
           name='email'
-          className='px-5 py-3 bg-white text-primary-300 w-full shadow-sm rounded-sm'
+          className='px-5 py-3 bg-accent-200 text-primary-300 w-full shadow-sm rounded-sm'
         />
       </div>
 
       <div className='space-y-2'>
         <label>Phone number</label>
         <input
-          disabled
-          defaultValue=''
+          defaultValue={phone}
           name='phone'
           className='px-5 py-3 bg-white text-primary-300 w-full shadow-sm rounded-sm'
         />
@@ -49,18 +49,31 @@ function UpdatePrifileForm({ children }) {
           <label htmlFor='nationality'>Where are you from?</label>
           <Image
             src={countryFlag}
-            width={48}
-            height={48}
+            width={36}
+            height={36}
             alt='Country flag'
+            name='countryFlag'
             priority
           />
         </div>
         {children}
       </div>
       <div className='flex justify-end items-center gap-6'>
-        <button>Update profile</button>
+        <Button />
       </div>
     </form>
+  );
+}
+
+function Button() {
+  const { pending } = useFormStatus();
+  return (
+    <button
+      className='bg-accent-300 p-4 rounded-sm text-xl text-accent-100 hover:text-accent-200 transition-all disabled:cursor-not-allowed'
+      disabled={pending}
+    >
+      {pending ? 'Updating...' : 'Update Profile'}
+    </button>
   );
 }
 
