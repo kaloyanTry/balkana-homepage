@@ -17,8 +17,8 @@ const navLinks = [
     icon: <HomeIcon className='h-5 w-5 text-accent-300 ' />,
   },
   {
-    name: 'Visitations',
-    href: '/home/explorer/visitations',
+    name: 'Explorations',
+    href: '/home/explorer/explorations',
     icon: <CalendarDaysIcon className='h-5 w-5 text-accent-300' />,
   },
   {
@@ -33,9 +33,9 @@ function ExplorerNavigation() {
 
   return (
     <nav className='border-r border-accent-300'>
-      <ul className='flex flex-col gap-2 h-full text-lg'>
+      <ul className='flex flex-col gap-2 h-full text-xl'>
         {navLinks.map((link) => (
-          <li key='link.name'>
+          <li key={link.name}>
             <Link
               className={`py-3 px-5 hover:bg-accent-100 hover:text-primary-300 transition-colors flex items-center gap-4 font-semibold text-accent-300 ${
                 pathname === link.href ? 'bg-accent-100 text-primary-300' : ''

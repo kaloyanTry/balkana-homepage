@@ -15,7 +15,7 @@ async function LoginPage() {
         Sign in to access your explorer area
       </h2>
       {providers.map((provider) => (
-        <SignInBtn provider={provider} key={provider.id} />
+        <SignInBtn provider={provider} key={provider} />
       ))}
     </div>
   );
