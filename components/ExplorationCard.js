@@ -39,11 +39,11 @@ function ExplorationCard({ exploration, onDelete }) {
             {numDays} day(s) at Trail: {title}
           </h3>
           {isPast(new Date(startDate)) ? (
-            <span className='bg-accent-200 text-primary-300 h-8 mt-2 px-3 uppercase text-md font-bold flex items-center rounded-sm'>
+            <span className='bg-accent-200 text-primary-300 mt-2 h-8 px-4 py-2 uppercase text-md font-bold flex items-center rounded-sm'>
               past
             </span>
           ) : (
-            <span className='bg-primary-200 text-accent-100 h-7 px-3 uppercase text-md font-bold flex items-center rounded-sm'>
+            <span className='bg-primary-200 text-accent-100 mt-2 h-8 px-4 py-2 uppercase text-md font-bold flex items-center rounded-sm'>
               upcoming
             </span>
           )}
