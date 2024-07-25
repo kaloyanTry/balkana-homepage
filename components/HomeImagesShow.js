@@ -21,7 +21,7 @@ const HomeImagesShow = ({ images }) => {
   useEffect(() => {
     const autoPlay = setInterval(() => {
       nextImage();
-    }, 7000);
+    }, 5000);
     return () => clearInterval(autoPlay);
   });
 

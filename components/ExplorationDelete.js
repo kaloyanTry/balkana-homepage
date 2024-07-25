@@ -2,10 +2,10 @@
 
 import { deleteExploration } from '@/lib/actions';
 import { TrashIcon } from '@heroicons/react/24/solid';
-import { ExplorationProvider } from './ExplorationContext';
+// import { ExplorationProvider } from './ExplorationContext';
 import { useTransition } from 'react';
-import Spinner from './Spinner';
-// import SpinnerMini from './SpinnerMini';
+// import Spinner from './Spinner';
+import SpinnerMini from './SpinnerMini';
 
 function ExplorationDelete({ explorationId, onDelete }) {
   const [isPending, startTransition] = useTransition();
@@ -27,7 +27,7 @@ function ExplorationDelete({ explorationId, onDelete }) {
         </>
       ) : (
         <span className='mx-auto'>
-          <Spinner />
+          <SpinnerMini />
         </span>
       )}
     </button>

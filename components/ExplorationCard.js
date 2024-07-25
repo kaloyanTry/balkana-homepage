@@ -23,7 +23,7 @@ function ExplorationCard({ exploration, onDelete }) {
 
   return (
     <div className='flex border border-primary-200'>
-      <div className='relative h-32 aspect-square'>
+      <div className='relative h-36 aspect-square'>
         <Image
           src={image}
           alt={`Trail ${title}`}
@@ -36,7 +36,7 @@ function ExplorationCard({ exploration, onDelete }) {
       <div className='flex-grow px-8 py-2 flex flex-col'>
         <div className='flex items-center justify-between'>
           <h3 className='text-2xl font-semibold'>
-            {numDays} day(s) at Trail: {title}
+            {numDays} day{numDays > 1 && 's'} at Trail: {title}
           </h3>
           {isPast(new Date(startDate)) ? (
             <span className='bg-accent-200 text-primary-300 mt-2 h-8 px-4 py-2 uppercase text-md font-bold flex items-center rounded-sm'>
@@ -48,20 +48,24 @@ function ExplorationCard({ exploration, onDelete }) {
             </span>
           )}
         </div>
-        <p className='text-xl text-primary-300 py-2'>
-          {format(new Date(startDate), 'EEE, MMM dd yyyy')} (
+        <p className='text-xl text-primary-200 py-2'>
+          {format(new Date(startDate), 'EEE, dd MMM yyyy')} (
           {isToday(new Date(startDate))
             ? 'Today'
             : formatDistanceFromNow(startDate)}
-          ) &mdash; {format(new Date(endDate), 'EEE, MMM dd yyyy')}
+          ) &mdash; {format(new Date(endDate), 'EEE, dd MMM yyyy')}
         </p>
 
         <div className='flex gap-4 mt-auto items-baseline'>
           <p className='text-lg text-primary-300'>
-            {numExplorers} explorer{numExplorers > 1 && 's'}
+            <span className='text-accent-300 font-semibold'>
+              {numExplorers}{' '}
+            </span>
+            explorer{numExplorers > 1 && 's'}
           </p>
           <p className='ml-auto text-lg text-primary-400'>
-            Booked at: {format(new Date(created_at), 'EEE, MMM dd yyyy, p')}
+            <span className='text-accent-300 font-semibold'>Noted at:</span>{' '}
+            {format(new Date(created_at), 'EEE, dd MMM yyyy, p')}
           </p>
         </div>
       </div>
@@ -70,7 +74,7 @@ function ExplorationCard({ exploration, onDelete }) {
         {!isPast(startDate) ? (
           <>
             <Link
-              href={`/explorer/explorations/edit/${id}`}
+              href={`/home/explorer/explorations/edit/${id}`}
               className='group flex items-center gap-2 uppercase text-md font-bold text-primary-300 border-b border-primary-300 flex-grow px-3 hover:bg-primary-100 transition-colors hover:text-primary-900'
             >
               <PencilSquareIcon className='h-5 w-5 text-primary-200 group-hover:text-primary-300 transition-colors' />

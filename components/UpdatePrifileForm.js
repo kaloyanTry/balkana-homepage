@@ -1,12 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
-import { useFormStatus } from 'react-dom';
+// import { useState } from 'react';
 import { updateExplorerProfile } from '@/lib/actions';
+import SubmitBtn from './SubmitBtn';
 
 function UpdatePrifileForm({ explorer, children }) {
-  const [count, setCount] = useState();
+  // const [count, setCount] = useState();
 
   const { fullName, email, phone, nationality, countryFlag } = explorer;
 
@@ -59,21 +59,9 @@ function UpdatePrifileForm({ explorer, children }) {
         {children}
       </div>
       <div className='flex justify-end items-center gap-6'>
-        <Button />
+        <SubmitBtn pendingLabel='Updating...'>Update Profile</SubmitBtn>
       </div>
     </form>
-  );
-}
-
-function Button() {
-  const { pending } = useFormStatus();
-  return (
-    <button
-      className='bg-accent-300 p-4 rounded-sm text-xl text-accent-100 hover:text-accent-200 transition-all disabled:cursor-not-allowed'
-      disabled={pending}
-    >
-      {pending ? 'Updating...' : 'Update Profile'}
-    </button>
   );
 }
 
