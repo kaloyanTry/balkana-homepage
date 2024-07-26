@@ -53,7 +53,7 @@ const HomeImagesShow = ({ images }) => {
     <div className='m-auto py-8 px-8 relative group'>
       <div
         style={{ backgroundImage: `url(${trackImages[currentIndex].url})` }}
-        className='w-auto h-96 bg-center bg-cover duration-300'
+        className='w-auto h-[600px] bg-center bg-cover duration-300'
       ></div>
 
       <Arrow direction='left' onClick={prevImage} />

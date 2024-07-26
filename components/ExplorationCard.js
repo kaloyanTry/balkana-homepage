@@ -70,7 +70,7 @@ function ExplorationCard({ exploration, onDelete }) {
         </div>
       </div>
 
-      <div className='flex flex-col border-l border-primary-300 w-[100px]'>
+      <div className='flex flex-col border-l border-primary-300 w-32'>
         {!isPast(startDate) ? (
           <>
             <Link
@@ -82,7 +82,22 @@ function ExplorationCard({ exploration, onDelete }) {
             </Link>
             <ExplorationDelete explorationId={id} onDelete={onDelete} />
           </>
-        ) : null}
+        ) : (
+          <>
+            <h3 className='text-lg text-accent-200 font-semibold p-2'>
+              Explored Trail
+            </h3>
+            <p className='p-2'>
+              Plan to explore new trails{' '}
+              <Link
+                href='/home/tracks'
+                className='text-accent-200 font-semibold'
+              >
+                &rarr;
+              </Link>
+            </p>
+          </>
+        )}
       </div>
     </div>
   );

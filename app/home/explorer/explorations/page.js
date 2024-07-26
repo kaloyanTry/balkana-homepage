@@ -1,6 +1,5 @@
 import { getExplorations } from '@/lib/actions';
 import { auth } from '@/lib/auth';
-import ExplorationCard from '@/components/ExplorationCard';
 import ExplorationList from '@/components/ExplorationList';
 import Link from 'next/link';
 

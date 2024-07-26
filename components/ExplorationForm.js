@@ -2,13 +2,39 @@
 
 import Image from 'next/image';
 import { useExploration } from './ExplorationContext';
+import { differenceInDays } from 'date-fns';
+import { createExploration } from '@/lib/actions';
+import SubmitBtn from './SubmitBtn';
 
 function ExplorationForm({ track, user }) {
-  // const { range } = useExploration();
+  const { range, resetRange } = useExploration();
+  const { id } = track;
+
+  const startDate = range.from;
+  const endDate = range.to;
+  const numDays = differenceInDays(endDate, startDate);
+
+  const explorationData = {
+    startDate,
+    endDate,
+    numDays,
+    trackId: id,
+  };
+
+  const createExplorationWithData = createExploration.bind(
+    null,
+    explorationData
+  );
 
   return (
     <div>
-      <form className='bg-accent-100 text-accent-300 text-xl'>
+      <form
+        action={async (formData) => {
+          await createExplorationWithData(formData);
+          resetRange();
+        }}
+        className='bg-accent-100 text-accent-300 text-xl'
+      >
         <div className='text-xl bg-accent-300 text-primary-100 py-4 flex justify-center gap-4 items-center'>
           <p>Logged in as</p>
           <div className='flex gap-4 items-center'>
@@ -42,22 +68,22 @@ function ExplorationForm({ track, user }) {
           </select>
         </div>
         <div className='p-4 space-y-2 my-4 font-semibold'>
-          <label htmlFor='experience'>Share your experience with us?</label>
+          <label htmlFor='experience'>Keep some notes...</label>
           <textarea
             name='experience'
             id='experience'
             className='px-2 py-2 bg-accent-100 text-primary-300 font-normal w-full shadow-sm rounded-sm'
-            placeholder='Your experiance, expentations, thoughts about equipmets, specificates and more...'
+            placeholder='Your experiance, expentations, thoughts about equipmets, specificates...'
           />
         </div>
-        <div className='flex justify-end items-center gap-6'>
-          <p className='text-accent-300 text-xl font-semibold'>
-            Start by selecting dates
-          </p>
-
-          <button className='text-primary-100 bg-accent-300 p-4 text-xl rounded-sm'>
-            Explore Now
-          </button>
+        <div className='flex justify-center items-center pb-4'>
+          {!(startDate && endDate) ? (
+            <p className='text-accent-300 text-2xl font-semibold'>
+              Start by selecting a starting and an ending date
+            </p>
+          ) : (
+            <SubmitBtn pendingLabel='Planning...'>Plan Exploration</SubmitBtn>
+          )}
         </div>
       </form>
     </div>

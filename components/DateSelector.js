@@ -59,7 +59,7 @@ function DateSelector({ track, bookedDates }) {
         </div>
         {range.from || range.to ? (
           <button
-            className='border border-accent-300 px-4 py-2 text-xl rounded-md font-bold text-accent-300'
+            className='border border-accent-300 px-4 py-2 text-lg rounded-sm font-bold text-primary-300 hover:bg-accent-300'
             onClick={resetRange}
           >
             Clear
