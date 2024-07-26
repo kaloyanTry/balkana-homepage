@@ -1,19 +1,26 @@
+// Opt out of caching for all data requests in the route segment
+export const dynamic = 'force-dynamic';
+
 import TextExpander from '@/components/TextExpander';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPinIcon, UsersIcon } from '@heroicons/react/24/solid';
+import { MapPinIcon } from '@heroicons/react/24/solid';
 
 function Track({ track }) {
   const {
     id,
     title,
     distance,
+    difficulty,
+    startPoint,
     description,
     elevation,
-    difficulty,
     image,
     suitable,
   } = track;
+
+  // console.log(startPoint);
+  const displayStartPoint = String(startPoint);
 
   const checkSuits = suitable;
   function suitsResult(result) {
@@ -77,7 +84,7 @@ function Track({ track }) {
         </div>
       </div>
 
-      <div className='flex my-4 justify-center'>
+      <div className='flex my-4 justify-center mx-12'>
         <p className=' text-primary-300 text-2xl font-normal'>
           <TextExpander>{description}</TextExpander>
         </p>
@@ -88,9 +95,11 @@ function Track({ track }) {
         <span className='text-2xl text-primary-200'>
           Explore starting point location{' '}
           <Link
-            href='https://maps.app.goo.gl/cRmVTQfreF1RobMi9'
+            // href='https://maps.app.goo.gl/cRmVTQfreF1RobMi9'
+            href={displayStartPoint}
             passHref
             legacyBehavior
+            shallow
           >
             <a target='_blank' className='text-accent-300 font-semibold'>
               here
