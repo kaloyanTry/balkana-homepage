@@ -1,5 +1,6 @@
 import Logo from '@/components/Logo';
 import Navigation from '@/components/Navigation';
+// import NavigationResponsive from '@/components/NavigationResponsive';
 
 function Header() {
   return (
@@ -7,6 +8,7 @@ function Header() {
       <div className='flex justify-between items-center max-w-7xl mx-auto'>
         <Logo />
         <Navigation />
+        {/* <NavigationResponsive /> */}
       </div>
     </header>
   );

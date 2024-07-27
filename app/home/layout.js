@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+// import NavigationResponsive from '@/components/NavigationResponsive';
 import Footer from '@/components/Footer';
 import { ExplorationProvider } from '@/components/ExplorationContext';
 
