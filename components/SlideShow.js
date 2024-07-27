@@ -17,8 +17,6 @@ async function SlideShow() {
     return displayedImages;
   });
 
-  // console.log(images);
-
   return <ImagesShow images={images} />;
 }
 

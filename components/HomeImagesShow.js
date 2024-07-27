@@ -1,9 +1,14 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
+import {
+  ArrowLeftCircleIcon,
+  ArrowRightCircleIcon,
+} from '@heroicons/react/24/solid';
 
 const HomeImagesShow = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const CDNURL =
     'https://sixxmrmgffvhhcbjbnwu.supabase.co/storage/v1/object/public/track-images/';
 
@@ -16,8 +21,6 @@ const HomeImagesShow = ({ images }) => {
     return displayedImages;
   });
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   useEffect(() => {
     const autoPlay = setInterval(() => {
       nextImage();
@@ -27,24 +30,24 @@ const HomeImagesShow = ({ images }) => {
 
   const prevImage = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? trackImages.length - 1 : prevIndex - 1
     );
   };
   const nextImage = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === trackImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  const Arrow = ({ direction, onClick }) => (
+  let Arrow = ({ direction, onClick }) => (
     <div
-      className='hidden group-hover:block absolute top-[50%] translate-x-0 translate-y-[-50%] text-2xl rounded-full p-2  text-gray-300 cursor-pointer'
-      style={{ [direction]: '20px' }}
+      className='h-8 w-8 text-primary-100  group-hover:block absolute top-[50%] translate-y-[-50%] cursor-pointer'
+      style={{ [direction]: '40px' }}
     >
       {direction === 'left' ? (
-        <ArrowLeftIcon onClick={onClick} size={25} />
+        <ArrowLeftCircleIcon onClick={onClick} />
       ) : (
-        <ArrowRightIcon onClick={onClick} size={25} />
+        <ArrowRightCircleIcon onClick={onClick} />
       )}
     </div>
   );
@@ -53,11 +56,24 @@ const HomeImagesShow = ({ images }) => {
     <div className='m-auto py-8 px-8 relative group'>
       <div
         style={{ backgroundImage: `url(${trackImages[currentIndex].url})` }}
-        className='w-auto h-[600px] bg-center bg-cover duration-300'
-      ></div>
+        className='w-auto h-screen max-h-[60vh] min-h-96 bg-center bg-cover placeholder-primary-200 transition-all'
+      >
+        <Arrow direction='left' onClick={prevImage} />
+        <Arrow direction='right' onClick={nextImage} />
 
-      <Arrow direction='left' onClick={prevImage} />
-      <Arrow direction='right' onClick={nextImage} />
+        <div className='absolute bottom-12 right-0 left-0'>
+          <div className='flex items-center justify-center gap-2'>
+            {trackImages.map((_, i) => (
+              <div
+                key={trackImages[currentIndex]}
+                className={`transition-all w-2 h-2 bg-primary-100 rounded-full ${
+                  currentIndex === i ? 'p-1' : 'bg-opacity-50'
+                }`}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -14,7 +14,7 @@ async function ProjectsPage({ params }) {
 
   return (
     <div className='flex flex-col'>
-      <div className='flex justify-between relative w-auto h-96 my-4'>
+      <div className='flex justify-between relative w-auto max-w-[2000px] h-screen max-h-[60vh] min-h-96 my-4'>
         <Image
           src={image}
           fill
