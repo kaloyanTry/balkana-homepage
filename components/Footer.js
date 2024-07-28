@@ -12,26 +12,13 @@ function Footer() {
           <h3 className='text-primary-300 font-bold pb-1'>App Map</h3>
           <ul className='text-accent-100'>
             <li className='pb-1'>
-              <Link
-                href='https://github.com/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+              <Link href='/home' rel='noopener noreferrer' target='_blank'>
                 Home
               </Link>
             </li>
             <li className='pb-1'>
               <Link
-                href='https://tailwindcss.com/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Tracks
-              </Link>
-            </li>
-            <li className='pb-1'>
-              <Link
-                href='https://nextjs.org/'
+                href='/home/projects'
                 rel='noopener noreferrer'
                 target='_blank'
               >
@@ -40,7 +27,17 @@ function Footer() {
             </li>
             <li className='pb-1'>
               <Link
-                href='https://react.dev/'
+                href='/home/tracks'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                Routes
+              </Link>
+            </li>
+
+            <li className='pb-1'>
+              <Link
+                href='home/explorer'
                 rel='noopener noreferrer'
                 target='_blank'
               >

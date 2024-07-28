@@ -17,7 +17,7 @@ export default async function Home() {
       <main className='flex flex-col m-auto py-8 px-4'>
         <article className='pb-8'>
           <h1 className='text-9xl text-center text-primary-200 font-semibold'>
-            You are wellcome to Balkana
+            BalkanaTry Web Application
           </h1>
         </article>
 
@@ -59,7 +59,10 @@ export default async function Home() {
             We organize and support outdoor activities in the area. Activities
             such as mountain running and mountain cycling events, preserving
             traditional paths, and volunteering. For example, you can see
-            TryavnaTour24 and Mahnatite skali RUN events on our PROJECTS
+            TryavnaTour and Mahnatite skali RUN events on our{' '}
+            <Link href='/home/projects' className='text-accent-300 uppercase'>
+              projects
+            </Link>{' '}
             section. There you could find information about our other activities
             like clearing forest paths and renovating route marks.
           </p>
@@ -88,7 +91,7 @@ export default async function Home() {
             href='/home/tracks'
             className='bg-accent-300 hover:bg-accent-200 text-primary-100 text-2xl p-8 rounded'
           >
-            Explore the tracks
+            Explore the routes
           </Link>
           <Link
             href='/home/projects'

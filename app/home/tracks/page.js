@@ -9,7 +9,7 @@ import { Suspense } from 'react';
 // export const revalidate = 86400;
 
 export const metadata = {
-  title: 'Trails',
+  title: 'Routes',
   description: 'The overview of the Balkanas trails',
 };
 
@@ -21,7 +21,7 @@ async function TracksPage({ searchParams }) {
   return (
     <main>
       <h1 className='text-8xl mb-8 text-accent-300 font-semibold text-center'>
-        Balkanas&apos; Trails
+        Balkanas&apos; Routes
       </h1>
       <p className='mt-16 text-primary-300 text-2xl font-normal '>
         Balkanas&apos; trails are pieces of beauty and wild. Our liability is to

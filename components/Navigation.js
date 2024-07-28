@@ -32,7 +32,7 @@ async function Navigation() {
             href='/home/tracks'
             className='hover:text-accent-200 transition-colors '
           >
-            Trails
+            Routes
           </Link>
         </li>
         <li>
