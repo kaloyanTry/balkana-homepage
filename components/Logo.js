@@ -13,7 +13,7 @@ function Logo() {
         priority
         quality={100}
         alt='Balkana Try Logo'
-        // style={{ width: '100%', height: 'auto' }}
+        style={{ width: 'auto', height: 'auto' }}
       />
       <span className='text-6xl font-semibold text-primary-200 max-md:hidden'>
         BalkanaTry

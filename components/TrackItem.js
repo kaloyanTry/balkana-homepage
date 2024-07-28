@@ -19,7 +19,7 @@ function TrackItem({ track }) {
       <div className='flex-grow'>
         <section>
           <h2 className='text-accent-300 text-4xl font-semibold min-h-32 m-4'>
-            Track: {title}
+            Route: {title}
           </h2>
 
           <div className='flex gap-2 mx-4'>

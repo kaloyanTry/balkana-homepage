@@ -85,10 +85,10 @@ function ExplorationCard({ exploration, onDelete }) {
         ) : (
           <>
             <h3 className='text-lg text-accent-200 font-semibold p-2'>
-              Explored Trail
+              Explored Route
             </h3>
             <p className='p-2'>
-              Plan to explore new trails{' '}
+              Plan to explore new routes{' '}
               <Link
                 href='/home/tracks'
                 className='text-accent-200 font-semibold'

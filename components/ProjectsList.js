@@ -4,8 +4,6 @@ import { getProjects } from '@/lib/actions';
 import ProjectItem from './ProjectItem';
 
 async function ProjectsList() {
-  // noStore();
-
   const projects = await getProjects();
 
   return (

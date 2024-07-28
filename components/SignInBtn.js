@@ -12,7 +12,9 @@ function SignInBtn({ provider }) {
           width={24}
           priority
         />
-        <span>Continue with {provider}</span>
+        <span>
+          Continue with <b className='uppercase text-accent-300'>{provider}</b>
+        </span>
 
         <input name={'provider'} value={provider} readOnly hidden />
       </button>

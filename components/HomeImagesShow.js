@@ -53,10 +53,11 @@ const HomeImagesShow = ({ images }) => {
   );
 
   return (
-    <div className='m-auto py-8 px-8 relative group'>
+    <div className='m-auto py-4 px-8 relative group'>
       <div
         style={{ backgroundImage: `url(${trackImages[currentIndex].url})` }}
         className='w-auto h-screen max-h-[60vh] min-h-96 bg-center bg-cover placeholder-primary-200 transition-all'
+        key={trackImages[currentIndex]}
       >
         <Arrow direction='left' onClick={prevImage} />
         <Arrow direction='right' onClick={nextImage} />
@@ -65,8 +66,8 @@ const HomeImagesShow = ({ images }) => {
           <div className='flex items-center justify-center gap-2'>
             {trackImages.map((_, i) => (
               <div
-                key={trackImages[currentIndex]}
-                className={`transition-all w-2 h-2 bg-primary-100 rounded-full ${
+                key={i}
+                className={`transition-all ease-out duration-900 w-2 h-2 bg-primary-100 rounded-full ${
                   currentIndex === i ? 'p-1' : 'bg-opacity-50'
                 }`}
               ></div>

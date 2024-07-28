@@ -18,7 +18,7 @@ function ProjectItem({ project }) {
         </h3>
       </div>
 
-      <div className='flex justify-between relative w-auto max-w-[2000px] h-screen max-h-[50vh] my-8 '>
+      <div className='flex justify-between relative w-auto max-w-[2000px] h-screen max-h-[60vh] my-8 '>
         <Image
           src={image}
           fill

@@ -11,7 +11,7 @@ function LoginMessage() {
         >
           login
         </Link>{' '}
-        to book and explore the trail
+        to plan and explore the trail
       </p>
     </div>
   );

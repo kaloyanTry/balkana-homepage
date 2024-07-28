@@ -55,7 +55,7 @@ async function EditExplorationPage({ params }) {
         </div>
         <div className='space-y-2 my-8'>
           <label htmlFor='experience'>
-            Anything to share about your experience?
+            Notes to keep, about experience, equipment...
           </label>
           <textarea
             name='experience'

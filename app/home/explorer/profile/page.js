@@ -16,9 +16,7 @@ async function ProfilePage() {
       <h2 className='font-semibold text-4xl text-accent-200 m-4'>
         Explorer Profile Page
       </h2>
-      {/* <p className='font-normal text-xl text-primary-300 m-4'>
-        You have NO profile yet.
-      </p> */}
+
       <p className='font-normal text-xl text-primary-300 m-4'>
         Providing real information will make your exploration faster and
         smoother. See you in Balkana!

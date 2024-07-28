@@ -79,7 +79,7 @@ function ExplorationForm({ track, user }) {
         <div className='flex justify-center items-center pb-4'>
           {!(startDate && endDate) ? (
             <p className='text-accent-300 text-2xl font-semibold'>
-              Start by selecting a starting and an ending date
+              Start by selecting a starting date and a hour, and an ending date
             </p>
           ) : (
             <SubmitBtn pendingLabel='Planning...'>Plan Exploration</SubmitBtn>
