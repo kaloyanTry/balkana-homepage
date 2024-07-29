@@ -8,7 +8,7 @@ function ProjectItem({ project }) {
     <main className='flex flex-col'>
       <div className='flex-grow'>
         <h2 className='text-primary-200 text-6xl mt-16 min-h-32 text-center font-semibold'>
-          <span className='text-primary-300 '>Project</span> {title}
+          <span className='text-accent-300 '>Project</span> {title}
         </h2>
         <h3 className='text-4xl my-8 text-primary-300 font-semibold text-center'>
           Opening Year:{' '}
