@@ -31,7 +31,7 @@ function TrackItem({ track }) {
 
           <div className='flex gap-2 mx-4'>
             <h3 className='text-2xl text-accent-300 font-semibold'>
-              Elevation:{' '}
+              Elevation Gain:{' '}
               <span className='font-bold text-primary-300'>{elevation}</span>
               D+
             </h3>
