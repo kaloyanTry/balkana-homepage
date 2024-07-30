@@ -38,8 +38,8 @@ function Track({ track }) {
   }
 
   return (
-    <div className='flex flex-col'>
-      <div className='flex justify-between relative w-auto h-96'>
+    <main className='flex flex-col m-auto py-8 px-4'>
+      <div className='flex justify-between relative w-auto h-screen max-h-[60vh] min-h-96'>
         <Image
           src={image}
           fill
@@ -50,10 +50,10 @@ function Track({ track }) {
       </div>
 
       <div className='flex my-12 justify-center'>
-        <h2 className=' text-primary-200 text-6xl font-semibold'>{title}</h2>
+        <h2 className=' text-primary-200 text-7xl font-semibold'>{title}</h2>
       </div>
 
-      <div className='flex flex-col items-center'>
+      <section className='flex flex-col items-center'>
         <div className='flex gap-2 my-2'>
           <h3 className='text-4xl text-accent-300 font-semibold'>
             Distance:{' '}
@@ -82,7 +82,7 @@ function Track({ track }) {
             <span className='font-bold text-6xl'>{suitsResult()}</span>
           </h3>
         </div>
-      </div>
+      </section>
 
       <div className='flex my-4 justify-center mx-12'>
         <p className=' text-primary-300 text-2xl font-normal'>
@@ -107,8 +107,11 @@ function Track({ track }) {
           </Link>
         </span>
       </div>
-    </div>
+    </main>
   );
 }
 
 export default Track;
+
+// https://ell.stackexchange.com/questions/171407/whats-the-difference-between-track-and-trail
+// http://www.outdoorsfather.com/2015/10/trail-vs-route-which-one-is-for-you/

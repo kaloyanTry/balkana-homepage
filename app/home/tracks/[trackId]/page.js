@@ -40,14 +40,17 @@ async function TrackPage({ params }) {
 
         {plannedExplorations ? (
           <div className='flex flex-col mt-4 items-center justify-center'>
-            <h2 className='text-5xl text-primary-200 font-normal my-8'>
+            <h2 className='text-6xl text-primary-200 font-semibold my-8'>
+              <span className='mx-4 text-accent-200 text-7xl font-semibold'>
+                &#9432;
+              </span>
               Shared Information
             </h2>
-            <h3 className='text-4xl text-accent-300 my-2'>
+            <h3 className='text-4xl text-accent-300 my-4'>
               The trail has been explored {exploredTimes} times. Join!
             </h3>
             {plannedExplorations.map((exploration) => (
-              <p key={exploration.startDate} className='text-2xl'>
+              <p key={exploration.startDate} className='text-2xl py-2'>
                 on{' '}
                 {isPast(exploration.startDate) ? (
                   <span className='bg-accent-100'>

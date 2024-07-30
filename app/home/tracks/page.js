@@ -1,5 +1,6 @@
 import ExplorationReminder from '@/components/ExplorationReminder';
 import FilterDistance from '@/components/FilterDistance';
+// import FilterSuitable from '@/components/FilterSuitable';
 import Spinner from '@/components/Spinner';
 import TracksList from '@/components/TracksList';
 import { getTracks } from '@/lib/actions';

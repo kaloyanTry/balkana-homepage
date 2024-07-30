@@ -37,13 +37,14 @@ function FilterSuitable() {
         cycling
       </button> */}
 
-      <ButtonTracks
+      {/* <ButtonTracks
         filterSuitable='all'
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
         all
-      </ButtonTracks>
+      </ButtonTracks> */}
+
       <ButtonTracks
         filterSuitable='running'
         handleFilter={handleFilter}
