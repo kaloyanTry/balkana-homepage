@@ -10,21 +10,28 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { useExploration } from './ExplorationContext';
 
-function isAlreadyBooked(range, dateArray) {
-  return (
-    range.from &&
-    range.to &&
-    dateArray.some((date) =>
-      isWithinInterval(date, { start: range.from, end: range.to })
-    )
-  );
-}
+// function isAlreadyNoted(range, dateArray) {
+//   return (
+//     range.from &&
+//     range.to &&
+//     dateArray.some((date) =>
+//       isWithinInterval(date, { start: range.from, end: range.to })
+//     )
+//   );
+// }
 
 function DateSelector({ track, bookedDates }) {
   const { range, setRange, resetRange } = useExploration();
-  const displayRange = isAlreadyBooked(range, bookedDates) ? {} : range;
+  // const displayRange = isAlreadyNoted(range, bookedDates) ? {} : range;
+  const displayRange = range;
 
-  const numDays = differenceInDays(displayRange.to, displayRange.from);
+  // const numDays = differenceInDays(displayRange.to, displayRange.from);
+  let numDays;
+  if (displayRange.to === 'undefined' || displayRange.from === 'undefined') {
+    numDays = 1;
+  } else {
+    numDays = differenceInDays(displayRange.to, displayRange.from) + 1;
+  }
 
   return (
     <div className='flex flex-col justify-between'>
@@ -38,10 +45,11 @@ function DateSelector({ track, bookedDates }) {
         toYear={new Date().getFullYear() + 3}
         captionLayout='dropdown'
         numberOfMonths={3}
-        disabled={(currDate) =>
-          isPast(currDate) ||
-          bookedDates.some((date) => isSameDay(date, currDate))
-        }
+        // disabled={(currDate) =>
+        //   isPast(currDate) ||
+        //   bookedDates.some((date) => isSameDay(date, currDate))
+        // }
+        disabled={(currDate) => isPast(currDate)}
       />
 
       <div className='flex items-center justify-between px-2 bg-accent-200 text-primary-300 h-16'>
@@ -50,9 +58,7 @@ function DateSelector({ track, bookedDates }) {
             <>
               <p className='text-xl'>
                 Days on the trail:{' '}
-                <span className='text-2xl font-semibold px-2'>
-                  {numDays + 1}
-                </span>
+                <span className='text-2xl font-semibold px-2'>{numDays}</span>
               </p>
             </>
           ) : null}

@@ -47,15 +47,16 @@ async function TracksList({ filterDistance }) {
               &#9432;
             </span>
             Important! Crossing the routes requires personal responsibility and
-            activity. Being in the wild requires care and respect. It is
-            recommended to have mountain insurance, for more information{' '}
+            activity. Being in the wild requires care and respect. When visiting
+            mountains, it is recommended to have mountain insurance. Information
+            about Mountain Resque Service and mountain insurance{' '}
             <Link
               href='https://www.pss-bg.bg/planinska-zastrahovka/'
               rel='noopener noreferrer'
               target='_blank'
               className='text-accent-300 font-semibold'
             >
-              here
+              link
             </Link>
             .
           </p>
@@ -63,14 +64,14 @@ async function TracksList({ filterDistance }) {
             <MapIcon className='h-12 w-12 text-accent-200' />
             <p className='pt-2'>
               Very useful source for Bulgarian mountains online maps, gps routes
-              and tracks{' '}
+              and tracks on bgmountains.org,{' '}
               <Link
                 href='https://bgmountains.org/en/#'
                 rel='noopener noreferrer'
                 target='_blank'
                 className='text-accent-300 font-semibold'
               >
-                here.
+                link.
               </Link>{' '}
               Respect!
             </p>

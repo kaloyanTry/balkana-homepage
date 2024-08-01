@@ -12,7 +12,14 @@ function ExplorationForm({ track, user }) {
 
   const startDate = range.from;
   const endDate = range.to;
-  const numDays = differenceInDays(endDate, startDate);
+
+  // const numDays = differenceInDays(endDate, startDate);
+  let numDays;
+  if (startDate === 'undefined' || endDate === 'undefined') {
+    numDays = 1;
+  } else {
+    numDays = differenceInDays(endDate, startDate) + 1;
+  }
 
   const explorationData = {
     startDate,
@@ -79,7 +86,8 @@ function ExplorationForm({ track, user }) {
         <div className='flex justify-center items-center pb-4'>
           {!(startDate && endDate) ? (
             <p className='text-accent-300 text-2xl font-semibold'>
-              Start by selecting a starting date and a hour, and an ending date
+              Start by selecting a starting date and hour, and ending date date
+              and hour
             </p>
           ) : (
             <SubmitBtn pendingLabel='Planning...'>Plan Exploration</SubmitBtn>
