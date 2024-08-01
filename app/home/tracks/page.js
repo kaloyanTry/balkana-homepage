@@ -25,11 +25,13 @@ async function TracksPage({ searchParams }) {
         Balkanas&apos; Routes
       </h1>
       <p className='mt-16 text-primary-300 text-2xl font-normal '>
-        Balkanas&apos; trails are pieces of beauty and wild. Our liability is to
-        maintain, to preserve and to live in harmony with the nature. The
+        Balkanas&apos; routes are pieces of beauty and wild. Our liability is to
+        maintain, to preserve, and to live in harmony with the nature. The
         mountains are still not overcrowded and so not much destroyed by danger
-        humans&apos; actions. Please, explore Balkanas&apos; routes with respect
-        to the mountain and without destructive attitude and behavior.
+        humans&apos; actions. The trails are suitable for active, sensible and
+        responsible people. Please, explore Balkans&apos; routes with respect to
+        the mountain, and without destructive attitude and behavior. Take care
+        of the nature, locals, and yourself.
       </p>
       <p className='mb-8 text-primary-300 text-2xl font-normal'>
         Our public database of routes include{' '}
