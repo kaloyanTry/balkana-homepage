@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MapPinIcon } from '@heroicons/react/24/solid';
 
-function Track({ track }) {
+function Route({ route }) {
   const {
     id,
     title,
@@ -17,7 +17,7 @@ function Track({ track }) {
     elevation,
     image,
     suitable,
-  } = track;
+  } = route;
 
   // console.log(startPoint);
   const displayStartPoint = String(startPoint);
@@ -39,21 +39,21 @@ function Track({ track }) {
 
   return (
     <main className='flex flex-col m-auto py-8 px-4'>
-      <div className='flex justify-between relative w-auto h-screen max-h-[60vh] min-h-96'>
+      <article className='flex justify-between relative w-auto h-screen max-h-[60vh] min-h-96'>
         <Image
           src={image}
           fill
           sizes='100%'
-          alt={`Track ${title}`}
+          alt={`Route ${title}`}
           className='object-cover'
         />
-      </div>
+      </article>
 
       <div className='flex my-12 justify-center'>
         <h2 className=' text-primary-200 text-7xl font-semibold'>{title}</h2>
       </div>
 
-      <section className='flex flex-col items-center'>
+      <article className='flex flex-col items-center'>
         <div className='flex gap-2 my-2'>
           <h3 className='text-4xl text-accent-300 font-semibold'>
             Distance:{' '}
@@ -82,15 +82,15 @@ function Track({ track }) {
             <span className='font-bold text-6xl'>{suitsResult()}</span>
           </h3>
         </div>
-      </section>
+      </article>
 
-      <div className='flex my-4 justify-center mx-12'>
+      <article className='flex my-4 justify-center mx-12'>
         <p className=' text-primary-300 text-2xl font-normal'>
           <TextExpander>{description}</TextExpander>
         </p>
-      </div>
+      </article>
 
-      <div className='flex gap-2 items-center justify-center my-8'>
+      <article className='flex gap-2 items-center justify-center my-8'>
         <MapPinIcon className='h-8 w-8 text-accent-300' />
         <span className='text-2xl text-primary-200'>
           Explore starting point location{' '}
@@ -106,12 +106,12 @@ function Track({ track }) {
             </a>
           </Link>
         </span>
-      </div>
+      </article>
     </main>
   );
 }
 
-export default Track;
+export default Route;
 
 // https://ell.stackexchange.com/questions/171407/whats-the-difference-between-track-and-trail
 // http://www.outdoorsfather.com/2015/10/trail-vs-route-which-one-is-for-you/

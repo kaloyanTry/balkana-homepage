@@ -2,8 +2,8 @@ import ExplorationReminder from '@/components/ExplorationReminder';
 import FilterDistance from '@/components/FilterDistance';
 // import FilterSuitable from '@/components/FilterSuitable';
 import Spinner from '@/components/Spinner';
-import TracksList from '@/components/TracksList';
-import { getTracks } from '@/lib/actions';
+import RoutesList from '@/components/RoutesList';
+import { getRoutes } from '@/lib/actions';
 import { Suspense } from 'react';
 
 // code for static generated pages:
@@ -15,8 +15,8 @@ export const metadata = {
 };
 
 // when using sesarchParams the page is dynamic rendered page
-async function TracksPage({ searchParams }) {
-  const tracks = await getTracks();
+async function RoutesPage({ searchParams }) {
+  const routes = await getRoutes();
   const filterDistance = searchParams?.distance ?? 'all';
 
   return (
@@ -36,7 +36,7 @@ async function TracksPage({ searchParams }) {
       <p className='mb-8 text-primary-300 text-2xl font-normal'>
         Our public database of routes include{' '}
         <span className='font-bold text-accent-300'>
-          {tracks.length} trails
+          {routes.length} trails
         </span>
         , which you can explore.{' '}
         <span className='font-bold text-accent-300'>Explore!</span>
@@ -48,11 +48,11 @@ async function TracksPage({ searchParams }) {
         <FilterDistance />
       </div>
       <Suspense fallback={<Spinner />} key={filterDistance}>
-        <TracksList filterDistance={filterDistance} />
+        <RoutesList filterDistance={filterDistance} />
         <ExplorationReminder />
       </Suspense>
     </main>
   );
 }
 
-export default TracksPage;
+export default RoutesPage;

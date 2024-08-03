@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import ButtonTracks from './ButtonTracks';
+import ButtonRoutes from './ButtonRoutes';
 
 function FilterDistance() {
   const searchParams = useSearchParams();
@@ -18,34 +18,34 @@ function FilterDistance() {
 
   return (
     <div className='flex mb-8 text-xl'>
-      <ButtonTracks
+      <ButtonRoutes
         filterDistance='all'
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
         all
-      </ButtonTracks>
-      <ButtonTracks
+      </ButtonRoutes>
+      <ButtonRoutes
         filterDistance='short'
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
         short
-      </ButtonTracks>
-      <ButtonTracks
+      </ButtonRoutes>
+      <ButtonRoutes
         filterDistance='trail'
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
         trail
-      </ButtonTracks>
-      <ButtonTracks
+      </ButtonRoutes>
+      <ButtonRoutes
         filterDistance='ultra'
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
         ultra
-      </ButtonTracks>
+      </ButtonRoutes>
 
       {/* <button
         className='my-2 px-4 hover:bg-primary-100 hover:border-r-2 border-primary-300'

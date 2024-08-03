@@ -25,10 +25,10 @@ function ImagesShow({ images }) {
   };
 
   return (
-    <div className='w-full h-screen'>
+    <main className='w-full h-screen'>
       <Zoom {...zoomInProperties}>
         {images.map((image, index) => (
-          <div
+          <article
             key={index}
             className='flex justify-center md:items-center items-start w-screen h-screen relative'
           >
@@ -45,10 +45,10 @@ function ImagesShow({ images }) {
                 Explore
               </Link>
             </div>
-          </div>
+          </article>
         ))}
       </Zoom>
-    </div>
+    </main>
   );
 }
 

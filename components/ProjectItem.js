@@ -6,7 +6,7 @@ function ProjectItem({ project }) {
 
   return (
     <main className='flex flex-col'>
-      <div className='flex-grow'>
+      <article className='flex-grow'>
         <h2 className='text-primary-200 text-6xl mt-16 min-h-32 text-center font-semibold'>
           <span className='text-accent-300 '>Project</span> {title}
         </h2>
@@ -16,9 +16,9 @@ function ProjectItem({ project }) {
             {year}
           </span>
         </h3>
-      </div>
+      </article>
 
-      <div className='flex justify-between relative w-auto max-w-[2000px] h-screen max-h-[60vh] my-8 '>
+      <article className='flex justify-between relative w-auto max-w-[2000px] h-screen max-h-[60vh] my-8 '>
         <Image
           src={image}
           fill
@@ -26,25 +26,25 @@ function ProjectItem({ project }) {
           alt={`Track ${title}`}
           className='object-cover'
         />
-      </div>
+      </article>
 
-      <div className='flex-grow'>
-        <h3 className='text-4xl text-primary-300 font-semibold my-4 text-center'>
+      <article className='flex-grow'>
+        <h3 className='text-4xl text-primary-300 font-normal my-4 text-center'>
           Partners{' '}
-          <span className='text-4xl text-accent-300 font-normal'>
+          <span className='text-4xl text-accent-300 font-semibold'>
             {partners}
           </span>
         </h3>
-      </div>
+      </article>
 
-      <div className='flex justify-end my-8 pb-12 border-b-4 border-accent-200'>
+      <article className='flex justify-end my-8 pb-12 border-b-4 border-accent-200'>
         <Link
           href={`/home/projects/${id}`}
-          className='bg-accent-300 text-primary-100 text-xl p-4 rounded'
+          className='bg-accent-300 text-primary-100 text-xl p-4 rounded-sm'
         >
           Explore more
         </Link>
-      </div>
+      </article>
     </main>
   );
 }

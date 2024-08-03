@@ -6,9 +6,9 @@ import { differenceInDays } from 'date-fns';
 import { createExploration } from '@/lib/actions';
 import SubmitBtn from './SubmitBtn';
 
-function ExplorationForm({ track, user }) {
+function ExplorationForm({ route, user }) {
   const { range, resetRange } = useExploration();
-  const { id } = track;
+  const { id } = route;
 
   const startDate = range.from;
   const endDate = range.to;
@@ -25,7 +25,7 @@ function ExplorationForm({ track, user }) {
     startDate,
     endDate,
     numDays,
-    trackId: id,
+    routeId: id,
   };
 
   const createExplorationWithData = createExploration.bind(
@@ -34,7 +34,7 @@ function ExplorationForm({ track, user }) {
   );
 
   return (
-    <div>
+    <main>
       <form
         action={async (formData) => {
           await createExplorationWithData(formData);
@@ -42,7 +42,7 @@ function ExplorationForm({ track, user }) {
         }}
         className='bg-accent-100 text-accent-300 text-xl'
       >
-        <div className='text-xl bg-accent-300 text-primary-100 py-4 flex justify-center gap-4 items-center'>
+        <article className='text-xl bg-accent-300 text-primary-100 py-4 flex justify-center gap-4 items-center'>
           <p>Logged in as</p>
           <div className='flex gap-4 items-center'>
             <Image
@@ -55,8 +55,9 @@ function ExplorationForm({ track, user }) {
             />
             <p>{user.name}</p>
           </div>
-        </div>
-        <div className='p-4 space-y-2 font-semibold'>
+        </article>
+
+        <article className='p-4 space-y-2 font-semibold'>
           <label htmlFor='numExplorers'>How many explorers?</label>
           <select
             name='numExplorers'
@@ -73,8 +74,8 @@ function ExplorationForm({ track, user }) {
               </option>
             ))}
           </select>
-        </div>
-        <div className='p-4 space-y-2 my-4 font-semibold'>
+        </article>
+        <article className='p-4 space-y-2 my-4 font-semibold'>
           <label htmlFor='experience'>Keep some notes...</label>
           <textarea
             name='experience'
@@ -82,8 +83,8 @@ function ExplorationForm({ track, user }) {
             className='px-2 py-2 bg-accent-100 text-primary-300 font-normal w-full shadow-sm rounded-sm'
             placeholder='Your experiance, expentations, thoughts about equipmets, specificates...'
           />
-        </div>
-        <div className='flex justify-center items-center pb-4'>
+        </article>
+        <article className='flex justify-center items-center pb-4'>
           {!(startDate && endDate) ? (
             <p className='text-accent-300 text-2xl font-semibold'>
               Start by selecting a starting date and hour, and ending date date
@@ -92,9 +93,9 @@ function ExplorationForm({ track, user }) {
           ) : (
             <SubmitBtn pendingLabel='Planning...'>Plan Exploration</SubmitBtn>
           )}
-        </div>
+        </article>
       </form>
-    </div>
+    </main>
   );
 }
 

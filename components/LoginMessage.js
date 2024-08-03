@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 function LoginMessage() {
   return (
-    <div className='grid bg-accent-300'>
+    <main className='grid bg-accent-300'>
       <p className='text-center self-center py-8 text-accent-100 text-xl'>
         Please,{' '}
         <Link
@@ -13,7 +13,7 @@ function LoginMessage() {
         </Link>{' '}
         to plan and explore the trail
       </p>
-    </div>
+    </main>
   );
 }
 

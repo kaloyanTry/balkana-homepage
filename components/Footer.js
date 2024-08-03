@@ -27,7 +27,7 @@ function Footer() {
             </li>
             <li className='pb-1'>
               <Link
-                href='/home/tracks'
+                href='/home/routes'
                 rel='noopener noreferrer'
                 target='_blank'
               >

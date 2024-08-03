@@ -1,5 +1,7 @@
 import { getTracksImages } from '@/lib/actions';
 import HomeImagesShow from './HomeImagesShow';
+import { Suspense } from 'react';
+import Spinner from './Spinner';
 
 async function HomeSlideShow() {
   const tracksImages = await getTracksImages();
@@ -16,9 +18,9 @@ async function HomeSlideShow() {
     return displayedImages;
   });
   return (
-    <div>
+    <Suspense fallback={<Spinner />}>
       <HomeImagesShow images={images} />
-    </div>
+    </Suspense>
   );
 }
 

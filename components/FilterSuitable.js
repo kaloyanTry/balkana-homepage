@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import ButtonTracks from './ButtonTracks';
+import ButtonRoutes from './ButtonRoutes';
 
 function FilterSuitable() {
   const searchParams = useSearchParams();
@@ -45,20 +45,20 @@ function FilterSuitable() {
         all
       </ButtonTracks> */}
 
-      <ButtonTracks
+      <ButtonRoutes
         filterSuitable='running'
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
         running
-      </ButtonTracks>
-      <ButtonTracks
+      </ButtonRoutes>
+      <ButtonRoutes
         filterSuitable='cycling'
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
         cycling
-      </ButtonTracks>
+      </ButtonRoutes>
     </div>
   );
 }

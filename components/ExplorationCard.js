@@ -18,12 +18,12 @@ function ExplorationCard({ exploration, onDelete }) {
     numDays,
     numExplorers,
     created_at,
-    tracks: { title, image },
+    routes: { title, image },
   } = exploration;
 
   return (
-    <div className='flex border border-primary-200'>
-      <div className='relative h-36 aspect-square'>
+    <main className='flex border border-primary-200'>
+      <article className='relative h-36 aspect-square'>
         <Image
           src={image}
           alt={`Trail ${title}`}
@@ -32,8 +32,8 @@ function ExplorationCard({ exploration, onDelete }) {
           quality={75}
           className='object-cover border-r border-primary-200'
         />
-      </div>
-      <div className='flex-grow px-8 py-2 flex flex-col'>
+      </article>
+      <article className='flex-grow px-8 py-2 flex flex-col'>
         <div className='flex items-center justify-between'>
           <h3 className='text-2xl font-semibold text-primary-300'>
             {numDays} day{numDays > 1 && 's'} at the Trail: {title}
@@ -68,7 +68,7 @@ function ExplorationCard({ exploration, onDelete }) {
             {format(new Date(created_at), 'EEE, dd MMM yyyy, p')}
           </p>
         </div>
-      </div>
+      </article>
 
       <div className='flex flex-col border-l border-primary-300 w-32'>
         {!isPast(startDate) ? (
@@ -90,7 +90,7 @@ function ExplorationCard({ exploration, onDelete }) {
             <p className='p-2'>
               Plan to explore new routes{' '}
               <Link
-                href='/home/tracks'
+                href='/home/routes'
                 className='text-accent-200 font-semibold'
               >
                 &rarr;
@@ -99,7 +99,7 @@ function ExplorationCard({ exploration, onDelete }) {
           </>
         )}
       </div>
-    </div>
+    </main>
   );
 }
 

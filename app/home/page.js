@@ -1,6 +1,8 @@
 import HomeImagesShow from '@/components/HomeImagesShow';
 import { getTracksImages } from '@/lib/actions';
 import Link from 'next/link';
+import { Suspense } from 'react';
+import Spinner from '@/components/Spinner';
 
 export const metadata = {
   title: 'Balkana Home',
@@ -12,16 +14,18 @@ export default async function Home() {
   return (
     <>
       <header>
-        <HomeImagesShow images={images} />
+        <Suspense fallback={<Spinner />}>
+          <HomeImagesShow images={images} />
+        </Suspense>
       </header>
       <main className='flex flex-col m-auto py-8 px-4'>
-        <article className='pb-8'>
+        <article className='py-8'>
           <h1 className='text-9xl text-center text-primary-200 font-semibold max-sm:text-2xl'>
-            BalkanaTry Web App
+            BalkanaTry WebApp
           </h1>
         </article>
 
-        <section className='flex flex-col m-auto py-8 px-4'>
+        <article className='flex flex-col m-auto py-8 px-4'>
           <h2 className='text-center text-8xl m-8 font-bold text-primary-200 max-sm:text-lg'>
             Goal
           </h2>
@@ -31,22 +35,28 @@ export default async function Home() {
             <cite> (Eliud Kipchoge)</cite>
           </blockquote>
           <p className='text-justify text-2xl m-4 pb-8 border-b-2 font-normal text-primary-300 max-sm:text-lg'>
-            Our goal is to preserve and maintain traditional trails, paths,
-            tracks, and routes in the mountain. Specifically, in Balkan, in the
-            Centre Stara Planina area. The goal of this web application is to
-            share information about the local routes. You could explore some or
-            all of them. On the website is given a short description, including
-            GPS coordinates of the routes, distance, elevation gain, and images.
-            If you plan to explore a particular route you could share
+            Our goal is to preserve and maintain traditional trails, paths, and
+            routes in the mountain. Specifically, in Balkan, in the Centre Stara
+            Planina area.{' '}
+            <span className='font-semibold'>
+              The goal of this web application is to share information about the
+              local routes.
+            </span>{' '}
+            You could explore some or all of them. On the webapp is given a
+            short description, including GPS coordinates of the starting point
+            of routes, distance, elevation gain, and images. If you plan to
+            explore a particular route, through the application, you could share
             information about when would you go to run, cycle, or hike through
             the route and with how many friends. On the web app, the information
             about it is shared, and if someone other is interested in the route
             she or he could join or just to know that the route has been
-            explored by others shortly in the past. No names or any other
-            personal information is shared on the web app.
+            explored by others shortly in the past. There is an explorer area,
+            where you can find information for your explorations of Balkana. No
+            names or any other personal information is shared on the web app.{' '}
+            <span className='font-semibold'>Touch the Balkan!</span>
           </p>
-        </section>
-        <section className='flex flex-col m-auto py-8 px-4'>
+        </article>
+        <article className='flex flex-col m-auto py-8 px-4'>
           <h2 className='text-center text-8xl m-8 font-bold text-primary-200 max-sm:text-lg'>
             Activities
           </h2>
@@ -67,8 +77,8 @@ export default async function Home() {
             section. There you could find information about our other activities
             like clearing forest paths and renovating route marks.
           </p>
-        </section>
-        <section className='flex flex-col m-auto py-8 px-4'>
+        </article>
+        <article className='flex flex-col m-auto py-8 px-4'>
           <h2 className='text-center text-8xl m-8 font-bold text-primary-200 max-sm:text-lg'>
             Values
           </h2>
@@ -85,7 +95,7 @@ export default async function Home() {
             activities we have realized are led by the idea of ​​a clean and
             healthy environment and zero ecological footprint.
           </p>
-        </section>
+        </article>
 
         <aside className='flex flex-col-2 m-auto py-8 px-4 gap-16 max-sm:gap-2 max-sm:py-2'>
           <Link

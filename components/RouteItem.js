@@ -1,23 +1,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-function TrackItem({ track }) {
-  const { id, title, distance, elevation, difficulty, image } = track;
+function RouteItem({ route }) {
+  const { id, title, distance, elevation, difficulty, image } = route;
 
   return (
     <main className='flex flex-col bg-primary-100'>
-      <div className='flex justify-between relative w-auto h-96'>
+      <article className='flex justify-between relative w-auto h-96'>
         <Image
           src={image}
           fill
           sizes='100%'
-          alt={`Track ${title}`}
+          alt={`Route image ${title}`}
           className='object-cover'
         />
-      </div>
+      </article>
 
-      <div className='flex-grow'>
-        <section>
+      <article className='flex-grow'>
+        <div>
           <h2 className='text-accent-300 text-4xl font-semibold min-h-32 m-4'>
             Route: {title}
           </h2>
@@ -46,16 +46,16 @@ function TrackItem({ track }) {
 
           <div className=' text-accent-100 text-right text-xl'>
             <Link
-              href={`/home/tracks/${id}`}
+              href={`/home/routes/${id}`}
               className=' bg-primary-200 py-2 px-4 inline-block hover:bg-accent-200 transition-all hover:text-primary-300 rounded-tl'
             >
               Details and explore
             </Link>
           </div>
-        </section>
-      </div>
+        </div>
+      </article>
     </main>
   );
 }
 
-export default TrackItem;
+export default RouteItem;

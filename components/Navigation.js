@@ -29,7 +29,7 @@ async function Navigation() {
         </li>
         <li>
           <Link
-            href='/home/tracks'
+            href='/home/routes'
             className='hover:text-accent-200 transition-colors '
           >
             Routes

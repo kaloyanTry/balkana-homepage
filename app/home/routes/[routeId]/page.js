@@ -1,45 +1,47 @@
 import Exploration from '@/components/Exploration';
 import Spinner from '@/components/Spinner';
-import Track from '@/components/Track';
-import { getPlannedExplorations, getTrack } from '@/lib/actions';
+import Route from '@/components/Route';
+import { getPlannedExplorations, getRoute } from '@/lib/actions';
 import { Suspense } from 'react';
 import { UserGroupIcon } from '@heroicons/react/24/solid';
 import { format, formatDistance, isPast, isToday, parseISO } from 'date-fns';
 
 export async function generateMetadata({ params }) {
-  const { title } = await getTrack(params.trackId);
+  const { title } = await getRoute(params.routeId);
   const titleFirstWord = title.split(' - ').slice(0, 1);
 
-  return { title: `Trail ${titleFirstWord}` };
+  return { title: `Route ${titleFirstWord}` };
 }
 
-async function TrackPage({ params }) {
-  const trackId = params.trackId;
-  const track = await getTrack(trackId);
-  const plannedExplorations = await getPlannedExplorations(trackId);
+async function RoutePage({ params }) {
+  const routeId = params.routeId;
+  const route = await getRoute(routeId);
+  const plannedExplorations = await getPlannedExplorations(routeId);
   const exploredTimes = plannedExplorations.length;
 
   return (
-    <div className='mx-auto my-4'>
-      <Track track={track} />
+    <main className='mx-auto my-4'>
+      <Suspense fallback={<Spinner />}>
+        <Route route={route} />
+      </Suspense>
 
       <div className='flex flex-col my-8 items-center justify-center'>
         <h3 className='text-4xl text-accent-300 text-center'>
-          Plan your trail{' '}
+          Plan your route{' '}
           <span className='text-5xl text-primary-200 font-normal'>
-            {track.title}
+            {route.title}
           </span>{' '}
           and share with others
         </h3>
         <UserGroupIcon className='h-12 w-12 text-accent-300' />
         <div>
           <Suspense fallback={<Spinner />}>
-            <Exploration track={track} />
+            <Exploration route={route} />
           </Suspense>
         </div>
 
         {plannedExplorations ? (
-          <div className='flex flex-col mt-4 items-center justify-center'>
+          <article className='flex flex-col mt-4 items-center justify-center'>
             <h2 className='text-6xl text-primary-200 font-semibold my-8'>
               <span className='mx-4 text-accent-200 text-7xl font-semibold'>
                 &#9432;
@@ -74,11 +76,11 @@ async function TrackPage({ params }) {
                 explorers.
               </p>
             ))}
-          </div>
+          </article>
         ) : null}
       </div>
-    </div>
+    </main>
   );
 }
 
-export default TrackPage;
+export default RoutePage;

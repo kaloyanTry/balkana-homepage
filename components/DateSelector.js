@@ -34,7 +34,7 @@ function DateSelector({ track, bookedDates }) {
   }
 
   return (
-    <div className='flex flex-col justify-between'>
+    <main className='flex flex-col justify-between'>
       <DayPicker
         className='pt-12 place-self-center'
         mode='range'
@@ -52,7 +52,7 @@ function DateSelector({ track, bookedDates }) {
         disabled={(currDate) => isPast(currDate)}
       />
 
-      <div className='flex items-center justify-between px-2 bg-accent-200 text-primary-300 h-16'>
+      <article className='flex items-center justify-between px-2 bg-accent-200 text-primary-300 h-16'>
         <div>
           {numDays ? (
             <>
@@ -71,8 +71,8 @@ function DateSelector({ track, bookedDates }) {
             Clear
           </button>
         ) : null}
-      </div>
-    </div>
+      </article>
+    </main>
   );
 }
 

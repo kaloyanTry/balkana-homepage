@@ -1,5 +1,6 @@
 import { getProject } from '@/lib/actions';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export async function generateMetadata({ params }) {
   const { year } = await getProject(params.projectId);
@@ -13,8 +14,8 @@ async function ProjectsPage({ params }) {
   const { id, title, year, description, partners, image } = project;
 
   return (
-    <div className='flex flex-col'>
-      <div className='flex justify-between relative w-auto max-w-[2000px] h-screen max-h-[60vh] min-h-96 my-4'>
+    <main className='flex flex-col'>
+      <article className='flex justify-between relative w-auto max-w-[2000px] h-screen max-h-[60vh] min-h-96 my-4'>
         <Image
           src={image}
           fill
@@ -22,13 +23,13 @@ async function ProjectsPage({ params }) {
           alt={`Track ${title}`}
           className='object-cover'
         />
-      </div>
+      </article>
 
-      <div className='flex my-12 justify-center'>
+      <article className='flex my-12 justify-center'>
         <h2 className=' text-primary-200 text-9xl font-semibold'>{title}</h2>
-      </div>
+      </article>
 
-      <div className='flex flex-col items-center'>
+      <article className='flex flex-col items-center'>
         <div className='flex gap-2 my-6'>
           <h3 className='text-4xl text-accent-300 font-semibold '>
             Opening year{' '}
@@ -39,9 +40,9 @@ async function ProjectsPage({ params }) {
         </div>
 
         <div className='flex gap-2 my-8'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
+          <h3 className='text-4xl text-primary-300 font-semibold'>
             Partners{' '}
-            <span className='font-bold text-primary-300'>{partners}</span>
+            <span className='font-bold text-accent-300'>{partners}</span>
           </h3>
         </div>
 
@@ -50,8 +51,17 @@ async function ProjectsPage({ params }) {
             {description}
           </p>
         </div>
-      </div>
-    </div>
+      </article>
+
+      <article className='flex justify-end my-12'>
+        <Link
+          href='/home/projects'
+          className=' bg-primary-200 text-xl font-normal text-primary-100 px-4 py-2 rounded-sm'
+        >
+          Back to all
+        </Link>
+      </article>
+    </main>
   );
 }
 

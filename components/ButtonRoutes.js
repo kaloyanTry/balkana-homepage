@@ -1,4 +1,4 @@
-function ButtonTracks({
+function ButtonRoutes({
   filterDistance,
   handleFilter,
   activeFilter,
@@ -15,4 +15,4 @@ function ButtonTracks({
     </button>
   );
 }
-export default ButtonTracks;
+export default ButtonRoutes;
