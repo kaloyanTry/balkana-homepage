@@ -5,6 +5,7 @@ import { getPlannedExplorations, getRoute } from '@/lib/actions';
 import { Suspense } from 'react';
 import { UserGroupIcon } from '@heroicons/react/24/solid';
 import { format, formatDistance, isPast, isToday, parseISO } from 'date-fns';
+import Link from 'next/link';
 
 export async function generateMetadata({ params }) {
   const { title } = await getRoute(params.routeId);
@@ -20,12 +21,12 @@ async function RoutePage({ params }) {
   const exploredTimes = plannedExplorations.length;
 
   return (
-    <main className='mx-auto my-4'>
+    <main className='flex flex-col mx-auto my-4'>
       <Suspense fallback={<Spinner />}>
         <Route route={route} />
       </Suspense>
 
-      <div className='flex flex-col my-8 items-center justify-center'>
+      <section className='flex flex-col my-8 items-center justify-center'>
         <h3 className='text-4xl text-accent-300 text-center'>
           Plan your route{' '}
           <span className='text-5xl text-primary-200 font-normal'>
@@ -34,12 +35,13 @@ async function RoutePage({ params }) {
           and share with others
         </h3>
         <UserGroupIcon className='h-12 w-12 text-accent-300' />
-        <div>
+        <article>
           <Suspense fallback={<Spinner />}>
             <Exploration route={route} />
           </Suspense>
-        </div>
+        </article>
 
+        {/* Shared Information Section: */}
         {plannedExplorations ? (
           <article className='flex flex-col mt-4 items-center justify-center'>
             <h2 className='text-6xl text-primary-200 font-semibold my-8'>
@@ -78,7 +80,15 @@ async function RoutePage({ params }) {
             ))}
           </article>
         ) : null}
-      </div>
+      </section>
+      <aside className='flex justify-end my-12 px-4'>
+        <Link
+          href='/home/routes'
+          className=' bg-accent-300 text-xl font-normal text-primary-100 px-4 py-2 rounded-sm hover:bg-accent-200'
+        >
+          Back to all
+        </Link>
+      </aside>
     </main>
   );
 }

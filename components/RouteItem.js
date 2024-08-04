@@ -13,6 +13,7 @@ function RouteItem({ route }) {
           sizes='100%'
           alt={`Route image ${title}`}
           className='object-cover'
+          priority
         />
       </article>
 

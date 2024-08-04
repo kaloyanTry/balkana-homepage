@@ -16,6 +16,8 @@ export const metadata = {
 
 // when using sesarchParams the page is dynamic rendered page
 async function RoutesPage({ searchParams }) {
+  const page = searchParams.page ? parseInt(searchParams.page) : 1;
+
   const routes = await getRoutes();
   const filterDistance = searchParams?.distance ?? 'all';
 
@@ -48,7 +50,7 @@ async function RoutesPage({ searchParams }) {
         <FilterDistance />
       </div>
       <Suspense fallback={<Spinner />} key={filterDistance}>
-        <RoutesList filterDistance={filterDistance} />
+        <RoutesList filterDistance={filterDistance} page={page} />
         <ExplorationReminder />
       </Suspense>
     </main>

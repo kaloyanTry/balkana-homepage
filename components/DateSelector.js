@@ -1,5 +1,6 @@
 'use client';
 
+import { useExploration } from './ExplorationContext';
 import {
   differenceInDays,
   isPast,
@@ -8,7 +9,6 @@ import {
 } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
-import { useExploration } from './ExplorationContext';
 
 // function isAlreadyNoted(range, dateArray) {
 //   return (
@@ -45,6 +45,11 @@ function DateSelector({ track, bookedDates }) {
         toYear={new Date().getFullYear() + 3}
         captionLayout='dropdown'
         numberOfMonths={3}
+        weekStartsOn={1}
+        classNames={{
+          today: 'bg-accent-200 text-accent-300', // Add a border to today's date
+          selected: 'bg-accent-200 border-prime-300 text-primary-200', // Highlight the selected day
+        }}
         // disabled={(currDate) =>
         //   isPast(currDate) ||
         //   bookedDates.some((date) => isSameDay(date, currDate))

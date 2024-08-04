@@ -3,7 +3,8 @@ import RouteItem from './RouteItem';
 import Link from 'next/link';
 import { MapIcon } from '@heroicons/react/24/outline';
 
-async function RoutesList({ filterDistance }) {
+async function RoutesList({ filterDistance, page }) {
+  const routesPerPage = 6;
   const routes = await getRoutes();
 
   if (!routes.length) return null;
@@ -32,8 +33,8 @@ async function RoutesList({ filterDistance }) {
   return (
     <main className='flex flex-col'>
       <section className='grid gap-2 sm:grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-6 xl:gap-12'>
-        {displayedRoutes.map((route) => (
-          <RouteItem route={route} key={route.id} />
+        {displayedRoutes.map((route, i) => (
+          <RouteItem route={route} key={i} />
         ))}
       </section>
       <section>

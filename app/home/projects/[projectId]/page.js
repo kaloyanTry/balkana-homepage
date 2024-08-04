@@ -53,14 +53,14 @@ async function ProjectsPage({ params }) {
         </div>
       </article>
 
-      <article className='flex justify-end my-12'>
+      <aside className='flex justify-end my-12'>
         <Link
           href='/home/projects'
           className=' bg-primary-200 text-xl font-normal text-primary-100 px-4 py-2 rounded-sm'
         >
           Back to all
         </Link>
-      </article>
+      </aside>
     </main>
   );
 }

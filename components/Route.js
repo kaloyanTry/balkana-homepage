@@ -46,6 +46,7 @@ function Route({ route }) {
           sizes='100%'
           alt={`Route ${title}`}
           className='object-cover'
+          priority
         />
       </article>
 

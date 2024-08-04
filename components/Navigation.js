@@ -8,12 +8,12 @@ async function Navigation() {
   const session = await auth();
 
   return (
-    <nav className='z-10 text-2xl text-accent-300 font-semibold'>
+    <nav className='z-10 text-2xl text-accent-300 font-semibold uppercase'>
       <ul className='flex gap-10 max-md:gap-2 max-sm:text-lg'>
         <li>
           <Link
             href='/home'
-            className='hover:text-accent-200 transition-colors'
+            className='hover:text-primary-200 transition-colors'
           >
             Home
           </Link>
@@ -22,7 +22,7 @@ async function Navigation() {
         <li>
           <Link
             href='/home/projects'
-            className='hover:text-accent-200 transition-colors '
+            className='hover:text-primary-200 transition-colors '
           >
             Projects
           </Link>
@@ -30,7 +30,7 @@ async function Navigation() {
         <li>
           <Link
             href='/home/routes'
-            className='hover:text-accent-200 transition-colors '
+            className='hover:text-primary-200 transition-colors '
           >
             Routes
           </Link>
@@ -39,7 +39,7 @@ async function Navigation() {
           {session?.user?.image ? (
             <Link
               href='/home/explorer'
-              className='hover:text-accent-200 transition-colors flex items-center gap-4'
+              className='hover:text-primary-200 transition-colors flex items-center gap-4'
             >
               <Image
                 className='rounded-full'
