@@ -17,7 +17,7 @@ function FilterDistance() {
   }
 
   return (
-    <div className='flex mb-8 text-xl'>
+    <div className='flex mb-4 text-xl'>
       <ButtonRoutes
         filterDistance='all'
         handleFilter={handleFilter}

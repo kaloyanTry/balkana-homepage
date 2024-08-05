@@ -3,14 +3,14 @@ import RouteItem from './RouteItem';
 import Link from 'next/link';
 import { MapIcon } from '@heroicons/react/24/outline';
 
-async function RoutesList({ filterDistance, page }) {
-  const routesPerPage = 6;
+async function RoutesList({ filterDistance, query }) {
   const routes = await getRoutes();
 
   if (!routes.length) return null;
 
   let displayedRoutes;
 
+  ////////////////// Simple filter of routes: /////////
   if (filterDistance === 'all') {
     displayedRoutes = routes;
   }
@@ -27,16 +27,22 @@ async function RoutesList({ filterDistance, page }) {
   if (filterDistance === 'ultra') {
     displayedRoutes = routes.filter((route) => route.distance >= 43);
   }
+  /////////////////////////////////////////////////
 
+  /////////////////////Search implementation////////////////////////////
+  if (query) {
+    displayedRoutes = routes.filter((route) => route.title.includes(query));
+  }
+
+  ////////////////////////////////////////////////
   const numberRoutes = displayedRoutes.length;
-
   return (
     <main className='flex flex-col'>
-      <section className='grid gap-2 sm:grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-6 xl:gap-12'>
+      <article className='grid gap-2 sm:grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-6 xl:gap-12'>
         {displayedRoutes.map((route, i) => (
           <RouteItem route={route} key={i} />
         ))}
-      </section>
+      </article>
       <section>
         <p className='mt-8 mx-auto text-accent-100 text-2xl bg-accent-300 py-4 px-8'>
           The number of {filterDistance}s is{' '}
