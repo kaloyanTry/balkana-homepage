@@ -3,7 +3,9 @@ import FilterDistance from '@/components/FilterDistance';
 // import FilterSuitable from '@/components/FilterSuitable';
 import Spinner from '@/components/Spinner';
 import RoutesList from '@/components/RoutesList';
-import { getRoutes } from '@/lib/actions';
+import Pagination from '@/components/Pagination';
+import { getRoutes, getRoutesPages } from '@/lib/actions';
+
 import { Suspense } from 'react';
 import Search from '@/components/Search';
 
@@ -12,15 +14,15 @@ import Search from '@/components/Search';
 
 export const metadata = {
   title: 'Routes',
-  description: 'The overview of the Balkanas trails',
+  description: "The overview of the Balkanas' routes",
 };
 
 // when using sesarchParams the page is dynamic rendered page
 async function RoutesPage({ searchParams }) {
   const query = searchParams?.query || '';
-  // const currentPage = Number(searchParams?.page) || 1;
+  const currentPage = Number(searchParams.page) || 1;
 
-  const routes = await getRoutes();
+  const totalPages = await getRoutesPages(query);
 
   ////// simple filter for distance //////
   const filterDistance = searchParams?.distance ?? 'all';
@@ -43,7 +45,7 @@ async function RoutesPage({ searchParams }) {
         <p className='mb-8 text-primary-300 text-2xl font-normal'>
           Our public database includes{' '}
           <span className='font-bold text-accent-300'>
-            {routes.length} routes in total
+            {totalPages.length} routes in total
           </span>
           , which you can explore.{' '}
           <span className='font-bold text-accent-300'>Explore!</span>
@@ -67,13 +69,17 @@ async function RoutesPage({ searchParams }) {
         </div>
       </article>
 
+      <div className='my-4 flex w-full justify-center'>
+        <Pagination totalPages={totalPages} />
+      </div>
+
       {/* /////////////////////////////////////////////////// */}
 
-      <Suspense fallback={<Spinner />} key={filterDistance}>
+      <Suspense key={query + currentPage} fallback={<Spinner />}>
         <RoutesList
           filterDistance={filterDistance}
           query={query}
-          // currentPage={currentPage}
+          currentPage={currentPage}
         />
         <ExplorationReminder />
       </Suspense>

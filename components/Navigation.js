@@ -9,7 +9,7 @@ async function Navigation() {
 
   return (
     <nav className='z-10 text-2xl text-accent-300 font-semibold uppercase'>
-      <ul className='flex gap-10 max-md:gap-2 max-sm:text-lg'>
+      <ul className='flex gap-8 max-lg:gap-4 max-md:gap-2 max-sm:text-lg'>
         <li>
           <Link
             href='/home'

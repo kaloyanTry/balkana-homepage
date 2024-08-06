@@ -1,10 +1,10 @@
-import { getRoutes } from '@/lib/actions';
+import { getRoutes, getFilteredRoutes } from '@/lib/actions';
 import RouteItem from './RouteItem';
 import Link from 'next/link';
 import { MapIcon } from '@heroicons/react/24/outline';
 
-async function RoutesList({ filterDistance, query }) {
-  const routes = await getRoutes();
+async function RoutesList({ filterDistance, query, currentPage }) {
+  const routes = await getFilteredRoutes(query, currentPage);
 
   if (!routes.length) return null;
 
@@ -33,8 +33,12 @@ async function RoutesList({ filterDistance, query }) {
   if (query) {
     displayedRoutes = routes.filter((route) => route.title.includes(query));
   }
+  ///////////////////////////////////////////////////////////////////////
+  // https://nextjs.org/learn/dashboard-app/adding-search-and-pagination
+  //////////////////Pagination///////////////////////////////////////////
 
-  ////////////////////////////////////////////////
+  //////////////////////////////////////////////
+
   const numberRoutes = displayedRoutes.length;
   return (
     <main className='flex flex-col'>
