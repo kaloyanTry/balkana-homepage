@@ -1,13 +1,13 @@
+import { Suspense } from 'react';
+
+import { getRoutesPages } from '@/lib/actions';
+import Spinner from '@/components/Spinner';
 import ExplorationReminder from '@/components/ExplorationReminder';
+import Search from '@/components/Search';
+import Pagination from '@/components/Pagination';
 import FilterDistance from '@/components/FilterDistance';
 // import FilterSuitable from '@/components/FilterSuitable';
-import Spinner from '@/components/Spinner';
 import RoutesList from '@/components/RoutesList';
-import Pagination from '@/components/Pagination';
-import { getRoutes, getRoutesPages } from '@/lib/actions';
-
-import { Suspense } from 'react';
-import Search from '@/components/Search';
 
 // code for static generated pages:
 // export const revalidate = 86400;
@@ -17,15 +17,17 @@ export const metadata = {
   description: "The overview of the Balkanas' routes",
 };
 
-// when using sesarchParams the page is dynamic rendered page
+// When using sesarchParams the page is a dynamic rendered page //
 async function RoutesPage({ searchParams }) {
   const query = searchParams?.query || '';
-  const currentPage = Number(searchParams.page) || 1;
+  const currentPage = Number(searchParams?.page) || 1;
 
+  // Pagination => fetch routes total pages //
+  // https://nextjs.org/learn/dashboard-app/adding-search-and-pagination //
   const totalPages = await getRoutesPages(query);
 
-  ////// simple filter for distance //////
-  const filterDistance = searchParams?.distance ?? 'all';
+  // Simple filter for distance //
+  // const filterDistance = searchParams?.distance ?? 'all';
 
   return (
     <main>
@@ -45,7 +47,7 @@ async function RoutesPage({ searchParams }) {
         <p className='mb-8 text-primary-300 text-2xl font-normal'>
           Our public database includes{' '}
           <span className='font-bold text-accent-300'>
-            {totalPages.length} routes in total
+            {totalPages} pages with routes in total
           </span>
           , which you can explore.{' '}
           <span className='font-bold text-accent-300'>Explore!</span>
@@ -62,14 +64,15 @@ async function RoutesPage({ searchParams }) {
       {/* ///////// Search and Pagination section: ////////// */}
       <article>
         <p className='text-xl text-accent-300 text-center font-normal mb-2'>
-          <span className='uppercase font-semibold'>or</span> search by typing
+          <span className='uppercase font-semibold'>or</span> search by typing a
+          destination
         </p>
         <div className='mb-8 flex items-center justify-between gap-2'>
           <Search placeholder='Search routes...' />
         </div>
       </article>
 
-      <div className='my-4 flex w-full justify-center'>
+      <div className='mb-8 flex w-full justify-center'>
         <Pagination totalPages={totalPages} />
       </div>
 
@@ -77,7 +80,7 @@ async function RoutesPage({ searchParams }) {
 
       <Suspense key={query + currentPage} fallback={<Spinner />}>
         <RoutesList
-          filterDistance={filterDistance}
+          // filterDistance={filterDistance}
           query={query}
           currentPage={currentPage}
         />

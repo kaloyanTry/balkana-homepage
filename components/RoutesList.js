@@ -1,55 +1,55 @@
-import { getRoutes, getFilteredRoutes } from '@/lib/actions';
+import { getFilteredRoutes } from '@/lib/actions';
 import RouteItem from './RouteItem';
 import Link from 'next/link';
 import { MapIcon } from '@heroicons/react/24/outline';
 
-async function RoutesList({ filterDistance, query, currentPage }) {
+async function RoutesList({ query, currentPage }) {
   const routes = await getFilteredRoutes(query, currentPage);
 
   if (!routes.length) return null;
 
-  let displayedRoutes;
+  // let displayedRoutes;
 
-  ////////////////// Simple filter of routes: /////////
-  if (filterDistance === 'all') {
-    displayedRoutes = routes;
-  }
-  if (filterDistance === 'short') {
-    displayedRoutes = routes.filter((route) => route.distance <= 20);
-  }
+  // ////////////////// Simple filter of routes: /////////
+  // if (filterDistance === 'all') {
+  //   displayedRoutes = routes;
+  // }
+  // if (filterDistance === 'short') {
+  //   displayedRoutes = routes.filter((route) => route.distance <= 20);
+  // }
 
-  if (filterDistance === 'trail') {
-    displayedRoutes = routes.filter(
-      (route) => route.distance >= 21 && route.distance <= 42
-    );
-  }
+  // if (filterDistance === 'trail') {
+  //   displayedRoutes = routes.filter(
+  //     (route) => route.distance >= 21 && route.distance <= 42
+  //   );
+  // }
 
-  if (filterDistance === 'ultra') {
-    displayedRoutes = routes.filter((route) => route.distance >= 43);
-  }
-  /////////////////////////////////////////////////
+  // if (filterDistance === 'ultra') {
+  //   displayedRoutes = routes.filter((route) => route.distance >= 43);
+  // }
+  // /////////////////////////////////////////////////
 
-  /////////////////////Search implementation////////////////////////////
-  if (query) {
-    displayedRoutes = routes.filter((route) => route.title.includes(query));
-  }
+  // /////////////////////Search implementation////////////////////////////
+  // if (query) {
+  //   displayedRoutes = routes.filter((route) => route.title.includes(query));
+  // }
   ///////////////////////////////////////////////////////////////////////
   // https://nextjs.org/learn/dashboard-app/adding-search-and-pagination
   //////////////////Pagination///////////////////////////////////////////
 
   //////////////////////////////////////////////
 
-  const numberRoutes = displayedRoutes.length;
+  const numberRoutes = routes.length;
   return (
     <main className='flex flex-col'>
       <article className='grid gap-2 sm:grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-6 xl:gap-12'>
-        {displayedRoutes.map((route, i) => (
+        {routes.map((route, i) => (
           <RouteItem route={route} key={i} />
         ))}
       </article>
       <section>
         <p className='mt-8 mx-auto text-accent-100 text-2xl bg-accent-300 py-4 px-8'>
-          The number of {filterDistance}s is{' '}
+          The number of routes on this page is{' '}
           <span className='text-4xl font-bold'>{numberRoutes}</span> here
         </p>
         <article className='text-2xl py-8 px-4 bg-accent-100'>
