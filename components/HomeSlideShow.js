@@ -1,4 +1,4 @@
-import { getTracksImages } from '@/lib/actions';
+import { getTracksImages } from '@/lib/data';
 import HomeImagesShow from './HomeImagesShow';
 import { Suspense } from 'react';
 import Spinner from './Spinner';

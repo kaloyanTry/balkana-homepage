@@ -1,7 +1,6 @@
 'use client';
 
 import { useDebouncedCallback } from 'use-debounce';
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 function Search({ placeholder }) {
@@ -30,14 +29,13 @@ function Search({ placeholder }) {
       <input
         name='search'
         id='search'
-        className='peer block w-full mx-auto rounded-sm border border-accent-300 bg-primary-100 py-2 pl-8 text-lg outline-2'
+        className='peer block w-96 mx-auto rounded-sm border border-accent-300 bg-primary-100 py-2 pl-8 text-lg outline-2'
         placeholder={placeholder}
         onChange={(e) => {
           handleSearch(e.target.value);
         }}
         defaultValue={searchParams.get('query')?.toString()}
       />
-      <MagnifyingGlassIcon className='absolute left-2 top-1/2 h-5 w-5 -translate-y-1/2 text-accent-300' />
     </article>
   );
 }

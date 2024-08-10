@@ -20,7 +20,7 @@ async function VisitationsPage() {
       {explorations.length === 0 ? (
         <p className='font-normal text-xl text-primary-300 m-4'>
           You have NO explorations yet. Explore Balkanas&apos;{' '}
-          <Link href='/home/tracks'>routes $rarr;</Link>
+          <Link href='/home/routes'>routes $rarr;</Link>
         </p>
       ) : (
         <ExplorationList explorations={explorations} />

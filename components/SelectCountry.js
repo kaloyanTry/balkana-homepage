@@ -1,4 +1,4 @@
-import { getAllCountries } from '@/lib/actions-data-services';
+import { getAllCountries } from '@/lib/utils';
 
 async function SelectCountry({ defaultCountry, name, id, className }) {
   const countries = await getAllCountries();

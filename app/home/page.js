@@ -1,5 +1,5 @@
 import HomeImagesShow from '@/components/HomeImagesShow';
-import { getTracksImages } from '@/lib/actions';
+import { getTracksImages } from '@/lib/data';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import Spinner from '@/components/Spinner';

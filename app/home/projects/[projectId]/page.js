@@ -1,4 +1,4 @@
-import { getProject } from '@/lib/actions';
+import { getProject } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -26,7 +26,7 @@ async function ProjectsPage({ params }) {
       </article>
 
       <article className='flex my-12 justify-center'>
-        <h2 className=' text-primary-200 text-9xl font-semibold'>{title}</h2>
+        <h1 className=' text-primary-200 text-9xl font-semibold'>{title}</h1>
       </article>
 
       <article className='flex flex-col items-center'>

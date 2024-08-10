@@ -2,11 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 function RouteItem({ route }) {
-  const { id, title, distance, elevation, difficulty, image } = route;
+  const { id, title, distance, elevation, difficulty, image, destination } =
+    route;
 
   return (
     <main className='flex flex-col bg-primary-100'>
-      <article className='flex justify-between relative w-auto h-96'>
+      <article className='flex justify-between relative h-screen max-h-[60vh] min-h-96'>
         <Image
           src={image}
           fill
@@ -19,9 +20,9 @@ function RouteItem({ route }) {
 
       <article className='flex-grow'>
         <div>
-          <h2 className='text-accent-300 text-4xl font-semibold min-h-32 m-4'>
-            Route: {title}
-          </h2>
+          <h1 className='text-accent-300 text-6xl font-bold min-h-32 m-4'>
+            {title}
+          </h1>
 
           <div className='flex gap-2 mx-4'>
             <h3 className='text-2xl text-accent-300 font-semibold'>
@@ -48,9 +49,9 @@ function RouteItem({ route }) {
           <div className=' text-accent-100 text-right text-xl'>
             <Link
               href={`/home/routes/${id}`}
-              className=' bg-primary-200 py-2 px-4 inline-block hover:bg-accent-200 transition-all hover:text-primary-300 rounded-tl'
+              className=' bg-accent-300 py-4 px-4 inline-block hover:bg-primary-200 transition-all  rounded-sm'
             >
-              Details and explore
+              Explore Details
             </Link>
           </div>
         </div>

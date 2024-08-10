@@ -1,13 +1,15 @@
 import { Suspense } from 'react';
 
-import { getRoutesPages } from '@/lib/actions';
+import { getRoutesPages } from '@/lib/data';
 import Spinner from '@/components/Spinner';
 import ExplorationReminder from '@/components/ExplorationReminder';
 import Search from '@/components/Search';
 import Pagination from '@/components/Pagination';
-import FilterDistance from '@/components/FilterDistance';
+// import FilterDistance from '@/components/FilterDistance';
 // import FilterSuitable from '@/components/FilterSuitable';
 import RoutesList from '@/components/RoutesList';
+import { MapIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 // code for static generated pages:
 // export const revalidate = 86400;
@@ -25,9 +27,6 @@ async function RoutesPage({ searchParams }) {
   // Pagination => fetch routes total pages //
   // https://nextjs.org/learn/dashboard-app/adding-search-and-pagination //
   const totalPages = await getRoutesPages(query);
-
-  // Simple filter for distance //
-  // const filterDistance = searchParams?.distance ?? 'all';
 
   return (
     <main>
@@ -55,37 +54,86 @@ async function RoutesPage({ searchParams }) {
       </section>
 
       <article className='flex justify-center'>
-        <span className='text-2xl font-medium bg-accent-300 text-accent-100 p-2 mb-4'>
-          Explore
-        </span>
-        <FilterDistance />
+        <Link href='/home/routes' className='mb-4'>
+          <span className='text-2xl font-medium bg-accent-300 text-accent-100 py-2 px-4 rounded-sm'>
+            Explore All
+          </span>
+        </Link>
+        {/* <FilterDistance /> */}
       </article>
 
       {/* ///////// Search and Pagination section: ////////// */}
-      <article>
+      <article className='block'>
         <p className='text-xl text-accent-300 text-center font-normal mb-2'>
-          <span className='uppercase font-semibold'>or</span> search by typing a
-          destination
+          Search by typing a destination{' '}
+          <span className='mx-2'>&#x1F50E;&#xFE0E;</span>{' '}
         </p>
-        <div className='mb-8 flex items-center justify-between gap-2'>
+        <article className='mb-8 flex items-center justify-between gap-2'>
           <Search placeholder='Search routes...' />
-        </div>
+        </article>
       </article>
 
-      <div className='mb-8 flex w-full justify-center'>
-        <Pagination totalPages={totalPages} />
-      </div>
+      <article className='mb-8 flex w-full justify-center'>
+        {totalPages ? <Pagination totalPages={totalPages} /> : ''}
+      </article>
 
       {/* /////////////////////////////////////////////////// */}
 
       <Suspense key={query + currentPage} fallback={<Spinner />}>
-        <RoutesList
-          // filterDistance={filterDistance}
-          query={query}
-          currentPage={currentPage}
-        />
+        <RoutesList query={query} currentPage={currentPage} />
         <ExplorationReminder />
       </Suspense>
+
+      <section>
+        <article className='mb-8 flex w-full justify-center'>
+          {totalPages ? <Pagination totalPages={totalPages} /> : ''}
+        </article>
+        <article className='text-2xl py-8 px-4 bg-accent-100'>
+          <p className='text-primary-300'>
+            <span className='mr-4 text-accent-200 text-4xl font-semibold'>
+              &#9432;
+            </span>
+            Important! Crossing the routes requires personal responsibility and
+            activity. Being in the wild requires care and respect. When visiting
+            mountains, it is recommended to have mountain insurance. Information
+            about Mountain Resque Service{' '}
+            <Link
+              href='https://en.redcross.bg/activities/activities2'
+              rel='noopener noreferrer'
+              target='_blank'
+              className='text-accent-300 font-semibold'
+            >
+              link
+            </Link>{' '}
+            and mountain insurance{' '}
+            <Link
+              href='https://www.pss-bg.bg/planinska-zastrahovka/'
+              rel='noopener noreferrer'
+              target='_blank'
+              className='text-accent-300 font-semibold'
+            >
+              link
+            </Link>
+            .
+          </p>
+          <div className='py-4 flex gap-4'>
+            <MapIcon className='h-12 w-12 text-accent-200' />
+            <p className='pt-2'>
+              Very useful source for Bulgarian mountains online maps, gps routes
+              and tracks on bgmountains.org,{' '}
+              <Link
+                href='https://bgmountains.org/en/#'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='text-accent-300 font-semibold'
+              >
+                link.
+              </Link>{' '}
+              Respect!
+            </p>
+          </div>
+        </article>
+      </section>
     </main>
   );
 }

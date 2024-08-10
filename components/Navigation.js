@@ -13,7 +13,7 @@ async function Navigation() {
         <li>
           <Link
             href='/home'
-            className='hover:text-primary-200 transition-colors'
+            className='hover:text-primary-200 transition-all hover:text-xl'
           >
             Home
           </Link>
@@ -22,7 +22,7 @@ async function Navigation() {
         <li>
           <Link
             href='/home/projects'
-            className='hover:text-primary-200 transition-colors '
+            className='hover:text-primary-200 transition-all hover:text-xl'
           >
             Projects
           </Link>
@@ -30,7 +30,7 @@ async function Navigation() {
         <li>
           <Link
             href='/home/routes'
-            className='hover:text-primary-200 transition-colors '
+            className='hover:text-primary-200 transition-all hover:text-xl'
           >
             Routes
           </Link>
@@ -39,7 +39,7 @@ async function Navigation() {
           {session?.user?.image ? (
             <Link
               href='/home/explorer'
-              className='hover:text-primary-200 transition-colors flex items-center gap-4'
+              className='hover:text-primary-200 transition-all flex items-center gap-4'
             >
               <Image
                 className='rounded-full'
@@ -54,7 +54,7 @@ async function Navigation() {
           ) : (
             <Link
               href='/home/explorer'
-              className='hover:text-accent-200 transition-colors '
+              className='hover:text-primary-200 transition-all hover:text-xl'
             >
               Explorer
             </Link>

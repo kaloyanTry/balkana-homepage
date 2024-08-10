@@ -20,9 +20,9 @@ import 'react-day-picker/dist/style.css';
 //   );
 // }
 
-function DateSelector({ track, bookedDates }) {
+function DateSelector({ track, plannedDates }) {
   const { range, setRange, resetRange } = useExploration();
-  // const displayRange = isAlreadyNoted(range, bookedDates) ? {} : range;
+  // const displayRange = isAlreadyNoted(range, plannedDates) ? {} : range;
   const displayRange = range;
 
   // const numDays = differenceInDays(displayRange.to, displayRange.from);

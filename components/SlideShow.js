@@ -1,4 +1,4 @@
-import { getImages } from '@/lib/actions';
+import { getImages } from '@/lib/data';
 import ImagesShow from './ImagesShow';
 
 async function SlideShow() {

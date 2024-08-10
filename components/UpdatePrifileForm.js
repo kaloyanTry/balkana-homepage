@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-// import { useState } from 'react';
 import { updateExplorerProfile } from '@/lib/actions';
 import SubmitBtn from './SubmitBtn';
 

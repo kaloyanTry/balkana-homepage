@@ -1,6 +1,6 @@
 // import { unstable_noStore as noStore } from 'next/cache';
 
-import { getProjects } from '@/lib/actions';
+import { getProjects } from '@/lib/data';
 import ProjectItem from './ProjectItem';
 
 async function ProjectsList() {

@@ -1,10 +1,10 @@
 // Opt out of caching for all data requests in the route segment
 export const dynamic = 'force-dynamic';
 
-import TextExpander from '@/components/TextExpander';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPinIcon } from '@heroicons/react/24/solid';
+import TextExpander from '@/components/TextExpander';
 
 function Route({ route }) {
   const {
@@ -17,6 +17,7 @@ function Route({ route }) {
     elevation,
     image,
     suitable,
+    destination,
   } = route;
 
   // console.log(startPoint);
@@ -38,7 +39,7 @@ function Route({ route }) {
   }
 
   return (
-    <main className='flex flex-col m-auto py-8 px-4'>
+    <main className='flex flex-col mx-auto py-4'>
       <article className='flex justify-between relative w-auto h-screen max-h-[60vh] min-h-96'>
         <Image
           src={image}
@@ -50,11 +51,18 @@ function Route({ route }) {
         />
       </article>
 
-      <div className='flex my-12 justify-center'>
-        <h2 className=' text-primary-200 text-7xl font-semibold'>{title}</h2>
-      </div>
-
       <article className='flex flex-col items-center'>
+        <div className='flex my-12 justify-center'>
+          <h1 className=' text-accent-300 text-8xl font-semibold'>{title}</h1>
+        </div>
+
+        <div className='flex gap-2 my-2'>
+          <h3 className='text-4xl text-accent-300 font-semibold'>
+            Destination:{' '}
+            <span className='font-bold text-primary-300'>{destination}</span>
+          </h3>
+        </div>
+
         <div className='flex gap-2 my-2'>
           <h3 className='text-4xl text-accent-300 font-semibold'>
             Distance:{' '}

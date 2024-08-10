@@ -1,7 +1,8 @@
 import Exploration from '@/components/Exploration';
 import Spinner from '@/components/Spinner';
 import Route from '@/components/Route';
-import { getPlannedExplorations, getRoute } from '@/lib/actions';
+import { getRoute } from '@/lib/data';
+import { getPlannedExplorations } from '@/lib/actions';
 import { Suspense } from 'react';
 import { UserGroupIcon } from '@heroicons/react/24/solid';
 import { format, formatDistance, isPast, isToday, parseISO } from 'date-fns';

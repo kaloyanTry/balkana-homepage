@@ -36,7 +36,8 @@ function ExplorationCard({ exploration, onDelete }) {
       <article className='flex-grow px-8 py-2 flex flex-col'>
         <div className='flex items-center justify-between'>
           <h3 className='text-2xl font-semibold text-primary-300'>
-            {numDays} day{numDays > 1 && 's'} at the Trail: {title}
+            {numDays} day{numDays > 1 && 's'} at the Route:{' '}
+            <span className='text-accent-300'>{title}</span>
           </h3>
           {isPast(new Date(startDate)) ? (
             <span className='bg-accent-200 text-primary-300 mt-2 h-8 px-4 py-2 uppercase text-md font-bold flex items-center rounded-sm'>

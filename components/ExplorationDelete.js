@@ -1,11 +1,8 @@
 'use client';
 
-// import { deleteExploration } from '@/lib/actions';
-import { TrashIcon } from '@heroicons/react/24/solid';
-// import { ExplorationProvider } from './ExplorationContext';
 import { useTransition } from 'react';
+import { TrashIcon } from '@heroicons/react/24/solid';
 import Spinner from './Spinner';
-// import SpinnerMini from './SpinnerMini';
 
 function ExplorationDelete({ explorationId, onDelete }) {
   const [isPending, startTransition] = useTransition();
