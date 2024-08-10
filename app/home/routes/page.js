@@ -46,10 +46,10 @@ async function RoutesPage({ searchParams }) {
         <p className='mb-8 text-primary-300 text-2xl font-normal'>
           Our public database includes{' '}
           <span className='font-bold text-accent-300'>
-            {totalPages} pages with routes in total
+            {totalPages} pages in total with routes in your destination
           </span>
           , which you can explore.{' '}
-          <span className='font-bold text-accent-300'>Explore!</span>
+          <span className='font-bold text-accent-300'>Explore more!</span>
         </p>
       </section>
 
