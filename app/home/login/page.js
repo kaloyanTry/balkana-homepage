@@ -6,7 +6,7 @@ export const metadata = {
 
 async function LoginPage() {
   // const res = await fetch('http://localhost:3000/api/auth/providers');
-  const res = await fetch('/api/auth/providers');
+  const res = await fetch('./../../api/auth/providers');
   const data = await res.json();
   const providers = Object.keys(data);
 
