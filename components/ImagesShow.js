@@ -32,7 +32,12 @@ function ImagesShow({ images }) {
             key={index}
             className='flex justify-center md:items-center items-start w-screen h-screen relative'
           >
-            <Image className='w-screen' src={image.url} alt={image.alt} fill />
+            <Image
+              className='w-auto h-screen max-h-[100vh] '
+              src={image.url}
+              alt={image.alt}
+              fill
+            />
             <div className='relative z-10 text-center'>
               <h1 className='text-8xl mb-6 tracking-tight font-normal text-primary-100'>
                 Touch the Balkan
