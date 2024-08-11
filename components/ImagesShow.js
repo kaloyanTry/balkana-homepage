@@ -30,10 +30,10 @@ function ImagesShow({ images }) {
         {images.map((image, index) => (
           <article
             key={index}
-            className='flex justify-center md:items-center items-start w-screen h-screen relative'
+            className='flex justify-center md:items-center items-start w-screen h-screen max-md:h-96 relative'
           >
             <Image
-              className='w-auto h-screen max-h-[100vh] '
+              className='h-auto max-w-full'
               src={image.url}
               alt={image.alt}
               fill
