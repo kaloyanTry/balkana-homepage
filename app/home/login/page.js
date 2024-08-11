@@ -5,11 +5,8 @@ export const metadata = {
 };
 
 async function LoginPage() {
-  const res = await fetch('./../../api/auth/[...nextauth]/route.js');
   // const res = await fetch('http://localhost:3000/api/auth/providers');
-  // const res = await fetch(
-  //   'https://balkana-homepage-git-main-kaloyantrys-projects.vercel.app/api/auth/callback/google/api/auth/providers'
-  // );
+  const res = await fetch('https://balkana-try.vercel.app/api/auth/providers');
   const data = await res.json();
   const providers = Object.keys(data);
 
