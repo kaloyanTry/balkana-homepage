@@ -29,7 +29,7 @@ function Search({ placeholder }) {
       <input
         name='search'
         id='search'
-        className='peer block w-96 mx-auto rounded-sm border border-accent-300 bg-primary-100 py-2 pl-8 text-lg outline-2'
+        className='peer block w-96 mx-auto rounded-sm border border-accent-300 bg-primary-100 py-2 pl-4 text-lg outline-2'
         placeholder={placeholder}
         onChange={(e) => {
           handleSearch(e.target.value);

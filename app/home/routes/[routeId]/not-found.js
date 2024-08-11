@@ -4,13 +4,13 @@ function NotFound() {
   return (
     <div className='space-y-8 mt-16 text-center'>
       <h1 className='text-4xl text-accent-300 font-semibold'>
-        The trail could NOT be found
+        This route could <span className='uppercase'>not</span> be found
       </h1>
       <Link
-        href='/home/tracks'
-        className='inline-block bg-accent-200 text-primary-300 text-xl p-4'
+        href='/home/routes'
+        className='inline-block bg-accent-200 text-primary-300 text-xl p-4 rounded-sm hover:text-primary-100'
       >
-        Go back to the main trails
+        Go back to the main routes
       </Link>
     </div>
   );

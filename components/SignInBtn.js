@@ -4,7 +4,7 @@ import Image from 'next/image';
 function SignInBtn({ provider }) {
   return (
     <form action={signInAction} className='flex flex-col gap-8'>
-      <button className='flex items-center gap-4 text-xl border  border-accent-200 px-10 py-4 rounded-md font-semibold bg-accent-100 text-primary-300'>
+      <button className='flex items-center gap-4 text-xl border  border-primary-200 px-8 py-4 rounded-sm font-semibold bg-primary-100 text-primary-300'>
         <Image
           src={`https://authjs.dev/img/providers/${provider}.svg`}
           alt={`${provider} logo`}
