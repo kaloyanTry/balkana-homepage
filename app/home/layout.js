@@ -9,7 +9,7 @@ export default function HomeLayout({ children }) {
       <Header />
 
       <div className='flex-1 px-8 py-12 grid'>
-        <main className='max-w-8xl mx-auto w-full'>
+        <main className='max-w-max mx-auto w-full'>
           <ExplorationProvider>{children}</ExplorationProvider>
         </main>
       </div>

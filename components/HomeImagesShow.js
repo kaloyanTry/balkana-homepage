@@ -6,6 +6,8 @@ import {
   ArrowRightCircleIcon,
 } from '@heroicons/react/24/solid';
 
+// Another approuch of coding and displaying an image slideshow without using react-slideshow-image:
+
 const HomeImagesShow = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -56,7 +58,7 @@ const HomeImagesShow = ({ images }) => {
     <main className='m-auto py-4 px-8 relative group'>
       <article
         style={{ backgroundImage: `url(${trackImages[currentIndex].url})` }}
-        className='w-auto h-screen max-h-[60vh] min-h-96 bg-center bg-cover placeholder-primary-200 transition-all'
+        className='w-auto h-screen max-h-[60vh] min-h-96 bg-center bg-cover placeholder-primary-100 transition-all'
         key={trackImages[currentIndex]}
       >
         <Arrow direction='left' onClick={prevImage} />
@@ -67,7 +69,7 @@ const HomeImagesShow = ({ images }) => {
             {trackImages.map((_, i) => (
               <div
                 key={i}
-                className={`transition-all ease-out duration-900 w-2 h-2 bg-primary-100 rounded-full ${
+                className={`transition-all ease-out duration-800 w-2 h-2 bg-primary-100 rounded-full ${
                   currentIndex === i ? 'p-1' : 'bg-opacity-50'
                 }`}
               ></div>

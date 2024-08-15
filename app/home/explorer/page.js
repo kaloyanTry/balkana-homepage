@@ -9,7 +9,7 @@ async function ExplorerPage() {
 
   const firstName = session.user.name.split(' ').at(0);
   return (
-    <artile className='flex flex-col'>
+    <section className='flex flex-col'>
       <h1 className='font-semibold text-4xl text-accent-100 m-4 bg-accent-300 px-8 py-4'>
         Explorer Area
       </h1>
@@ -23,7 +23,7 @@ async function ExplorerPage() {
           Explore and enjoy more!
         </span>
       </p>
-    </artile>
+    </section>
   );
 }
 
