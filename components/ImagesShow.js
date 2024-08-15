@@ -9,17 +9,17 @@ import Link from 'next/link';
 function ImagesShow({ images }) {
   const zoomInProperties = {
     scale: 1,
-    duration: 5000,
-    transitionDuration: 300,
+    duration: 4000,
+    transitionDuration: 400,
     infinite: true,
     prevArrow: (
-      <div className='ml-10 top-40 md:top-72'>
-        <ArrowLeftIcon className='h-8 w-8 text-accent-100 cursor-pointer' />
+      <div className='flex justify-center items-center ml-8'>
+        <ArrowLeftIcon className='h-8 w-8 text-primary-100 cursor-pointer' />
       </div>
     ),
     nextArrow: (
-      <div className='mr-10 top-40 md:top-72'>
-        <ArrowRightIcon className='h-8 w-8 text-accent-100 cursor-pointer' />
+      <div className='flex justify-center items-center mr-8'>
+        <ArrowRightIcon className='h-8 w-8 text-primary-100 cursor-pointer' />
       </div>
     ),
   };
@@ -30,22 +30,22 @@ function ImagesShow({ images }) {
         {images.map((image, index) => (
           <article
             key={index}
-            className='flex justify-center md:items-center items-start w-screen h-screen max-md:h-96 relative'
+            className='flex justify-center items-center relative w-screen h-screen'
           >
             <Image
-              className='h-auto max-w-full'
               src={image.url}
               alt={image.alt}
               fill
+              className='object-cover object-top'
             />
             <div className='relative z-10 text-center'>
               <h1 className='text-8xl mb-6 tracking-tight font-normal text-primary-100'>
-                Touch the Balkan
+                Touch Balkana
               </h1>
 
               <Link
                 href='/home'
-                className=' bg-primary-200 px-4 py-2 text-accent-100 text-2xl hover:bg-primary-300 transition-all animate-pulse'
+                className=' bg-primary-200 px-4 py-2 text-primary-100 text-2xl hover:bg-primary-300 transition-all animate-pulse'
               >
                 Explore
               </Link>

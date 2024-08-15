@@ -36,24 +36,25 @@ export default async function Home() {
           </blockquote>
           <p className='text-justify text-2xl m-4 pb-8 border-b-2 font-normal text-primary-300 max-sm:text-lg'>
             Our goal is to preserve and maintain traditional paths, trails, and
-            routes in the mountain. Specifically, in Balkan, in the Centre Stara
-            Planina area.{' '}
+            routes in the mountain. Specifically, in Balkana, in the Centre
+            Stara Planina area.{' '}
             <span className='font-semibold'>
               The goal of this web application is to share information about the
               local routes.
             </span>{' '}
-            You could explore some or all of them. On the webapp is given a
-            short description, including GPS coordinates of the starting point
-            of the routes, distance, elevation gain, and images. If you plan to
+            You could explore some or all of them and share your try. On
+            BalkanaTry web application you will find a short description of the
+            routes, including GPS coordinates of the starting point,
+            destinations, distance, elevation gain, and images. If you plan to
             explore a particular route, through the application, you could share
             information about when would you go to run, cycle, or hike on the
-            route and with how many friends. On the web app, the information is
-            shared, and if someone other is interested in the route she or he
-            could join or just to know that the route has been explored by
-            others shortly in the past. There is an explorer area, where you can
-            find information for your explorations of Balkana. No names or any
-            other personal information is shared on the web app.{' '}
-            <span className='font-semibold'>Touch the Balkan!</span>
+            route and with how many friends. On the web application, the
+            information is shared, and if someone other is interested in the
+            route she or he could join or just to know that the route has been
+            explored by others shortly in the past. There is an explorer area,
+            where you can find information for your explorations of Balkana. No
+            names or any other personal information is shared on the web app.{' '}
+            <span className='font-semibold'>Touch Balkana!</span>
           </p>
         </article>
         <article className='flex flex-col m-auto py-8 px-4'>

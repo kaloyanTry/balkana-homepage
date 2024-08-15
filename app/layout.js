@@ -15,7 +15,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={bubbler.className}>{children}</body>
+      <body
+        className={`${bubbler.className} antialiased flex flex-col relative min-h-screen`}
+      >
+        <main className='max-w-max mx-auto w-full'>{children}</main>
+      </body>
+      {/* <body className={bubbler.className}>{children}</body> */}
     </html>
   );
 }
