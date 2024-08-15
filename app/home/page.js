@@ -29,10 +29,10 @@ export default async function Home() {
           <h2 className='text-center text-8xl m-8 font-bold text-primary-200 max-sm:text-lg'>
             Goal
           </h2>
-          <blockquote className='block text-2xl text-right text-accent-300 px-4 font-semibold max-sm:text-lg'>
+          <blockquote className='block text-2xl text-right text-accent-300 px-4 font-thin max-sm:text-lg'>
             &apos;Discipline is the bridge between goals and
             accomplishment.&apos;
-            <cite className='font-normal'> (Eliud Kipchoge)</cite>
+            <cite className='font-semibold'> (Eliud Kipchoge)</cite>
           </blockquote>
           <p className='text-justify text-2xl m-4 pb-8 border-b-2 font-normal text-primary-300 max-sm:text-lg'>
             Our goal is to preserve and maintain traditional paths, trails, and
@@ -61,10 +61,10 @@ export default async function Home() {
           <h2 className='text-center text-8xl m-8 font-bold text-primary-200 max-sm:text-lg'>
             Activities
           </h2>
-          <blockquote className='block text-2xl text-right text-accent-300 px-4 pt-2 max-sm:text-lg font-semibold'>
+          <blockquote className='block text-2xl text-right text-accent-300 px-4 pt-2 max-sm:text-lg font-thin'>
             &apos;We are what we repeatedly do. Excellence, then, is not an act,
             but a habit.&apos;
-            <cite className='font-normal'> (Aristotel)</cite>
+            <cite className='font-semibold'> (Aristotel)</cite>
           </blockquote>
           <p className='text-justify text-2xl m-4 pb-8 border-b-2 font-normal text-primary-300 max-sm:text-lg'>
             We organize and support outdoor activities in the local area.
@@ -86,7 +86,7 @@ export default async function Home() {
           <h2 className='text-center text-8xl m-8 font-bold text-primary-200 max-sm:text-lg'>
             Values
           </h2>
-          <blockquote className='block text-2xl text-right text-accent-300 px-4 pt-2 font-semibold max-sm:text-lg'>
+          <blockquote className='block text-2xl text-right text-accent-300 px-4 pt-2 font-thin max-sm:text-lg'>
             &apos;The key to genuine happiness is in our hands. To think this
             way is to discover the essential values of kindness, brotherly love
             and altruism. The more clearly we see the benefits of these values,
@@ -94,7 +94,7 @@ export default async function Home() {
             way we will be able to bring about inner transformation... <br />
             Follow the three R&apos;s: - Respect for self. - Respect for others.
             - Responsibility for all your actions.&apos;
-            <cite className='font-normal'> (Dalai Lama)</cite>
+            <cite className='font-semibold'> (Dalai Lama)</cite>
           </blockquote>
           <p className='text-justify text-2xl m-4 pb-8 border-b-2 font-normal text-primary-300 max-sm:text-lg'>
             We are trying to live very close to nature, relearning to co-exist
