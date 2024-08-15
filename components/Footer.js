@@ -37,7 +37,7 @@ function Footer() {
 
             <li className='pb-1'>
               <Link
-                href='home/explorer'
+                href='/home/explorer'
                 rel='noopener noreferrer'
                 target='_blank'
               >
