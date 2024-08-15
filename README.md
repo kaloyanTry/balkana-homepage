@@ -1,7 +1,7 @@
 
 # BalkanaTry Web Application
 
-## Used Technologies
+## About BalkanaTry project
 Web Application for routes in Balkana, Tryavna area about:
 
 ```
@@ -15,14 +15,14 @@ Sharing information
 
 ## Used Technologies
 ```
-Framework - Next.js (HTML, JavaScript, React JS library)
+Framework - Next.js
 Database - Supabase
 Styling - Tailwindcss
 ```
 
 ## Projects' Links
 
-- [BalkanaTry Deployed to Vercel]((https://balkana-try.vercel.app/) - Link the project BalkanaTry on Vercel Domain.
+- [BalkanaTry Deployed to Vercel](https://balkana-try.vercel.app/) - Link the project BalkanaTry on Vercel Domain.
 - [BalkanaTry GitHub repository](https://github.com/kaloyanTry/balkana-homepage) - Link the project on GitHub repo.
 
 
