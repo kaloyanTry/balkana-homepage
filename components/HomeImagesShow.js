@@ -55,7 +55,7 @@ const HomeImagesShow = ({ images }) => {
   );
 
   return (
-    <main className='m-auto py-4 px-8 relative group'>
+    <main className='m-auto py-4 relative group'>
       <article
         style={{ backgroundImage: `url(${trackImages[currentIndex].url})` }}
         className='w-auto h-screen max-h-[60vh] min-h-96 bg-center bg-cover placeholder-primary-100 transition-all'
