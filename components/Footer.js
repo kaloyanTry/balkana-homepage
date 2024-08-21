@@ -132,7 +132,7 @@ function Footer() {
         </div>
 
         <div className='flex justify-end items-end'>
-          <p className='text-accent-200 text-lg'>
+          <p className='text-accent-200 text-md'>
             All rights reserved&#169;{' '}
             <span className='text-accent-100 font-normal'>
               BalkanaTry&#8482;
