@@ -5,9 +5,8 @@ import Link from 'next/link';
 
 function Footer() {
   return (
-    <footer className='w-screen px-10 py-4 bg-accent-300'>
-      {/*  */}
-      <div className='flex flex-wrap'>
+    <footer className='flex justify-between w-full items-center mx-auto px-10 py-4 bg-accent-300'>
+      <div className='flex flex-grow'>
         <div className='w-1/3 h-auto'>
           <h3 className='text-primary-300 font-bold pb-1'>App Map</h3>
           <ul className='text-accent-100'>
@@ -132,7 +131,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className='w-screen flex justify-end'>
+        <div className='flex justify-end items-end'>
           <p className='text-accent-200 text-lg'>
             All rights reserved&#169;{' '}
             <span className='text-accent-100 font-normal'>
