@@ -40,7 +40,7 @@ function ImagesShow({ images }) {
             />
             <div className='relative z-10 text-center'>
               <h1 className='text-8xl mb-6 tracking-tight font-normal text-primary-100'>
-                Touch Balkana
+                Try Balkana
               </h1>
 
               <Link
