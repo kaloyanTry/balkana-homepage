@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${bubbler.className} antialiased flex flex-col relative min-h-screen`}
       >
-        <main className='max-w-max mx-auto w-full'>{children}</main>
+        <main className='w-full'>{children}</main>
       </body>
     </html>
   );

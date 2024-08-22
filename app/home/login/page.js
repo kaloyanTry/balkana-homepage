@@ -12,9 +12,9 @@ async function LoginPage() {
 
   return (
     <div className='flex flex-col gap-8 mt-8 items-center'>
-      <h2 className='text-4xl font-semibold text-primary-300 mb-4'>
+      <h1 className='text-4xl font-semibold text-primary-300 mb-4'>
         Sign in to access your explorations&apos; area
-      </h2>
+      </h1>
       {providers.map((provider) => (
         <SignInBtn provider={provider} key={provider} />
       ))}
