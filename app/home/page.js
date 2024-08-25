@@ -101,7 +101,7 @@ export default async function Home() {
             and inhabit the wild without polluting and without causing harm.{' '}
             <span className='font-semibold'>
               Living actively with respect for nature and others, and sharing
-              our experiences are our main values.
+              the experiences are our main values.
             </span>{' '}
             All the activities we have realized are led by the idea of ​​a clean
             and healthy environment and zero ecological footprint.
@@ -111,13 +111,13 @@ export default async function Home() {
         <aside className='flex flex-col-2 m-auto py-8 px-4 gap-16 max-sm:gap-2 max-sm:py-2'>
           <Link
             href='/home/routes'
-            className='bg-accent-300 hover:bg-accent-200 text-primary-100 text-2xl p-8 rounded'
+            className='bg-accent-300 hover:bg-accent-200 text-accent-100 text-2xl p-8 rounded'
           >
             Explore the routes
           </Link>
           <Link
             href='/home/projects'
-            className='bg-accent-300 hover:bg-accent-200 text-primary-300 text-2xl p-8 rounded'
+            className='bg-accent-300 hover:bg-accent-200 text-primary-100 text-2xl p-8 rounded'
           >
             Explore the projects
           </Link>
