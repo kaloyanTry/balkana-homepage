@@ -41,7 +41,7 @@ function ScrollToTopBtn() {
           } fixed bottom-2 right-4 z-50 cursor-pointer`}
           title='Go to top'
         >
-          <ArrowUpIcon className='w-10 h-10 py-2 px-2 rounded-sm  text-accent-100 bg-accent-300 hover:h-12' />
+          <ArrowUpIcon className='w-10 h-10 p-2 rounded-sm text-accent-100 bg-accent-300  hover:p-1' />
         </button>
       )}
     </div>
