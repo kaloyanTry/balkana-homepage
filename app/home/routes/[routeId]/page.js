@@ -46,13 +46,14 @@ async function RoutePage({ params }) {
         {plannedExplorations ? (
           <article className='flex flex-col mt-4 items-center justify-center'>
             <h2 className='text-6xl text-primary-200 font-semibold my-8'>
-              <span className='mx-4 text-accent-200 text-7xl font-semibold'>
+              <span className='mx-4 text-accent-300 text-8xl font-semibold'>
                 &#9432;
               </span>
               Shared Information
             </h2>
             <h3 className='text-4xl text-accent-300 my-4'>
-              The trail has been explored {exploredTimes} times. Join!
+              The route has been explored {exploredTimes} times.{' '}
+              <span className='font-semibold'>Join!</span>
             </h3>
             {plannedExplorations.map((exploration) => (
               <p key={exploration.startDate} className='text-2xl py-2'>
@@ -82,7 +83,7 @@ async function RoutePage({ params }) {
           </article>
         ) : null}
       </section>
-      <aside className='flex justify-end my-12 px-4'>
+      <aside className='flex justify-end my-12 px-4 max-sm:my-4 max-sm:px-2'>
         <Link
           href='/home/routes'
           className=' bg-accent-300 text-xl font-normal text-primary-100 px-4 py-2 rounded-sm hover:bg-accent-200'

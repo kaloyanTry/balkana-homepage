@@ -40,7 +40,7 @@ function Route({ route }) {
 
   return (
     <main className='flex flex-col mx-auto py-4'>
-      <article className='flex relative w-auto h-screen max-h-[60vh] min-h-96'>
+      <article className='flex relative w-auto h-screen max-h-[60vh] min-h-96 my-4 rounded-sm'>
         <Image
           src={image}
           fill
@@ -53,25 +53,27 @@ function Route({ route }) {
 
       <article className='flex flex-col items-center'>
         <div className='flex my-12 justify-center'>
-          <h1 className=' text-accent-300 text-8xl font-semibold'>{title}</h1>
+          <h1 className=' text-accent-300 text-8xl font-semibold max-sm:text-4xl'>
+            {title}
+          </h1>
         </div>
 
         <div className='flex gap-2 my-2'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
+          <h3 className='text-4xl text-accent-300 font-semibold max-sm:text-2xl'>
             Destination:{' '}
             <span className='font-bold text-primary-300'>{destination}</span>
           </h3>
         </div>
 
         <div className='flex gap-2 my-2'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
+          <h3 className='text-4xl text-accent-300 font-semibold max-sm:text-2xl'>
             Distance:{' '}
             <span className='font-bold text-primary-300'>{distance}</span>K
           </h3>
         </div>
 
         <div className='flex gap-2 my-2'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
+          <h3 className='text-4xl text-accent-300 font-semibold max-sm:text-2xl'>
             Elevation:{' '}
             <span className='font-bold text-primary-300'>{elevation}</span>
             D+
@@ -79,21 +81,23 @@ function Route({ route }) {
         </div>
 
         <div className='flex gap-2 my-2'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
+          <h3 className='text-4xl text-accent-300 font-semibold max-sm:text-2xl'>
             Difficulty:{' '}
             <span className='font-bold text-primary-300'>{difficulty}</span>
           </h3>
         </div>
 
         <div className='flex gap-2 my-2'>
-          <h3 className='text-4xl text-accent-300 font-semibold'>
+          <h3 className='text-4xl text-accent-300 font-semibold max-sm:text-2xl'>
             Suitable for:{' '}
-            <span className='font-bold text-6xl'>{suitsResult()}</span>
+            <span className='font-bold text-6xl max-sm:text-4xl'>
+              {suitsResult()}
+            </span>
           </h3>
         </div>
       </article>
 
-      <article className='flex my-4 justify-center mx-12'>
+      <article className='flex my-4 justify-center mx-2'>
         <p className=' text-primary-300 text-2xl font-normal'>
           <TextExpander>{description}</TextExpander>
         </p>

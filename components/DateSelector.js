@@ -27,14 +27,14 @@ function DateSelector({ track, plannedDates }) {
 
   // const numDays = differenceInDays(displayRange.to, displayRange.from);
   let numDays;
-  if (displayRange.to === 'undefined' || displayRange.from === 'undefined') {
+  if (displayRange.to === 'undefined' && displayRange.from === 'undefined') {
     numDays = 1;
   } else {
     numDays = differenceInDays(displayRange.to, displayRange.from) + 1;
   }
 
   return (
-    <main className='flex flex-col justify-between'>
+    <main className='flex flex-col mx-auto justify-between'>
       <DayPicker
         className='pt-12 place-self-center'
         mode='range'
@@ -42,9 +42,9 @@ function DateSelector({ track, plannedDates }) {
         selected={displayRange}
         fromMonth={new Date()}
         fromDate={new Date()}
-        toYear={new Date().getFullYear() + 3}
+        toYear={new Date().getFullYear() + 2}
         captionLayout='dropdown'
-        numberOfMonths={3}
+        numberOfMonths={2}
         weekStartsOn={1}
         classNames={{
           today: 'bg-accent-200 text-accent-300', // Add a border to today's date
@@ -62,11 +62,13 @@ function DateSelector({ track, plannedDates }) {
           {numDays ? (
             <>
               <p className='text-xl'>
-                Days on the trail:{' '}
+                Days on the route:{' '}
                 <span className='text-2xl font-semibold px-2'>{numDays}</span>
               </p>
             </>
-          ) : null}
+          ) : (
+            <p className='text-xl'>Pleases, select dates.</p>
+          )}
         </div>
         {range.from || range.to ? (
           <button

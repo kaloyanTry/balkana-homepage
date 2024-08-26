@@ -34,19 +34,19 @@ function ExplorationForm({ route, user }) {
   );
 
   return (
-    <main>
+    <main className='flex flex-col mx-auto'>
       <form
         action={async (formData) => {
           await createExplorationWithData(formData);
           resetRange();
         }}
-        className='bg-accent-100 text-accent-300 text-xl'
+        className='bg-accent-100 text-accent-300 text-xl rounded-sm'
       >
         <article className='text-xl bg-accent-300 text-primary-100 py-4 flex justify-center gap-4 items-center'>
           <p>Logged in as</p>
           <div className='flex gap-4 items-center'>
             <Image
-              className='rounded-full'
+              className='rounded-lg'
               src={user.image}
               alt={user.name}
               width={32}
@@ -58,7 +58,9 @@ function ExplorationForm({ route, user }) {
         </article>
 
         <article className='p-4 space-y-2 font-semibold'>
-          <label htmlFor='numExplorers'>How many explorers?</label>
+          <label htmlFor='numExplorers' className='text-accent-300'>
+            How many explorers?
+          </label>
           <select
             name='numExplorers'
             id='numExplorers'
@@ -76,7 +78,9 @@ function ExplorationForm({ route, user }) {
           </select>
         </article>
         <article className='p-4 space-y-2 my-4 font-semibold'>
-          <label htmlFor='experience'>Keep some notes...</label>
+          <label htmlFor='experience' className='text-accent-300'>
+            Keep some notes...
+          </label>
           <textarea
             name='experience'
             id='experience'
@@ -84,10 +88,10 @@ function ExplorationForm({ route, user }) {
             placeholder='Your experiance, expentations, thoughts about equipmets, specificates...'
           />
         </article>
-        <article className='flex justify-center items-center pb-4'>
+        <article className='flex justify-center items-center p-4'>
           {!(startDate && endDate) ? (
             <p className='text-accent-300 text-2xl font-semibold'>
-              Start by selecting a starting date and hour, and ending date date
+              Plan by selecting a starting date and hour, and ending date date
               and hour
             </p>
           ) : (

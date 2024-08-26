@@ -42,7 +42,7 @@ async function Navigation() {
               className='hover:text-primary-200 transition-all flex items-center gap-4'
             >
               <Image
-                className='rounded-full'
+                className='rounded-lg'
                 src={session.user.image}
                 alt={session.user.name}
                 width={32}
