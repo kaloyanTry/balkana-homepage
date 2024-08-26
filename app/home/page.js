@@ -18,14 +18,14 @@ export default async function Home() {
           <HomeImagesShow images={images} />
         </Suspense>
       </header>
-      <main className='flex flex-col m-auto py-8 px-4'>
+      <main className='flex flex-col m-auto py-8 px-4 max-sm:px-0 max-sm:py-2'>
         <article className='py-8'>
           <h1 className='text-9xl text-center text-primary-200 font-semibold max-sm:text-2xl'>
             BalkanaTry WebApp
           </h1>
         </article>
 
-        <article className='flex flex-col m-auto py-8 px-4'>
+        <article className='flex flex-col m-auto py-8 px-4 max-sm:px-0 max-sm:py-2'>
           <h2 className='text-center text-8xl m-8 font-bold text-primary-200 max-sm:text-lg'>
             Goal
           </h2>

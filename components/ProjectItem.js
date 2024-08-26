@@ -5,9 +5,9 @@ function ProjectItem({ project }) {
   const { id, title, year, partners, image } = project;
 
   return (
-    <main className='flex flex-col'>
+    <main className='flex flex-col mx-auto'>
       <article className='flex-grow'>
-        <h2 className='text-primary-200 text-6xl mt-16 min-h-32 text-center font-semibold'>
+        <h2 className='text-primary-200 text-6xl mt-16 text-center font-semibold'>
           <span className='text-accent-300 '>Project</span> {title}
         </h2>
         <h3 className='text-4xl my-8 text-primary-300 font-semibold text-center'>
@@ -18,7 +18,7 @@ function ProjectItem({ project }) {
         </h3>
       </article>
 
-      <article className='flex justify-between relative w-auto max-w-[2000px] h-screen max-h-[60vh] my-8 '>
+      <article className='flex relative w-auto max-w-[2000px] h-screen max-h-[60vh] my-8 '>
         <Image
           src={image}
           fill

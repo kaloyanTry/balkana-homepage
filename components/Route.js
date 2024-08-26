@@ -40,7 +40,7 @@ function Route({ route }) {
 
   return (
     <main className='flex flex-col mx-auto py-4'>
-      <article className='flex justify-between relative w-auto h-screen max-h-[60vh] min-h-96'>
+      <article className='flex relative w-auto h-screen max-h-[60vh] min-h-96'>
         <Image
           src={image}
           fill
