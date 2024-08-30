@@ -44,7 +44,7 @@ function DateSelector({ track, plannedDates }) {
         fromDate={new Date()}
         toYear={new Date().getFullYear() + 2}
         captionLayout='dropdown'
-        numberOfMonths={2}
+        numberOfMonths={3}
         weekStartsOn={1}
         classNames={{
           today: 'bg-accent-200 text-accent-300', // Add a border to today's date
