@@ -25,16 +25,41 @@ function Route({ route }) {
 
   const checkSuits = suitable;
   function suitsResult(result) {
-    if (checkSuits.length > 9) {
-      result = '🏃‍➡️ + 🚴';
-    } else {
-      if (checkSuits.includes('running')) {
-        result = '🏃‍➡️';
-      }
-      if (checkSuits.includes('cycling')) {
-        result = '🚴';
-      }
+    if (checkSuits.length > 17) {
+      result = '🏃‍➡️ + 🚴 + 🚶';
+      console.log(checkSuits.length);
     }
+
+    if (
+      checkSuits.length > 8 &&
+      checkSuits.length <= 15 &&
+      checkSuits.includes('hiking')
+    ) {
+      result = '🏃‍➡️ + 🚶';
+      console.log(checkSuits.length);
+    }
+
+    if (
+      checkSuits.length > 8 &&
+      checkSuits.length <= 16 &&
+      checkSuits.includes('cycling')
+    ) {
+      result = '🏃‍➡️ + 🚴';
+      console.log(checkSuits.length);
+    }
+
+    if (checkSuits === 'running') {
+      result = '🏃‍➡️';
+    }
+
+    if (checkSuits === 'cycling') {
+      result = '🚴';
+    }
+
+    if (checkSuits === 'hiking') {
+      result = '🚶';
+    }
+
     return result;
   }
 
