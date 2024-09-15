@@ -3,23 +3,30 @@ import Image from 'next/image';
 
 function SignInBtn({ provider }) {
   return (
-    <form action={signInAction} className='flex flex-col gap-8'>
-      <button className='flex items-center gap-4 text-xl border  border-primary-200 px-8 py-4 rounded-sm font-semibold bg-primary-100 text-primary-300'>
+    <form action={signInAction}>
+      <button className='flex items-center gap-6 text-lg border border-primary-300 px-10 py-4 font-medium'>
         <Image
-          src={`https://authjs.dev/img/providers/${provider}.svg`}
-          alt={`${provider} logo`}
-          height={24}
-          width={24}
-          priority
+          src='https://authjs.dev/img/providers/google.svg'
+          alt='Google logo'
+          height='24'
+          width='24'
         />
-        <span>
-          Continue with <b className='uppercase text-accent-300'>{provider}</b>
-        </span>
-
-        <input name={'provider'} value={provider} readOnly hidden />
+        <span>Continue with Google</span>
       </button>
     </form>
   );
 }
+// {/* <Image
+//   src={`https://authjs.dev/img/providers/${provider}.svg`}
+//   alt={`${provider} logo`}
+//   height={24}
+//   width={24}
+//   priority
+// /> */}
+// {/* <span>
+//   Continue with <b className='uppercase text-accent-300'>{provider}</b>
+// </span>
+
+// <input name={'provider'} value={provider} readOnly hidden /> */}
 
 export default SignInBtn;

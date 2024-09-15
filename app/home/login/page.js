@@ -15,9 +15,10 @@ async function LoginPage() {
       <h1 className='text-4xl font-semibold text-primary-300 mb-4'>
         Sign in to access your explorations&apos; area
       </h1>
-      {providers.map((provider) => (
+      <SignInBtn />
+      {/* {providers.map((provider) => (
         <SignInBtn provider={provider} key={provider} />
-      ))}
+      ))} */}
     </div>
   );
 }
