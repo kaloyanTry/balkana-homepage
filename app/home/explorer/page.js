@@ -6,8 +6,8 @@ export const metadata = {
 
 async function ExplorerPage() {
   const session = await auth();
-
   const firstName = session.user.name.split(' ').at(0);
+
   return (
     <section className='flex flex-col mx-auto'>
       <h1 className='font-semibold text-4xl text-accent-100 m-4 bg-accent-300 px-8 py-4'>

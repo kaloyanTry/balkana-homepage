@@ -50,7 +50,7 @@ function UpdatePrifileForm({ explorer, children }) {
             src={countryFlag}
             width={36}
             height={36}
-            alt='Country flag'
+            alt='Country flag of the explorer'
             name='countryFlag'
             priority
           />
