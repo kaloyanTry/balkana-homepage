@@ -2,6 +2,7 @@ import { auth } from '@/lib/auth';
 
 export const metadata = {
   title: 'Explorer Area',
+  description: "Balkana Try Explorer's Area",
 };
 
 async function ExplorerPage() {

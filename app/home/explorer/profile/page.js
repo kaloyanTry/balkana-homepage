@@ -1,7 +1,7 @@
+import { auth } from '@/lib/auth';
 import { getExplorer } from '@/lib/actions';
 import SelectCountry from '@/components/SelectCountry';
 import UpdatePrifileForm from '@/components/UpdatePrifileForm';
-import { auth } from '@/lib/auth';
 
 export const metadata = {
   title: 'Update Explorer Profile',
