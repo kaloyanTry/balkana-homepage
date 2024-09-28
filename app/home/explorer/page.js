@@ -14,9 +14,9 @@ async function ExplorerPage() {
       <h1 className='font-semibold text-4xl text-accent-100 m-4 bg-accent-300 px-8 py-4'>
         Explorer Area
       </h1>
-      <p className='font-semibold text-2xl text-accent-300 m-4'>
+      <h2 className='font-semibold text-2xl text-accent-300 m-4'>
         Wellcome {firstName},
-      </p>
+      </h2>
       <p className='font-normal text-xl text-primary-300 mx-4'>
         It is your explorations&apos; area. Here is stored an information about
         your planned and previous explorations of Balkana.{' '}
