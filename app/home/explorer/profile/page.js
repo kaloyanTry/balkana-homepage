@@ -10,14 +10,18 @@ export const metadata = {
 async function ProfilePage() {
   const session = await auth();
   const explorer = await getExplorer(session.user.email);
+  let explorerNationality = '';
+  explorer.nationality === null
+    ? (explorerNationality = 'Bulgaria')
+    : (explorerNationality = explorerNationality);
 
   return (
-    <div>
-      <h2 className='font-semibold text-4xl text-accent-200 m-4'>
+    <section>
+      <h1 className='font-semibold text-4xl text-accent-200 m-2'>
         Explorer Profile Page
-      </h2>
+      </h1>
 
-      <p className='font-normal text-xl text-primary-300 m-4'>
+      <p className='font-normal text-xl text-primary-300 m-2'>
         Providing real information will make your exploration faster and
         smoother. See you in Balkana!
       </p>
@@ -26,10 +30,10 @@ async function ProfilePage() {
           name='nationality'
           id='nationality'
           className='px-5 py-3 bg-wgite text-primary-300 w-full shadow-sm rounded-sm'
-          defaultCountry={explorer.nationality}
+          defaultCountry={explorerNationality}
         />
       </UpdatePrifileForm>
-    </div>
+    </section>
   );
 }
 
