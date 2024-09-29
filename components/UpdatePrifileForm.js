@@ -8,6 +8,7 @@ function UpdatePrifileForm({ explorer, children }) {
   // const [count, setCount] = useState();
 
   const { fullName, email, phone, nationality, countryFlag } = explorer;
+  console.log(explorer);
 
   return (
     <form

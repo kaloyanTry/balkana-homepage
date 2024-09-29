@@ -23,7 +23,7 @@ function ExplorationCard({ exploration, onDelete }) {
 
   return (
     <main className='flex border border-primary-200'>
-      <article className='relative h-36 aspect-square'>
+      <article className='relative h-36 w-36 aspect-square'>
         <Image
           src={image}
           alt={`Trail ${title}`}
@@ -33,12 +33,12 @@ function ExplorationCard({ exploration, onDelete }) {
           className='object-cover border-r border-primary-200'
         />
       </article>
-      <article className='flex-grow px-8 py-2 flex flex-col'>
+      <article className='flex-grow px-4 py-2'>
         <div className='flex items-center justify-between'>
-          <h3 className='text-2xl font-semibold text-primary-300'>
+          <h2 className='text-2xl font-semibold text-primary-300'>
             {numDays} day{numDays > 1 && 's'} at the Route:{' '}
             <span className='text-accent-300'>{title}</span>
-          </h3>
+          </h2>
           {isPast(new Date(startDate)) ? (
             <span className='bg-accent-200 text-primary-300 mt-2 h-8 px-4 py-2 uppercase text-md font-bold flex items-center rounded-sm'>
               past

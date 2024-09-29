@@ -13,7 +13,7 @@ async function VisitationsPage() {
   const explorations = await getExplorations(session.user.explorerId);
 
   return (
-    <div>
+    <div className='flex flex-col'>
       <h2 className='font-semibold text-4xl text-accent-300 m-4'>
         {explorerName}&apos; Explorations
       </h2>
