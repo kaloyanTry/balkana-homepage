@@ -44,7 +44,7 @@ function DateSelector({ track, plannedDates }) {
         fromDate={new Date()}
         toYear={new Date().getFullYear() + 2}
         captionLayout='dropdown'
-        numberOfMonths={3}
+        numberOfMonths={1}
         weekStartsOn={1}
         classNames={{
           today: 'bg-accent-200 text-accent-300', // Add a border to today's date
@@ -67,7 +67,7 @@ function DateSelector({ track, plannedDates }) {
               </p>
             </>
           ) : (
-            <p className='text-xl'>Pleases, select dates.</p>
+            <p className='text-xl'>!!! Pleases, select dates, first.</p>
           )}
         </div>
         {range.from || range.to ? (

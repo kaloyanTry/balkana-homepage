@@ -5,10 +5,10 @@ const BgPage = async () => {
   console.log(routesbg);
   return (
     <div>
-      <h1>Routes in bg</h1>
+      <h1>Маршрутите на български (работна версия)</h1>
       <ul>
         {routesbg.map((route) => (
-          <li key={route.id}>{route.title_bg}</li>
+          <li key={route.id}>{route.title}</li>
         ))}
       </ul>
     </div>

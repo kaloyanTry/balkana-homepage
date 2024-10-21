@@ -42,13 +42,24 @@ function ImagesShow({ images }) {
               <h1 className='text-8xl mb-6 tracking-tight font-normal text-primary-100'>
                 Try Balkana
               </h1>
-
-              <Link
-                href='/home'
-                className=' bg-primary-200 px-4 py-2 text-primary-100 text-2xl hover:bg-primary-300 transition-all animate-pulse'
-              >
-                Explore
-              </Link>
+              <aside className='space-y-4'>
+                <div>
+                  <Link
+                    href='/home'
+                    className=' bg-primary-200 px-4 py-2 text-primary-100 text-2xl hover:bg-primary-300 transition-all animate-pulse'
+                  >
+                    Explore
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    href='/home/bg'
+                    className=' bg-primary-200 px-4 py-2 text-primary-100 text-2xl hover:bg-primary-300 transition-all animate-pulse'
+                  >
+                    Изследвайте
+                  </Link>
+                </div>
+              </aside>
             </div>
           </article>
         ))}
