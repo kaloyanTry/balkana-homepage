@@ -51,14 +51,14 @@ function ImagesShow({ images }) {
                     Explore
                   </Link>
                 </div>
-                <div>
+                {/* <div>
                   <Link
                     href='/home/bg'
                     className=' bg-primary-200 px-4 py-2 text-primary-100 text-2xl hover:bg-primary-300 transition-all animate-pulse'
                   >
                     Изследвайте
                   </Link>
-                </div>
+                </div> */}
               </aside>
             </div>
           </article>
