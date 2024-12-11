@@ -64,7 +64,7 @@ function Route({ route }) {
   }
 
   return (
-    <main className='flex flex-col m-auto'>
+    <main>
       <article className='flex relative w-auto max-w-[2000px] h-screen max-h-[60vh] min-h-96 rounded-sm my-4'>
         <Image
           src={image}

@@ -83,7 +83,7 @@ async function RoutePage({ params }) {
           </article>
         ) : null}
       </section>
-      <aside className='flex justify-end my-12 px-4 max-sm:my-4 max-sm:px-2'>
+      <aside className='flex justify-end my-8 px-4 max-sm:my-4 max-sm:px-2'>
         <Link
           href='/home/routes'
           className=' bg-accent-300 text-xl font-normal text-primary-100 px-4 py-2 rounded-sm hover:bg-accent-200'
