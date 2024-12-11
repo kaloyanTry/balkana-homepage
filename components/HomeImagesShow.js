@@ -66,7 +66,7 @@ const HomeImagesShow = ({ images }) => {
             {trackImages.map((_, i) => (
               <div
                 key={i}
-                className={`transition-all ease-out duration-800 w-2 h-2 bg-primary-100 rounded-sm ${
+                className={`transition-all ease-out duration-8000 w-2 h-2 bg-primary-100 rounded-sm ${
                   currentIndex === i ? 'p-1' : 'bg-opacity-50'
                 }`}
               ></div>
