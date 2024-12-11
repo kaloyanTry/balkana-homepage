@@ -25,35 +25,35 @@ async function ProjectsPage({ params }) {
         />
       </article>
 
-      <article className='flex flex-col my-12 max-sm:my-4'>
+      <section className='flex flex-col my-12 max-sm:my-4'>
         <h1 className='text-primary-200 text-8xl font-semibold max-sm:text-4xl text-center'>
           {title}
         </h1>
-      </article>
+      </section>
 
-      <article className='flex flex-col items-center'>
-        <div className='flex gap-2 my-6'>
+      <section className='flex flex-col items-center'>
+        <article className='flex gap-2 my-6'>
           <h3 className='text-4xl text-accent-300 font-semibold max-sm:text-2xl'>
             Opening year{' '}
             <span className='font-bold text-6xl bg-accent-300 p-2 text-primary-100 max-sm:text-4xl'>
               {year}
             </span>
           </h3>
-        </div>
+        </article>
 
-        <div className='flex gap-2 my-8'>
+        <article className='flex gap-2 my-8'>
           <h3 className='text-4xl text-primary-300 font-semibold max-sm:text-2xl'>
             Partners{' '}
             <span className='font-bold text-accent-300'>{partners}</span>
           </h3>
-        </div>
+        </article>
 
-        <div className='flex my-4 justify-center'>
+        <article className='flex my-4 justify-center'>
           <p className=' text-primary-300 text-2xl font-normal'>
             {description}
           </p>
-        </div>
-      </article>
+        </article>
+      </section>
 
       <aside className='flex justify-end my-12'>
         <Link

@@ -64,8 +64,8 @@ function Route({ route }) {
   }
 
   return (
-    <main className='flex flex-col mx-auto py-4'>
-      <article className='flex relative w-auto h-screen max-h-[60vh] min-h-96 my-4 rounded-sm'>
+    <main className='flex flex-col m-auto'>
+      <article className='flex relative w-auto max-w-[2000px] h-screen max-h-[60vh] min-h-96 rounded-sm my-4'>
         <Image
           src={image}
           fill
