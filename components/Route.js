@@ -64,8 +64,9 @@ function Route({ route }) {
   }
 
   return (
-    <main>
-      <article className='flex relative w-auto max-w-[2000px] h-screen max-h-[60vh] min-h-96 rounded-sm my-4'>
+    <main className='flex flex-col mx-auto'>
+      <article className='relative min-w-[96vw] min-h-[60vh] rounded-sm mx-auto'>
+        {/* <article className='flex relative w-auto max-w-[2000px] h-screen max-h-[60vh] min-h-96 rounded-sm my-4'> */}
         <Image
           src={image}
           fill

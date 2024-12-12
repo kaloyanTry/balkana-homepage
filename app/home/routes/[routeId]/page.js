@@ -45,13 +45,13 @@ async function RoutePage({ params }) {
         {/* Shared Information Section: */}
         {plannedExplorations ? (
           <article className='flex flex-col mt-4 items-center justify-center'>
-            <h2 className='text-6xl text-primary-200 font-semibold my-8'>
-              <span className='mx-4 text-accent-300 text-8xl font-semibold'>
+            <h2 className='text-6xl text-primary-200 font-semibold my-8 max-sm:text-4xl'>
+              <span className='mx-4 text-accent-300 text-8xl font-semibold max-sm:text-4xl'>
                 &#9432;
               </span>
               Shared Information
             </h2>
-            <h3 className='text-4xl text-accent-300 my-4'>
+            <h3 className='text-4xl text-accent-300 my-4 max-sm:text-2xl'>
               The route has been explored {exploredTimes} times.{' '}
               <span className='font-semibold'>Join!</span>
             </h3>

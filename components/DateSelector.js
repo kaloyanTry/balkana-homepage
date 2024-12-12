@@ -57,7 +57,7 @@ function DateSelector({ track, plannedDates }) {
         disabled={(currDate) => isPast(currDate)}
       />
 
-      <article className='flex flex-col items-center justify-between px-2 bg-accent-200 text-primary-300 h-16'>
+      <article className='flex flex-col items-center justify-between px-2 bg-accent-200 text-primary-300 h-16 w-auto'>
         <div>
           {numDays ? (
             <>

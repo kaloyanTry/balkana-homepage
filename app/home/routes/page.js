@@ -29,12 +29,12 @@ async function RoutesPage({ searchParams }) {
   const totalPages = await getRoutesPages(query);
 
   return (
-    <main>
+    <main className='flex flex-col mx-4'>
       <section>
         <h1 className='text-8xl mb-8 text-accent-300 font-semibold text-center'>
           Balkanas&apos; Routes
         </h1>
-        <p className='mt-16 text-primary-300 text-2xl font-normal '>
+        <p className='mt-16 text-primary-300 text-3xl font-normal max-sm:text-2xl'>
           Balkanas&apos; routes are pieces of beauty and wild. Our liability is
           to maintain, to preserve, and to live in harmony with the nature. The
           mountains are still not overcrowded and so not much destroyed by
