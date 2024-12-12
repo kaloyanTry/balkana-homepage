@@ -111,13 +111,13 @@ export default async function Home() {
         <aside className='flex flex-col-2 m-auto py-8 px-4 gap-16 max-sm:gap-2 max-sm:py-2'>
           <Link
             href='/home/routes'
-            className='bg-accent-300 hover:bg-accent-200 text-accent-100 text-2xl p-8 rounded'
+            className='bg-accent-300 hover:bg-accent-200 text-accent-100 text-3xl p-12 rounded'
           >
             Explore the routes
           </Link>
           <Link
             href='/home/projects'
-            className='bg-accent-300 hover:bg-accent-200 text-primary-100 text-2xl p-8 rounded'
+            className='bg-accent-300 hover:bg-accent-200 text-primary-100 text-3xl p-12 rounded'
           >
             Explore the projects
           </Link>
