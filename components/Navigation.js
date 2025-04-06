@@ -46,8 +46,8 @@ async function Navigation() {
                 className='rounded-lg'
                 src={session.user.image}
                 alt={session.user.name}
-                width={32}
-                height={32}
+                width={24}
+                height={24}
                 referrerPolicy='no-referrer'
               />
               Explorer
