@@ -40,7 +40,7 @@ async function Navigation() {
           {session?.user?.image ? (
             <Link
               href='/home/explorer'
-              className='hover:text-primary-100 transition-all hover:text-xl flex items-center gap-4 bg-accent-300 rounded-sm p-2'
+              className='hover:text-primary-100 transition-all hover:text-xl flex items-center gap-4 bg-accent-300 rounded-sm m-0'
             >
               <Image
                 className='rounded-lg'
@@ -49,13 +49,13 @@ async function Navigation() {
                 width={24}
                 height={24}
                 referrerPolicy='no-referrer'
-              />
+              />{' '}
               Explorer
             </Link>
           ) : (
             <Link
               href='/home/explorer'
-              className='hover:text-primary-100 transition-all hover:text-xl bg-accent-300 rounded-sm p-2'
+              className='hover:text-primary-100 transition-all hover:text-xl bg-accent-300 rounded-sm p-2 m-0'
             >
               Explorer
             </Link>
