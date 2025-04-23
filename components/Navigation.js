@@ -40,7 +40,7 @@ async function Navigation() {
           {session?.user?.image ? (
             <Link
               href='/home/explorer'
-              className='hover:text-primary-100 transition-all hover:text-xl flex items-center gap-4 bg-accent-300 rounded-sm m-0'
+              className='hover:text-primary-100 transition-all hover:text-xl flex items-center gap-4 bg-accent-300 rounded-sm p-2'
             >
               <Image
                 className='rounded-lg'
