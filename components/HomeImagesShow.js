@@ -55,7 +55,7 @@ const HomeImagesShow = ({ images }) => {
     <main className='flex flex-col m-auto py-4 relative group'>
       <article
         style={{ backgroundImage: `url(${trackImages[currentIndex].url})` }}
-        className='w-auto h-screen max-h-[60vh] rounded-sm min-h-96 bg-center bg-cover placeholder-primary-100 transition-all transition-duration: 1600'
+        className='w-auto h-screen max-h-[70vh] rounded-sm min-h-96 bg-center bg-cover placeholder-primary-100 transition-all transition-duration: 1600'
         key={trackImages[currentIndex]}
       >
         <Arrow direction='left' onClick={prevImage} />
