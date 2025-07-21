@@ -9,12 +9,12 @@ async function Navigation() {
   console.log(session);
 
   return (
-    <nav className='z-10 text-2xl text-accent-100 font-semibold uppercase'>
+    <nav className='z-10 text-2xl text-accent-300 font-bold uppercase'>
       <ul className='flex gap-4 max-lg:gap-4 max-md:gap-2 max-sm:text-lg '>
         <li>
           <Link
             href='/home'
-            className='hover:text-primary-100 transition-all hover:text-xl bg-accent-300 rounded-sm p-2'
+            className='hover:text-primary-200 transition-all hover:text-xl bg-white rounded-sm p-2'
           >
             Home
           </Link>
@@ -23,7 +23,7 @@ async function Navigation() {
         <li>
           <Link
             href='/home/projects'
-            className='hover:text-primary-100 transition-all hover:text-xl bg-accent-300 rounded-sm p-2'
+            className='hover:text-primary-200 transition-all hover:text-xl bg-white rounded-sm p-2'
           >
             Projects
           </Link>
@@ -31,7 +31,7 @@ async function Navigation() {
         <li>
           <Link
             href='/home/routes'
-            className='hover:text-primary-100 transition-all hover:text-xl bg-accent-300 rounded-sm p-2'
+            className='hover:text-primary-200 transition-all hover:text-xl bg-white rounded-sm p-2'
           >
             Routes
           </Link>
@@ -40,7 +40,7 @@ async function Navigation() {
           {session?.user?.image ? (
             <Link
               href='/home/explorer'
-              className='hover:text-primary-100 transition-all hover:text-xl flex items-center gap-4 bg-accent-300 rounded-sm p-2'
+              className='hover:text-primary-200 transition-all hover:text-xl flex items-center gap-4 bg-white rounded-sm p-2'
             >
               <Image
                 className='rounded-lg'
@@ -55,7 +55,7 @@ async function Navigation() {
           ) : (
             <Link
               href='/home/explorer'
-              className='hover:text-primary-100 transition-all hover:text-xl bg-accent-300 rounded-sm p-2 m-0'
+              className='hover:text-primary-200 transition-all hover:text-xl bg-white rounded-sm p-2 m-0'
             >
               Explorer
             </Link>

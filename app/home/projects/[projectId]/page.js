@@ -15,7 +15,7 @@ async function ProjectsPage({ params }) {
 
   return (
     <main className='flex flex-col mx-auto'>
-      <article className='flex relative w-auto h-screen max-h-[60vh] min-h-96 my-4 rounded-sm'>
+      <article className='flex relative w-auto h-screen max-h-[70vh] min-h-96 my-4 rounded-sm'>
         <Image
           src={image}
           fill
