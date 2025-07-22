@@ -32,7 +32,7 @@ async function RoutesPage({ searchParams }) {
     <main className='flex flex-col mx-4'>
       <section>
         <h1 className='text-8xl mb-8 text-accent-300 font-semibold text-center'>
-          Balkanas&apos; Routes
+          Balkana&apos;s Routes
         </h1>
         <p className='mt-16 text-primary-300 text-3xl font-normal max-sm:text-2xl'>
           Balkana&apos;s routes are pieces of natural beauty and wilderness. Our
