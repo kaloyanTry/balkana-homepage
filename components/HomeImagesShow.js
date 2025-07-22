@@ -52,7 +52,7 @@ const HomeImagesShow = ({ images }) => {
   );
 
   return (
-    <main className='flex flex-col m-auto py-4 relative group'>
+    <main className='flex flex-col mx-auto my-4 py-4 relative group'>
       <article
         style={{ backgroundImage: `url(${trackImages[currentIndex].url})` }}
         className='w-auto h-screen max-h-[70vh] rounded-sm min-h-96 bg-center bg-cover placeholder-primary-100 transition-all transition-duration: 1600'

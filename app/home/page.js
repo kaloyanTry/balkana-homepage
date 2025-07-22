@@ -18,7 +18,7 @@ export default async function Home() {
           <HomeImagesShow images={images} />
         </Suspense>
       </header>
-      <main className='flex flex-col m-auto py-8 px-4 max-sm:px-0 max-sm:py-2'>
+      <main className='flex flex-col mx-auto my-4 py-8 px-4 max-sm:px-0 max-sm:py-2'>
         <article className='py-8'>
           <h1 className='text-9xl text-center text-primary-200 font-semibold max-sm:text-2xl'>
             BalkanaTry WebApp
