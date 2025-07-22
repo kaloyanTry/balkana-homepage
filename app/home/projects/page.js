@@ -19,12 +19,12 @@ function ProjectsPage() {
           Balkanas&apos; Projects
         </h1>
         <p className='mb-8 text-primary-300 text-3xl font-normal max-sm:text-2xl'>
-          Balkanas&apos; projects are public and open. During the realization of
-          the projects are involved people with personal commitment, voluntary
-          work, and efforts for an active life in accordance with natural laws
-          and respect for the environment, the habitat of local life forms. Here
-          you can find information about different projects and activities you
-          could join.
+          Balkana&apos;s projects are public and open. During the realization of
+          these projects, we involve people with personal commitment who
+          contribute through voluntary work and efforts toward an active life in
+          accordance with natural laws and respect for the environment—the
+          habitat of local life forms. Here you can find information about
+          different projects and activities you can join.
         </p>
       </section>
       <Suspense fallback={<Spinner />}>
