@@ -35,13 +35,14 @@ async function RoutesPage({ searchParams }) {
           Balkanas&apos; Routes
         </h1>
         <p className='mt-16 text-primary-300 text-3xl font-normal max-sm:text-2xl'>
-          Balkanas&apos; routes are pieces of beauty and wild. Our liability is
-          to maintain, to preserve, and to live in harmony with the nature. The
-          mountains are still not overcrowded and so not much destroyed by
-          danger humans&apos; actions. The trails are suitable for active,
-          sensible and responsible people. Please, explore Balkans&apos; routes
-          with respect to the mountain, and without destructive attitude and
-          behavior. Take care of the nature, locals, and yourself.
+          Balkana&apos;s routes are pieces of natural beauty and wilderness. Our
+          responsibility is to maintain, preserve, and live in harmony with
+          nature. The mountains are still not overcrowded and have not been
+          significantly damaged by harmful human actions. The trails are
+          suitable for active, sensible, and responsible people. Please explore
+          Balkana&apos;s routes with respect for the mountain and without
+          destructive attitudes or behavior. Take care of nature, locals, and
+          yourself.
         </p>
         <p className='mb-8 text-primary-300 text-2xl font-normal'>
           Our public database includes{' '}
@@ -94,9 +95,9 @@ async function RoutesPage({ searchParams }) {
               &#9432;
             </span>
             Important! Crossing the routes requires personal responsibility and
-            activity. Being in the wild requires care and respect. When visiting
-            mountains, it is recommended to have mountain insurance. Information
-            about Mountain Resque Service{' '}
+            proper preparation. Being in the wilderness requires care and
+            respect. When visiting mountains, it is recommended to have mountain
+            insurance. Information about Mountain Rescue Service{' '}
             <Link
               href='https://en.redcross.bg/activities/activities2'
               rel='noopener noreferrer'
