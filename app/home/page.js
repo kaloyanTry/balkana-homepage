@@ -35,24 +35,24 @@ export default async function Home() {
         </blockquote>
         <p className='text-justify text-3xl p-4 pb-12 border-b-2 font-normal text-primary-300 max-sm:text-lg'>
           Our goal is to preserve and maintain traditional paths, trails, and
-          routes in the mountain. Specifically, in Balkana, in the Centre Stara
-          Planina area.{' '}
+          routes in the mountains, specifically in the Balkana region of the
+          Central Stara Planina area.{' '}
           <span className='font-semibold'>
-            The goal of this web application is to share information about the
-            local routes.
+            The goal of this web application is to share information about local
+            routes.
           </span>{' '}
-          You could explore some or all of them and share your try. On
-          BalkanaTry web application you will find a short description of the
-          routes, including GPS coordinates of the starting point, destinations,
+          You can explore some or all of them and share your experience. On the
+          BalkanaTry web application, you will find short descriptions of the
+          routes, including GPS coordinates of starting points, destinations,
           distance, elevation gain, and images. If you plan to explore a
-          particular route, through the application, you could share information
-          about when would you go to run, cycle, or hike on the route and with
-          how many friends. On the web application, the information is shared,
-          and if someone other is interested in the route she or he could join
-          or just to know that the route has been explored by others shortly in
-          the past. There is an explorer area, where you can find information
-          for your explorations of Balkana. No names or any other personal
-          information is shared on the web app.{' '}
+          particular route, you can use the application to share information
+          about when you intend to run, cycle, or hike the route and how many
+          friends will join you. This information is shared on the web
+          application, so if someone else is interested in the route, they can
+          join you or simply know that the route has been explored by others
+          recently. There is an explorer area where you can find information for
+          your Balkana explorations. No names or other personal information are
+          shared on the web app.{' '}
           <span className='font-semibold'>Touch Balkana!</span>
         </p>
       </article>
@@ -66,19 +66,19 @@ export default async function Home() {
           <cite className='font-semibold'> (Aristotel)</cite>
         </blockquote>
         <p className='text-justify text-3xl p-4 pb-8 border-b-2 font-normal text-primary-300 max-sm:text-lg'>
-          We organize and support outdoor activities in the local area.
-          Activities such as mountain running and mountain cycling events,
-          preserving and renovating traditional paths, volunteering. For
-          example, you can see Tryavna Tour and Mahnatite skali RUN events on
-          our{' '}
+          We organize and support outdoor activities in the local area,
+          including mountain running and mountain cycling events, preserving and
+          renovating traditional paths, and volunteering opportunities. For
+          example, you can see the Tryavna Tour and Mahnatite Skali RUN events
+          among our{' '}
           <Link
             href='/home/projects'
             className='text-accent-300 uppercase font-semibold'
           >
             projects
           </Link>{' '}
-          area. There you could find information about our other activities like
-          clearing forest paths and renovating route marks.
+          area. There you can find information about our other activities, such
+          as clearing forest paths and renovating route markers.
         </p>
       </article>
       <article className='flex flex-col m-auto py-8'>
@@ -102,8 +102,9 @@ export default async function Home() {
             Living actively with respect for nature and others, and sharing the
             experiences are our main values.
           </span>{' '}
-          All the activities we have realized are led by the idea of ​​a clean
-          and healthy environment and zero ecological footprint.
+          All the activities we undertake are guided by the principles of
+          maintaining a clean and healthy environment and achieving zero
+          ecological footprint.
         </p>
       </article>
 
