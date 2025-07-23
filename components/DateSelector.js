@@ -34,7 +34,7 @@ function DateSelector({ track, plannedDates }) {
   }
 
   return (
-    <main className='flex flex-col justify-between'>
+    <main className=''>
       <DayPicker
         className='pt-12 place-self-center'
         mode='range'

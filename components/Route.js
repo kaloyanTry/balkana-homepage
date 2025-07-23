@@ -22,7 +22,6 @@ function Route({ route }) {
     gpx_file,
   } = route;
 
-  // console.log(startPoint);
   const displayStartPoint = String(startPoint);
   const displayGpxFile = String(gpx_file);
 
@@ -147,8 +146,7 @@ function Route({ route }) {
       <article className='flex gap-2 items-center justify-center my-8'>
         <MapIcon className='h-16 w-16 text-accent-300' />
         <span className='text-2xl text-primary-200'>
-          Explore the gps track on a new window. A gpx file on a leaflet map
-          will be loaded...{' '}
+          Download the gpx file of the track{' '}
           <Link href={displayGpxFile} passHref legacyBehavior shallow>
             <a target='_blank' className='text-accent-300 font-semibold'>
               here

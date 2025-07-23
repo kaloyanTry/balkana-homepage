@@ -6,8 +6,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className='flex flex-col gap-8 mt-8 items-center'>
-      <h1 className='text-4xl font-semibold text-primary-300 mb-4'>
+    <div className='flex flex-col justify-between mx-auto gap-4 mt-8 items-center'>
+      <h1 className='text-4xl px-4 text-center font-semibold text-primary-300 mb-2'>
         Sign in to access your explorations&apos; area
       </h1>
 
