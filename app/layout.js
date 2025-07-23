@@ -8,8 +8,9 @@ const bubbler = Bubbler_One({
 });
 
 export const metadata = {
-  title: 'Balkana Home Page',
-  keywords: 'Balkana, Stara planina, Tryavna, routes',
+  title: 'BalkanaTry',
+  keywords:
+    'Balkana, Stara planina mountain, Tryavna, routes, trails, paths, mountain running, cycling, hiking, web application',
   description:
     'Balkana web application, routes in Stara planina, around Tryavna routes, paths, trails',
 };
