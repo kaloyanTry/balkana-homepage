@@ -40,8 +40,8 @@ const HomeImagesShow = ({ images }) => {
 
   let Arrow = ({ direction, onClick }) => (
     <div
-      className='h-8 w-8 text-primary-100 bg-primary-100 bg-opacity-10 rounded-sm  group-hover:block absolute top-[50%] translate-y-[-50%] cursor-pointer'
-      style={{ [direction]: '40px' }}
+      className='h-6 w-6 text-primary-100 bg-primary-100 bg-opacity-10 rounded-sm  group-hover:block absolute top-[50%] translate-y-[-50%] cursor-pointer'
+      style={{ [direction]: '20px' }}
     >
       {direction === 'left' ? (
         <ArrowLeftIcon onClick={onClick} />
@@ -55,7 +55,7 @@ const HomeImagesShow = ({ images }) => {
     <main className='flex flex-col mx-auto'>
       <article
         style={{ backgroundImage: `url(${trackImages[currentIndex].url})` }}
-        className='relative min-w-[90vw] min-h-[60vh] rounded-sm mx-auto bg-center bg-cover placeholder-primary-100 transition-all transition-duration: 1600'
+        className='relative min-w-[100vw] min-h-[60vh] rounded-sm mx-auto bg-center bg-cover placeholder-primary-100 transition-all transition-duration: 1600'
         key={trackImages[currentIndex]}
       >
         <Arrow direction='left' onClick={prevImage} />

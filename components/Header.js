@@ -8,7 +8,6 @@ function Header() {
       <div className='flex justify-between items-center max-w-7xl mx-auto'>
         <Logo />
         <Navigation />
-        {/* <NavigationResponsive /> */}
       </div>
     </header>
   );
