@@ -13,12 +13,12 @@ export const metadata = {
 
 function ProjectsPage() {
   return (
-    <main className='mx-4'>
+    <main className='mx-2'>
       <section className='flex flex-col mx-auto pb-12 border-b-4 border-accent-200'>
-        <h1 className='text-8xl mx-auto my-16 text-primary-100 bg-primary-200 font-bold text-center py-8'>
+        <h1 className='text-8xl mx-auto my-16 text-primary-100 bg-primary-200 font-bold text-center p-8'>
           Balkana&apos;s Projects
         </h1>
-        <p className='mb-8 text-primary-300 text-3xl font-normal max-sm:text-2xl'>
+        <p className='mb-8 text-primary-300 text-3xl text-justify font-normal max-sm:text-2xl'>
           Balkana&apos;s projects are public and open to all. We involve people
           who are personally committed and contribute through voluntary work and
           effort, promoting an active lifestyle in harmony with natural laws and

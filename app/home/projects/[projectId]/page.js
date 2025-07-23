@@ -49,7 +49,7 @@ async function ProjectsPage({ params }) {
         </article>
 
         <article className='flex my-4 justify-center'>
-          <p className=' text-primary-300 text-2xl font-normal'>
+          <p className=' text-primary-300 text-2xl text-justify font-normal'>
             {description}
           </p>
         </article>

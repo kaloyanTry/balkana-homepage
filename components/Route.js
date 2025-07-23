@@ -124,7 +124,7 @@ function Route({ route }) {
       </article>
 
       <article className='flex my-4 justify-center mx-2'>
-        <p className=' text-primary-300 text-2xl font-normal'>
+        <p className=' text-primary-300 text-2xl text-justify font-normal'>
           <TextExpander>{description}</TextExpander>
         </p>
       </article>

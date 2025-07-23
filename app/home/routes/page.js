@@ -34,7 +34,7 @@ async function RoutesPage({ searchParams }) {
         <h1 className='text-8xl my-8 text-accent-300 font-semibold text-center'>
           Balkana&apos;s Routes
         </h1>
-        <p className='mt-8 text-primary-300 text-3xl font-normal max-sm:text-2xl'>
+        <p className='mt-8 text-primary-300 text-3xl text-justify font-normal max-sm:text-2xl'>
           Balkana&apos;s routes are pieces of natural beauty and wilderness. Our
           responsibility is to maintain, preserve, and live in harmony with
           nature. The mountains are still not overcrowded and have not been
