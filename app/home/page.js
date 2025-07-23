@@ -17,7 +17,7 @@ export default async function Home() {
         <HomeImagesShow images={images} />
       </Suspense>
 
-      <section className='flex flex-col mt-12 items-center justify-center'>
+      <section className='flex flex-col mt-12 px-4 items-center justify-center'>
         <h1 className='text-9xl text-center text-primary-200 font-semibold max-sm:text-3xl'>
           BalkanaTry WebApp
         </h1>
@@ -109,7 +109,7 @@ export default async function Home() {
         </article>
       </section>
 
-      <aside className='flex flex-col-2 mx-auto py-8 px-2 gap-16 max-sm:gap-2 max-sm:py-2'>
+      <aside className='flex flex-col-2 mx-auto py-8 gap-16 max-sm:gap-2 max-sm:py-2'>
         <Link
           href='/home/routes'
           className='bg-accent-300 hover:bg-accent-200 text-accent-100 text-3xl p-12 rounded'

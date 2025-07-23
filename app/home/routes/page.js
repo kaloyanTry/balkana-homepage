@@ -16,7 +16,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Routes',
-  description: "The overview of the Balkanas' routes",
+  description: "The overview of the Balkana's routes",
 };
 
 // When using sesarchParams the page is a dynamic rendered page //
@@ -29,12 +29,12 @@ async function RoutesPage({ searchParams }) {
   const totalPages = await getRoutesPages(query);
 
   return (
-    <main className='flex flex-col mx-4'>
+    <main className='flex flex-col mx-auto px-2'>
       <section>
-        <h1 className='text-8xl mb-8 text-accent-300 font-semibold text-center'>
+        <h1 className='text-8xl my-8 text-accent-300 font-semibold text-center'>
           Balkana&apos;s Routes
         </h1>
-        <p className='mt-16 text-primary-300 text-3xl font-normal max-sm:text-2xl'>
+        <p className='mt-8 text-primary-300 text-3xl font-normal max-sm:text-2xl'>
           Balkana&apos;s routes are pieces of natural beauty and wilderness. Our
           responsibility is to maintain, preserve, and live in harmony with
           nature. The mountains are still not overcrowded and have not been
@@ -66,10 +66,10 @@ async function RoutesPage({ searchParams }) {
       {/* ///////// Search and Pagination section: ////////// */}
       <article className='block'>
         <p className='text-xl text-accent-300 text-center font-normal mb-2'>
-          Search by typing a destination{' '}
+          Search a route by typing a destination{' '}
           <span className='mx-2'>&#x1F50E;&#xFE0E;</span>{' '}
         </p>
-        <article className='mb-8 flex items-center justify-between gap-2'>
+        <article className='flex mb-8 items-center justify-between gap-2'>
           <Search placeholder='Search routes...' />
         </article>
       </article>
