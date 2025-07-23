@@ -14,7 +14,7 @@ async function ProjectsPage({ params }) {
   const { id, title, year, description, partners, image } = project;
 
   return (
-    <main className='flex flex-col mx-auto'>
+    <main className='flex flex-col mx-4'>
       <article className='flex relative w-auto h-screen max-h-[70vh] min-h-96 my-4 rounded-sm'>
         <Image
           src={image}
