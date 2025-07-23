@@ -3,7 +3,8 @@ export const dynamic = 'force-dynamic';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPinIcon } from '@heroicons/react/24/solid';
+import { MapPinIcon } from '@heroicons/react/24/outline';
+import { MapIcon } from '@heroicons/react/24/outline';
 import TextExpander from '@/components/TextExpander';
 
 function Route({ route }) {
@@ -18,10 +19,12 @@ function Route({ route }) {
     image,
     suitable,
     destination,
+    gpx_file,
   } = route;
 
   // console.log(startPoint);
   const displayStartPoint = String(startPoint);
+  const displayGpxFile = String(gpx_file);
 
   const checkSuits = suitable;
   function suitsResult(result) {
@@ -77,7 +80,7 @@ function Route({ route }) {
         />
       </article>
 
-      <article className='flex flex-col items-center'>
+      <article className='flex flex-col px-2 items-center'>
         <div className='flex my-12 justify-center'>
           <h1 className=' text-accent-300 text-8xl font-semibold max-sm:text-4xl'>
             {title}
@@ -130,16 +133,23 @@ function Route({ route }) {
       </article>
 
       <article className='flex gap-2 items-center justify-center my-8'>
-        <MapPinIcon className='h-8 w-8 text-accent-300' />
+        <MapPinIcon className='h-12 w-12 text-accent-300' />
         <span className='text-2xl text-primary-200'>
           Explore starting point location{' '}
-          <Link
-            // href='https://maps.app.goo.gl/cRmVTQfreF1RobMi9'
-            href={displayStartPoint}
-            passHref
-            legacyBehavior
-            shallow
-          >
+          <Link href={displayStartPoint} passHref legacyBehavior shallow>
+            <a target='_blank' className='text-accent-300 font-semibold'>
+              here
+            </a>
+          </Link>
+        </span>
+      </article>
+
+      <article className='flex gap-2 items-center justify-center my-8'>
+        <MapIcon className='h-16 w-16 text-accent-300' />
+        <span className='text-2xl text-primary-200'>
+          Explore the gps track on a new window. A gpx file on a leaflet map
+          will be loaded...{' '}
+          <Link href={displayGpxFile} passHref legacyBehavior shallow>
             <a target='_blank' className='text-accent-300 font-semibold'>
               here
             </a>
