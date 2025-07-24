@@ -9,6 +9,22 @@ export default function GpxViewer({ gpxUrl }) {
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
 
+  const startIcon = new L.Icon({
+    iconUrl: '/icons/pin-green.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    shadowUrl: 'https://unpkg.com/leaflet/dist/images/marker-shadow.png',
+    shadowSize: [41, 41],
+  });
+
+  const endIcon = new L.Icon({
+    iconUrl: '/icons/pin-red.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    shadowUrl: 'https://unpkg.com/leaflet/dist/images/marker-shadow.png',
+    shadowSize: [41, 41],
+  });
+
   useEffect(() => {
     if (!gpxUrl || typeof window === 'undefined') return;
 
@@ -29,8 +45,10 @@ export default function GpxViewer({ gpxUrl }) {
     const gpx = new L.GPX(gpxUrl, {
       async: true,
       marker_options: {
-        startIconUrl: null,
-        endIconUrl: null,
+        // startIconUrl: null,
+        // endIconUrl: null,
+        startIcon,
+        endIcon,
         shadowUrl: null,
       },
     })
