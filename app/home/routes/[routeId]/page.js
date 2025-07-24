@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 import { UserGroupIcon } from '@heroicons/react/24/solid';
 import { format, formatDistance, isPast, isToday, parseISO } from 'date-fns';
 import Link from 'next/link';
+import 'leaflet/dist/leaflet.css';
 
 export async function generateMetadata({ params }) {
   const { title } = await getRoute(params.routeId);

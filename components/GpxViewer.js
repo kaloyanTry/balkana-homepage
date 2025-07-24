@@ -5,6 +5,14 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-gpx';
 
+// Default icon fallback
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: '/leaflet/marker-icon-2x.png',
+  iconUrl: '/leaflet/marker-icon.png',
+  shadowUrl: '/leaflet/marker-shadow.png',
+});
+
 export default function GpxViewer({ gpxUrl }) {
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
@@ -13,53 +21,51 @@ export default function GpxViewer({ gpxUrl }) {
     if (!gpxUrl || typeof window === 'undefined') return;
 
     const container = mapContainerRef.current;
-
-    const startIcon = new L.Icon({
-      iconUrl: '/icons/pin-green.png',
-      iconSize: [25, 41], // default size
-      iconAnchor: [12, 41], // bottom point of icon
-      popupAnchor: [1, -34], // where popups appear
-      shadowUrl: 'https://unpkg.com/leaflet/dist/images/marker-shadow.png',
-      shadowSize: [41, 41],
-    });
-
-    const endIcon = new L.Icon({
-      iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-      iconSize: [25, 41], // default size
-      shadowUrl: 'https://unpkg.com/leaflet/dist/images/marker-shadow.png',
-      shadowSize: [41, 41],
-    });
-
-    // Prevent map re-initialization
     if (!container || mapInstanceRef.current) return;
 
-    // Fix: Ensure container has a unique ID (needed by Leaflet internals)
-    const map = L.map(container).setView([42.87, 25.32], 13);
+    const map = L.map(container);
     mapInstanceRef.current = map;
+
+    setTimeout(() => {
+      map.invalidateSize();
+      map.setView([42.87, 25.32], 13);
+    }, 0);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
     }).addTo(map);
 
-    // GPX layer
-    const gpx = new L.GPX(gpxUrl, {
+    // Use green icon for the start marker
+    const startIcon = new L.Icon({
+      iconUrl: '/leaflet/marker-icon.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowUrl: '/leaflet/marker-shadow.png',
+    });
+
+    // Use default red icon for the end marker
+    const endIcon = new L.Icon({
+      iconUrl: '/leaflet/marker-icon-2x.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowUrl: '/leaflet/marker-shadow.png',
+    });
+
+    new L.GPX(gpxUrl, {
       async: true,
       marker_options: {
         startIcon,
         endIcon,
-        shadowUrl: null,
       },
     })
       .on('loaded', function (e) {
-        try {
-          const bounds = e.target?.getBounds();
-          if (bounds && map) {
+        const bounds = e.target?.getBounds();
+        if (bounds) {
+          setTimeout(() => {
             map.fitBounds(bounds);
-          } else {
-            console.warn('GPX loaded but no bounds available.');
-          }
-        } catch (err) {
-          console.error('Error during GPX fitBounds:', err);
+          }, 100);
         }
       })
       .on('error', function (err) {
@@ -78,11 +84,10 @@ export default function GpxViewer({ gpxUrl }) {
   return (
     <div
       ref={mapContainerRef}
-      id='map'
       style={{
         height: '500px',
         width: '90%',
-        margin: '1rem 0',
+        margin: '1rem auto',
       }}
     />
   );

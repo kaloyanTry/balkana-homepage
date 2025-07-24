@@ -1,6 +1,8 @@
 // Opt out of caching for all data requests in the route segment
 export const dynamic = 'force-dynamic';
 
+import 'leaflet/dist/leaflet.css';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPinIcon } from '@heroicons/react/24/outline';
