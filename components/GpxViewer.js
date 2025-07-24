@@ -16,16 +16,16 @@ export default function GpxViewer({ gpxUrl }) {
 
     const startIcon = new L.Icon({
       iconUrl: '/icons/pin-green.png',
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
+      iconSize: [25, 41], // default size
+      iconAnchor: [12, 41], // bottom point of icon
+      popupAnchor: [1, -34], // where popups appear
       shadowUrl: 'https://unpkg.com/leaflet/dist/images/marker-shadow.png',
       shadowSize: [41, 41],
     });
 
     const endIcon = new L.Icon({
-      iconUrl: '/icons/pin-red.png',
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
+      iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+      iconSize: [25, 41], // default size
       shadowUrl: 'https://unpkg.com/leaflet/dist/images/marker-shadow.png',
       shadowSize: [41, 41],
     });
