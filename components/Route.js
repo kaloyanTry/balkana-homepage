@@ -6,6 +6,13 @@ import Link from 'next/link';
 import { MapPinIcon } from '@heroicons/react/24/outline';
 import { MapIcon } from '@heroicons/react/24/outline';
 import TextExpander from '@/components/TextExpander';
+// import GpxViewer from '@/components/GpxViewer'; // Import the GpxViewer component
+// Dynamically import without server-side rendering
+import dynamic2 from 'next/dynamic';
+
+const GpxViewer = dynamic2(() => import('@/components/GpxViewer'), {
+  ssr: false,
+});
 
 function Route({ route }) {
   const {
@@ -23,7 +30,7 @@ function Route({ route }) {
   } = route;
 
   const displayStartPoint = String(startPoint);
-  const displayGpxFile = String(gpx_file);
+  const sourceGpxFile = String(gpx_file);
 
   const checkSuits = suitable;
   function suitsResult(result) {
@@ -147,12 +154,16 @@ function Route({ route }) {
         <MapIcon className='h-16 w-16 text-accent-300' />
         <span className='text-2xl text-primary-200'>
           Download the gpx file of the track{' '}
-          <Link href={displayGpxFile} passHref legacyBehavior shallow>
+          <Link href={sourceGpxFile} passHref legacyBehavior shallow>
             <a target='_blank' className='text-accent-300 font-semibold'>
               here
             </a>
           </Link>
         </span>
+      </article>
+
+      <article className='flex my-4 justify-center mx-2'>
+        <GpxViewer gpxUrl={sourceGpxFile} />
       </article>
     </main>
   );

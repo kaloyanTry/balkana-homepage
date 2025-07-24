@@ -36,6 +36,7 @@ async function RoutePage({ params }) {
           and share with others
         </h3>
         <UserGroupIcon className='h-12 w-12 text-accent-300' />
+
         <article>
           <Suspense fallback={<Spinner />}>
             <Exploration route={route} />
