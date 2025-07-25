@@ -152,18 +152,6 @@ function Route({ route }) {
         </span>
       </article>
 
-      <article className='flex gap-2 items-center justify-center my-8'>
-        <MapIcon className='h-16 w-16 text-accent-300' />
-        <span className='text-2xl text-primary-200'>
-          Download the gpx file of the track{' '}
-          <Link href={sourceGpxFile} passHref legacyBehavior shallow>
-            <a target='_blank' className='text-accent-300 font-semibold'>
-              here
-            </a>
-          </Link>
-        </span>
-      </article>
-
       <article className='flex my-4 justify-center mx-2'>
         <GpxViewer gpxUrl={sourceGpxFile} />
       </article>
@@ -175,3 +163,14 @@ export default Route;
 
 // https://ell.stackexchange.com/questions/171407/whats-the-difference-between-track-and-trail
 // http://www.outdoorsfather.com/2015/10/trail-vs-route-which-one-is-for-you/
+// <article className='flex gap-2 items-center justify-center my-8'>
+//   <MapIcon className='h-16 w-16 text-accent-300' />
+//   <span className='text-2xl text-primary-200'>
+//     Download the gpx file of the track{' '}
+//     <Link href={sourceGpxFile} passHref legacyBehavior shallow>
+//       <a target='_blank' className='text-accent-300 font-semibold'>
+//         here
+//       </a>
+//     </Link>
+//   </span>
+// </article>;
