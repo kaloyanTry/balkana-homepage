@@ -31,7 +31,7 @@ async function RoutesPage({ searchParams }) {
   return (
     <main className='flex flex-col mx-auto px-2'>
       <section>
-        <h1 className='text-8xl my-8 text-accent-300 font-semibold text-center'>
+        <h1 className='text-8xl my-16 text-accent-300 font-semibold text-center'>
           Balkana&apos;s Routes
         </h1>
         <p className='mt-8 text-primary-300 text-3xl text-justify font-normal max-sm:text-2xl'>
