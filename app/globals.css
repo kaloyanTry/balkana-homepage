@@ -10,13 +10,13 @@ html {
 
 /* Add fonts and interalization */
 .font-english {
-  font-family: 'Bubblegum Sans', Arial, sans-serif;
+  font-family: 'Bubblegum Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .font-bulgarian {
-  font-family: 'Roboto Condensed', Arial, sans-serif;
+  font-family: 'Zen Kurenaido', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-
-/* Import fonts via CSS */
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans:wght@400&family=Roboto+Condensed:wght@300;400;700&display=swap');
-/* Custom styles for the fonts */

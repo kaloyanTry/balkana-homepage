@@ -30,6 +30,10 @@ const nextConfig = {
       },
     ],
   },
+  i18n: {
+    locales: ['en', 'bg'], // English and Bulgarian
+    defaultLocale: 'en',
+  },
 };
 
 export default nextConfig;
