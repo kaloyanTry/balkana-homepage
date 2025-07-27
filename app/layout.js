@@ -1,12 +1,13 @@
 import {
-  Bubbler_One,
-  // Zen_Kurenaido,
   Sofia_Sans_Condensed,
+  //   Bubbler_One,
+  //   Zen_Kurenaido,
 } from 'next/font/google';
+
 import './globals.css';
 
-const bubbler = Bubbler_One({ subsets: ['latin'], weight: '400' });
-// const kurenaido = Zen_Kurenaido({ subsets: ['cyrillic'], weight: '400' });
+// const bubbler = Bubbler_One({ subsets: ['latin'], weight: '400' });
+// // const kurenaido = Zen_Kurenaido({ subsets: ['cyrillic'], weight: '400' });
 const sofia_sans = Sofia_Sans_Condensed({
   subsets: ['cyrillic'],
   weight: '400',
@@ -21,13 +22,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children, params }) {
-  const locale = params?.locale || 'en';
-  const fontClass = locale === 'bg' ? sofia_sans.className : bubbler.className;
+  // const locale = params?.locale || 'en';
+  // const fontClass = locale === 'bg' ? sofia_sans.className : bubbler.className;
 
   return (
-    <html lang={locale}>
+    <html>
       <body
-        className={`${fontClass} antialiased flex flex-col relative min-h-screen`}
+        className={`${sofia_sans.className} antialiased flex flex-col relative min-h-screen`}
       >
         <main className='w-full'>{children}</main>
       </body>

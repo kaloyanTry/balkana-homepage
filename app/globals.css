@@ -8,11 +8,12 @@ html {
   scroll-behavior: smooth;
 }
 
-.font-dynamic:lang(bg) {
-  /* font-family: 'Zen Kurenaido', sans-serif !important; */
-  font-family: 'Sofia Sans Condensed', sans-serif !important;
+@import url('https://fonts.googleapis.com/css2?family=Bubbler+One&family=Sofia_Sans+Condensed&display=swap');
+
+body {
+  font-family: 'Bubbler One', 'Sofia Sans Condensed', sans-serif;
 }
 
-.font-dynamic:lang(en) {
-  font-family: 'Bubbler One', sans-serif !important;
-}
+/* body {
+  font-family: 'Bubbler One', 'Sofia Sans Condensed' sans-serif;
+} */

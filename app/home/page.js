@@ -27,15 +27,15 @@ export default function Home() {
   }, []);
 
   // Set the font class on body element
-  useEffect(() => {
-    document.body.setAttribute('data-lang', locale);
-    // Optional: set specific font class on body
-    document.body.className = document.body.className.replace(
-      /font-(en|bg)/g,
-      ''
-    );
-    document.body.classList.add(`font-${locale}`);
-  }, [locale]);
+  // useEffect(() => {
+  //   document.body.setAttribute('data-lang', locale);
+  //   // Optional: set specific font class on body
+  //   document.body.className = document.body.className.replace(
+  //     /font-(en|bg)/g,
+  //     ''
+  //   );
+  //   document.body.classList.add(`font-${locale}`);
+  // }, [locale]);
 
   if (loading) {
     return <Spinner />;
@@ -48,12 +48,12 @@ export default function Home() {
       </Suspense>
 
       <section className='flex flex-col mt-12 px-4 items-center justify-center'>
-        <h1 className='text-9xl text-center text-primary-200 font-semibold max-sm:text-3xl'>
+        <h1 className='text-9xl text-center text-primary-200 font-thin max-sm:text-3xl'>
           {t('title')}
         </h1>
 
         <article className='flex flex-col mx-auto mt-4 items-center justify-center'>
-          <h2 className='text-center text-8xl pt-4 font-bold text-primary-200 max-sm:text-lg'>
+          <h2 className='text-center text-8xl pt-4 font-thin text-primary-200 max-sm:text-lg'>
             {t('goal')}
           </h2>
           <blockquote className='block text-3xl text-center text-accent-300 px-2 pt-2 max-sm:text-lg font-thin'>
