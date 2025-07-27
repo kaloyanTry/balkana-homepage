@@ -31,7 +31,7 @@ const nextConfig = {
     ],
   },
   i18n: {
-    locales: ['en', 'bg'], // English and Bulgarian
+    locales: ['en', 'bg'],
     defaultLocale: 'en',
   },
 };
