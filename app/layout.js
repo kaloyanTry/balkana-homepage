@@ -1,10 +1,9 @@
-import { Bubbler_One } from 'next/font/google';
+import { Sofia_Sans_Condensed } from 'next/font/google';
 import './globals.css';
 
-const bubbler = Bubbler_One({
+const sofia_sans = Sofia_Sans_Condensed({
   subsets: ['latin'],
-  display: 'swap',
-  weight: '400',
+  weight: ['200', '400', '600', '800'],
 });
 
 export const metadata = {
@@ -16,9 +15,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children, params }) {
-  // const locale = params?.locale || 'en';
-  // const fontClass = locale === 'bg' ? sofia_sans.className : bubbler.className;
-
   return (
     <html>
       <body
