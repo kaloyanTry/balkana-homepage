@@ -40,15 +40,21 @@ function ImagesShow({ images }) {
             />
             <div className='relative z-10 text-center'>
               <h1 className='text-8xl mb-6 tracking-tight font-normal text-primary-100'>
-                Balkana
+                Балкана | Balkana
               </h1>
               <aside className='space-y-4'>
-                <div>
+                <div className='flex gap-6 justify-center items-center mt-8'>
                   <Link
-                    href='/home'
-                    className=' bg-primary-200 px-4 py-2 text-primary-100 text-2xl hover:bg-primary-300 transition-all animate-pulse'
+                    href='/home?lang=bg'
+                    className=' bg-primary-200 px-4 py-2 text-primary-100 text-2xl hover:bg-primary-300 transition-all animate-pulse flex items-center gap-2'
                   >
-                    try
+                    трай | БГ 🇧🇬
+                  </Link>
+                  <Link
+                    href='/home?lang=en'
+                    className=' bg-primary-200 px-4 py-2 text-primary-100 text-2xl hover:bg-primary-300 transition-all animate-pulse flex items-center gap-2'
+                  >
+                    try | EN 🇬🇧
                   </Link>
                 </div>
               </aside>
