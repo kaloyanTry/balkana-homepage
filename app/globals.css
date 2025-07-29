@@ -8,12 +8,8 @@ html {
   scroll-behavior: smooth;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Bubbler+One&family=Sofia_Sans+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
 
 body {
-  font-family: 'Bubbler One', 'Sofia Sans Condensed', sans-serif;
+  font-family: 'Sofia Sans Condensed', sans-serif;
 }
-
-/* body {
-  font-family: 'Bubbler One', 'Sofia Sans Condensed' sans-serif;
-} */
