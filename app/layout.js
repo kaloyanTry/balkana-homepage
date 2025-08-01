@@ -2,9 +2,9 @@ import { Bubbler_One } from 'next/font/google';
 import './globals.css';
 
 const bubbler = Bubbler_One({
-  subsets: ['latin'],
-  display: 'swap',
   weight: '400',
+  subsets: ['latin'],
+  fallback: ['cursive', 'sans-serif'], // Add fallback fonts
 });
 
 export const metadata = {
