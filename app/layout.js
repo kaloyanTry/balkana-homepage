@@ -1,25 +1,24 @@
-import { Bubbler_One } from 'next/font/google';
+import { Sofia_Sans_Condensed } from 'next/font/google';
 import './globals.css';
 
-const bubbler = Bubbler_One({
-  weight: '400',
+const sofia_sans = Sofia_Sans_Condensed({
   subsets: ['latin'],
-  fallback: ['cursive', 'sans-serif'], // Add fallback fonts
+  weight: ['200', '400', '600', '800'],
 });
 
 export const metadata = {
   title: 'BalkanaTry',
   keywords:
-    'Balkana, Stara planina mountain, Tryavna, routes, trails, paths, mountain running, cycling, hiking, web application',
+    'Balkana, Stara planina mountain, Tryavna, routes, tracks, trails, paths, mountain running, cycling, hiking, web application',
   description:
-    'Balkana web application, routes in Stara planina, around Tryavna routes, paths, trails',
+    'Balkana web application, routes in Stara planina mountain, around Tryavna routes, tracks, paths, trails',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, params }) {
   return (
-    <html lang='en'>
+    <html>
       <body
-        className={`${bubbler.className} antialiased flex flex-col relative min-h-screen`}
+        className={`${sofia_sans.className} antialiased flex flex-col relative min-h-screen`}
       >
         <main className='w-full'>{children}</main>
       </body>

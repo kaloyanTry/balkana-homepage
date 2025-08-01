@@ -1,15 +1,45 @@
+'use client';
+
 import HomeImagesShow from '@/components/HomeImagesShow';
 import { getTracksImages } from '@/lib/data';
 import Link from 'next/link';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Spinner from '@/components/Spinner';
+import { useTranslation } from '@/hooks/useTranslation';
 
-export const metadata = {
-  title: 'Balkana Home',
-};
+export default function Home() {
+  const { t, locale } = useTranslation();
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-export default async function Home() {
-  const images = await getTracksImages();
+  useEffect(() => {
+    async function fetchImages() {
+      try {
+        const fetchedImages = await getTracksImages();
+        setImages(fetchedImages);
+      } catch (error) {
+        console.error('Error fetching images:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchImages();
+  }, []);
+
+  // Set the font class on body element
+  // useEffect(() => {
+  //   document.body.setAttribute('data-lang', locale);
+  //   // Optional: set specific font class on body
+  //   document.body.className = document.body.className.replace(
+  //     /font-(en|bg)/g,
+  //     ''
+  //   );
+  //   document.body.classList.add(`font-${locale}`);
+  // }, [locale]);
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <main className='flex flex-col mx-auto my-4'>
@@ -18,93 +48,59 @@ export default async function Home() {
       </Suspense>
 
       <section className='flex flex-col mt-12 px-4 items-center justify-center'>
-        <h1 className='text-9xl text-center text-primary-200 font-semibold max-sm:text-3xl'>
-          BalkanaTry WebApp
+        <h1 className='text-9xl text-center text-primary-200 font-thin max-sm:text-3xl'>
+          {t('title')}
         </h1>
 
         <article className='flex flex-col mx-auto mt-4 items-center justify-center'>
-          <h2 className='text-center text-8xl pt-4 font-bold text-primary-200 max-sm:text-lg'>
-            Goal
+          <h2 className='text-center text-8xl pt-4 font-thin text-primary-200 max-sm:text-lg'>
+            {t('goal')}
           </h2>
           <blockquote className='block text-3xl text-center text-accent-300 px-2 pt-2 max-sm:text-lg font-thin'>
-            &apos;Discipline is the bridge between goals and
-            accomplishment.&apos;
-            <cite className='font-semibold'> (Eliud Kipchoge)</cite>
+            {t('quote1')}
+            <cite className='font-semibold'> {t('quote1_author')}</cite>
           </blockquote>
           <p className='text-justify text-3xl px-2 pt-4 pb-12 border-b-2 font-normal text-primary-300 max-sm:text-lg'>
-            Our goal is to preserve and maintain traditional paths, trails, and
-            routes in the mountains, specifically in the Balkana region of the
-            Central Stara Planina area.{' '}
-            <span className='font-semibold'>
-              The goal of this web application is to share information about
-              local routes.
-            </span>{' '}
-            You can explore some or all of them and share your experience. On
-            the BalkanaTry web application, you will find short descriptions of
-            the routes, including GPS coordinates of starting points,
-            destinations, distance, elevation gain, and images. If you plan to
-            explore a particular route, you can use the application to share
-            information about when you intend to run, cycle, or hike the route
-            and how many friends will join you. This information is shared on
-            the web application, so if someone else is interested in the route,
-            they can join you or simply know that the route has been explored by
-            others recently. There is an explorer area where you can find
-            information for your Balkana explorations. No names or other
-            personal information are shared on the web app.{' '}
-            <span className='font-semibold'>Touch Balkana!</span>
+            {t('paragraph1_start')}{' '}
+            <span className='font-semibold'>{t('paragraph1_bold')}</span>{' '}
+            {t('paragraph1_middle')}{' '}
+            <span className='font-semibold'>{t('paragraph1_end')}</span>
           </p>
         </article>
 
         <article className='flex flex-col mx-auto mt-8 items-center justify-center'>
           <h2 className='text-center text-8xl pt-4 font-bold text-primary-200 max-sm:text-lg'>
-            Activities
+            {t('activities')}
           </h2>
           <blockquote className='block text-3xl text-center text-accent-300 px-2 pt-2 max-sm:text-lg font-thin'>
-            &apos;We are what we repeatedly do. Excellence, then, is not an act,
-            but a habit.&apos;
-            <cite className='font-semibold'> (Aristotel)</cite>
+            {t('quote2')}
+            <cite className='font-semibold'> {t('quote2_author')}</cite>
           </blockquote>
           <p className='text-justify text-3xl px-2 pt-4 pb-12 border-b-2 font-normal text-primary-300 max-sm:text-lg'>
-            We organize and support outdoor activities in the local area,
-            including mountain running and mountain cycling events, preserving
-            and renovating traditional paths, and volunteering opportunities.
-            For example, you can see the Tryavna Tour and Mahnatite Skali RUN
-            events among our{' '}
+            {t('paragraph2_start')}{' '}
             <Link
               href='/home/projects'
               className='text-accent-300 uppercase font-semibold'
             >
-              projects
+              {t('projects_link')}
             </Link>{' '}
-            area. There you can find information about our other activities,
-            such as clearing forest paths and renovating route markers.
+            {t('paragraph2_end')}
           </p>
         </article>
 
         <article className='flex flex-col mx-auto mt-8 items-center justify-center'>
           <h2 className='text-center text-8xl pt-4 font-bold text-primary-200 max-sm:text-lg'>
-            Values
+            {t('values')}
           </h2>
           <blockquote className='block text-3xl text-center text-accent-300 px-2 pt-2 max-sm:text-lg font-thin'>
-            &apos;The key to genuine happiness is in our hands. To think this
-            way is to discover the essential values of kindness, brotherly love
-            and altruism. The more clearly we see the benefits of these values,
-            the more we will seek to reject anything that opposes them; in this
-            way we will be able to bring about inner transformation... <br />
-            Follow the three R&apos;s: - Respect for self. - Respect for others.
-            - Responsibility for all your actions.&apos;
-            <cite className='font-semibold'> (Dalai Lama)</cite>
+            {t('quote3')} <br />
+            {t('quote3_continue')}
+            <cite className='font-semibold'> {t('quote3_author')}</cite>
           </blockquote>
           <p className='text-justify text-3xl px-2 pt-4 pb-12 border-b-2 font-normal text-primary-300 max-sm:text-lg'>
-            We are trying to live very close to nature, relearning to co-exist
-            and inhabit the wild without polluting and without causing harm.{' '}
-            <span className='font-semibold'>
-              Living actively with respect for nature and others, and sharing
-              the experiences are our main values.
-            </span>{' '}
-            All the activities we undertake are guided by the principles of
-            maintaining a clean and healthy environment and achieving zero
-            ecological footprint.
+            {t('paragraph3_start')}{' '}
+            <span className='font-semibold'>{t('paragraph3_bold')}</span>{' '}
+            {t('paragraph3_end')}
           </p>
         </article>
       </section>
@@ -114,13 +110,13 @@ export default async function Home() {
           href='/home/routes'
           className='bg-accent-300 hover:bg-accent-200 text-accent-100 text-3xl p-12 rounded'
         >
-          Explore the routes
+          {t('explore_routes')}
         </Link>
         <Link
           href='/home/projects'
           className='bg-accent-300 hover:bg-accent-200 text-primary-100 text-3xl p-12 rounded'
         >
-          Explore the projects
+          {t('explore_projects')}
         </Link>
       </aside>
     </main>
